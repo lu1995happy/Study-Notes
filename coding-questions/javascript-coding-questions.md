@@ -4,7 +4,11 @@
 
 ## Leetcode 3: Longest substring without repeating characters
 
+## Leetcode 39: Combination Sum
+
 ## Leetcode 46: Permutations
+
+## Leetcode 151: Reverse words in a string
 
 ## Leetcode 268: Missing Number
 
@@ -26,7 +30,7 @@ Array.prototype.double = function() {
 
 ## Given a LinkedList and a target value, remove the node that has the same value as the given target value 
 
-## Write a function sum\(2\)\(3\), sum\(2, 3\) which will return 5
+## Write a function that sum\(2\)\(3\), sum\(2, 3\) will all return 5
 
 ```javascript
 function sum(a, b) {
@@ -43,4 +47,23 @@ function sum(a, b) {
 ## Merge two sorted array
 
 ## Given "HELLO" return "H.E.L.L.O"
+
+## Write a function that add\(\) = 0, add\(2\)\(\) = 2, add\(2\)\(2\)\(\) = 4, add\(2\)\(3\)\(4\)\(5\)\(\) = 14
+
+```javascript
+function add(a) {
+    if (a === undefined) {
+        return 0;
+    }
+    let sum = a;
+    return add2(b) {
+        if (b === undefined) {
+            return sum;
+        } else {
+            sum += b;
+        }
+        return add2;
+    }
+}
+```
 
