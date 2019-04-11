@@ -4,9 +4,13 @@
 
 ## Leetcode 3: Longest substring without repeating characters
 
+## Leetcode 36: Valid Sudoku
+
 ## Leetcode 39: Combination Sum
 
 ## Leetcode 46: Permutations
+
+## **Leetcode 125: Valid Palindrome**
 
 ## Leetcode 151: Reverse words in a string
 
@@ -89,6 +93,40 @@ function add(a) {
         }
         return add2;
     }
+}
+```
+
+## Query string constructor: Given an object, construct the query string of it
+
+```javascript
+// Example:
+const obj = {
+   name: "lynn",
+   gender: "female"
+}
+return "?name=lynn&gender=female"
+```
+
+```javascript
+const constructString = (obj) => {
+  let res = "?";
+  for (let key in obj) {
+    res += key + "=" + obj[key] + "&";
+  }
+  return res.slice(0, -1);
+}
+```
+
+## Flatten Array: **Change \["a", "b", \["c", "d", \["e", "f"\]\], "g"\] to \["a", "b", "c", "d", "e", "f", "g"\]**
+
+```javascript
+const flattenArray = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      arr = [...arr.slice(0, i), ...arr[i], ...arr.slice(i + 1)];
+    }
+  }
+  return arr;
 }
 ```
 
