@@ -28,6 +28,31 @@ Array.prototype.double = function() {
 
 ## Write a function to find the most repeated number in the array 
 
+```javascript
+const findMost = (arr) => {
+  if (arr.length === 0) {
+    return null;
+  }
+  let map = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (map[arr[i]]) {
+      map[arr[i]]++;
+    } else {
+      map[arr[i]] = 1;
+    }
+  }
+  let keys = Object.keys(map);
+  let times = 0, mostNum = 0;
+  for (let i = 0; i < keys.length; i++) {
+    if (times < map[keys[i]]) {
+      times = map[keys[i]];
+      mostNum = keys[i];
+    }
+  }
+  return mostNum;
+}
+```
+
 ## Given a LinkedList and a target value, remove the node that has the same value as the given target value 
 
 ## Write a function that sum\(2\)\(3\), sum\(2, 3\) will all return 5
