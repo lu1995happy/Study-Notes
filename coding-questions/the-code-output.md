@@ -227,7 +227,20 @@ console.log(obj.age);  // undefined
 console.log(obj.name); // undefined
 ```
 
+## What is the output of this code
 
+```javascript
+var module = {
+  x: 42,
+  getX: () => {
+    return this.x;
+  }
+}
+var unbound = module.getX;
+console.log(unbound()); // undefined 
+var bound = unbound.bind(module);
+console.log(bound());   // undefined
+```
 
 
 

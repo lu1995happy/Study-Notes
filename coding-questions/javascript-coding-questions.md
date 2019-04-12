@@ -4,23 +4,37 @@
 
 ## Leetcode 3: Longest substring without repeating characters
 
+## Leetcode 33: Search In Rotated Sorted Array
+
 ## Leetcode 36: Valid Sudoku
 
 ## Leetcode 39: Combination Sum
 
 ## Leetcode 46: Permutations
 
+## **Leetcode 73: Set Matrix Zeros**
+
+## **Leetcode 94: Binary Tree Inorder Traversal**
+
 ## **Leetcode 110: Balanced Binary Tree**
 
 ## **Leetcode 125: Valid Palindrome**
 
+## Leetcode 144: Binary Tree Preorder Traversal 
+
 ## Leetcode 151: Reverse words in a string
+
+## Leetcode 203: Remove Linked List Elements
+
+## Leetcode 206: Reverse Linked List
 
 ## Leetcode 268: Missing Number
 
 ## Leetcode 283: Move Zeros
 
 ## Leetcode 300: Longest Increasing Subsequence
+
+## Leetcode 316: Remove Duplicate Letters
 
 ## How to implement \[1, 2, 3\].double\(\) = \[2, 4, 6\]
 
@@ -119,6 +133,12 @@ const constructString = (obj) => {
   }
   return res.slice(0, -1);
 }
+
+// using Reduce
+const helper = obj => {
+  return Object.entries(obj).reduce((prev, curr) => prev 
+    + curr[0] + "=" + curr[1] + "&", "?").slice(0, -1);
+}
 ```
 
 ## Flatten Array: **Change \["a", "b", \["c", "d", \["e", "f"\]\], "g"\] to \["a", "b", "c", "d", "e", "f", "g"\]**
@@ -145,5 +165,68 @@ const flattenArray = (arr) => {
 4  5  5 | 2 | 6   ->  2       
 
 // Leetcode 410   
+```
+
+## Write a function, which passing an ID would return the options for that ID
+
+```javascript
+var linkGroups = [
+    {id: "sports", options: ["soccer", "basketball"]}, 
+    {id: "fish", options: ["salmon", "goldfish"]}
+];
+
+const helper = id => {
+    return linkGroups.filter(item => item.id === id)[0].options;
+}
+
+```
+
+## What if there are multiple options and you want to return them in one array
+
+```javascript
+var linkGroups = [
+    {id: "sports", options: ["soccer", "basketball"]}, 
+    {id: "fish", options: ["salmon", "goldfish"]}, 
+    {id: "fish", options: ["trout", "bass"]}
+];
+
+const helper = id => {
+    return linkGroups.filter(item => item.id === id).map(item => item.options);
+}
+```
+
+## Write a function, which returns all the elements are string
+
+```javascript
+const arr=["bird",1,3,{a:1},"cat","dog",56];
+
+const helper = arr => {
+    return arr.filter(item => typeof item === "string");
+}
+```
+
+## Write a function, which uses IIFE to get output 0,1,2,3,4
+
+```javascript
+for (var i = 0; i < 5; i++) {
+    (inner = i => {
+        setTimeout(() => console.log(i))
+    })(i);
+}
+```
+
+## Write a function, which returns the HTML elements that background color not equal to the color
+
+```javascript
+const getHTML = () => {
+    let res = "";
+    let arr = document.getElementsByTagName("td");
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].style.color !== arr[i].style["backgroundColor"]) {
+            res += arr[i].innerHTML();
+        }
+    }
+    return res;
+}
 ```
 

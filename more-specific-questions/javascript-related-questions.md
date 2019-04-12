@@ -13,3 +13,7 @@ The shallow comparison check means that JavaScript only checks that the value's 
 * false
 * NaN
 
+## How can you make people not change the value
+
+Object.freeze\(\)
+
