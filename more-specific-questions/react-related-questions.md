@@ -22,6 +22,10 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 * componentDidUpdate - also commonly used to update the DOM in response to prop or state changes.
 * componentWillUnmount - here you can cancel any outgoing network requests, or remove all eventListeners associated with the component. 
 
+## How to re-render out of Lifecycle
+
+using this.forceUpdate\(\)
+
 ## Where in a React component should you make an AJAX request?
 
 componentDidMount is where an AJAX request should be made in a React component. This method will be executed when the component "mounts" \(is added to the DOM\) for the first time. This method is only executed once during the component's life. Importantly, you can't guarantee the AJAX request will have resolved before the component mounts. If it doesn't, that would mean that you had be trying to setState on an unmounted component, which would not work. Making your AJAX request in componentDidMount will guarantee that there's a component to update. 
@@ -77,6 +81,10 @@ They help indicate to React what data types a React component's properties are a
 ## How Virtual DOM works in React
 
 React builds up its own "virtual DOM" which is a lightweight representation of the DOM optimized for React's diffing algorithms and reconciliation process. Virtual DOM changes eventually propagate to the actual DOM at the end of the reconciliation process. 
+
+## Test method in React
+
+Jest and Enzyme
 
 
 

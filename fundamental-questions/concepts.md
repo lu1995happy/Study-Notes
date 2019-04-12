@@ -98,7 +98,20 @@ Every object has a property called "prototype". It's also an object.
 
 Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope. 
 
+## Accessibility
 
+* subtitle
+* color
+* light conditions
+* voice searching
+* text for speech
+* clear layout navigation
+* notification and feedback
+* error message \(learning disability\)
+* large button and click control for mobile
+* customized text size color space \(vision disability\)
+* understandable context
+* keyboard compatibility \(mouse broken\)
 
 
 

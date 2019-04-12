@@ -155,3 +155,71 @@ document.addEventListener("DOMContentLoaded", function(event) {
 // external resources like images are downloaded to ≠ user's machine.
 ```
 
+## What is the output of this code
+
+```javascript
+const arr = [0, 1, 2, 3, 4];
+for (var i = 0; i < arr.length; i++) {
+    setTimeout(function() {
+        console.log('Index: ' + i + ' value:' + arr[i]);
+    }, 3000);
+}
+
+// output : 
+// Index: 5 value:undefined
+// Index: 5 value:undefined
+// Index: 5 value:undefined
+// Index: 5 value:undefined
+// Index: 5 value:undefined
+```
+
+## What is the output of this code
+
+```javascript
+for (var i = 0; i< 5; i++) {
+	setTimeout(() => console.log(i)); // 5 5 5 5 5
+}
+
+for (var i = 0; i< 5; i++) {
+	setTimeout(() => console.log(i)); // 5 5 5 5 5 
+}
+setTimeout(() => console.log(i)); // 5
+
+for (let i = 0; i< 5; i++) {
+	setTimeout(() => console.log(i)); // 0 1 2 3 4
+}
+
+for (let i = 0; i< 5; i++) {
+	setTimeout(() => console.log(i)); // 0 1 2 3 4
+}
+setTimeout(() => console.log(i)); // ERROR: i is not defined
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
