@@ -10,6 +10,8 @@
 
 ## Leetcode 46: Permutations
 
+## **Leetcode 110: Balanced Binary Tree**
+
 ## **Leetcode 125: Valid Palindrome**
 
 ## Leetcode 151: Reverse words in a string
@@ -17,6 +19,8 @@
 ## Leetcode 268: Missing Number
 
 ## Leetcode 283: Move Zeros
+
+## Leetcode 300: Longest Increasing Subsequence
 
 ## How to implement \[1, 2, 3\].double\(\) = \[2, 4, 6\]
 
@@ -128,5 +132,18 @@ const flattenArray = (arr) => {
   }
   return arr;
 }
+```
+
+## **Given array \[4, 5, 5, 2, 6\] indicate a piece of chocolate, each element represent the sweetness\(1 - 10\) of chocolate, you want to share the chocolate with two other friends\(divide array into three subarrays\), you want to make sure that your two friends get sweetest, how to divide the array so that you can get sweetest among all those division ways \(find sweetest value among the least sweet ways\)**
+
+```text
+4 | 5 | 5  2  6   ->  4
+4 | 5  5 | 2  6   ->  4
+4 | 5  5  2 | 6   ->  4
+4  5 | 5 | 2  6   ->  5
+4  5 | 5  2 | 6   ->  6   answer: 6
+4  5  5 | 2 | 6   ->  2       
+
+// Leetcode 410   
 ```
 

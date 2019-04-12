@@ -195,11 +195,37 @@ for (let i = 0; i< 5; i++) {
 setTimeout(() => console.log(i)); // ERROR: i is not defined
 ```
 
+## What is the output of this code
 
+```javascript
+test();
+var n = 9;;
 
+function test(){
+ console.log(n); // undefined
+}
+console.log(n); // 9
 
+```
 
+## What is the output of this code
 
+```javascript
+var obj = {
+  name: "Tom",
+  age: 20
+}
+
+var dup = obj;
+obj.age = 45;
+obj={
+  Class: "xxx",
+}
+
+console.log(dup.age);  // 45
+console.log(obj.age);  // undefined 
+console.log(obj.name); // undefined
+```
 
 
 
