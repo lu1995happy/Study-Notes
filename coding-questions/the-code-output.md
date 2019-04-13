@@ -165,6 +165,15 @@ for (var i = 0; i < arr.length; i++) {
     }, 3000);
 }
 
+// Fix:
+for (var i = 0; i < arr.length; i++) {
+  (function(i) {
+      setTimeout(function() {
+          console.log('Index: ' + i + ' value:' + arr[i]);
+      }, 3000);    
+  })(i);
+}
+
 // output : 
 // Index: 5 value:undefined
 // Index: 5 value:undefined

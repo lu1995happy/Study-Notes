@@ -4,6 +4,8 @@
 
 ## Leetcode 3: Longest substring without repeating characters
 
+## Leetcode 20: Valid Parentheses
+
 ## Leetcode 33: Search In Rotated Sorted Array
 
 ## Leetcode 36: Valid Sudoku
@@ -160,6 +162,13 @@ const flattenArray = (arr) => {
   }
   return arr;
 }
+
+// using Reduce
+const flatten = arr => {
+   return arr.reduce(function (flat, toFlatten) {
+       return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+   }, []);
+}
 ```
 
 ## **Merge Two Object**
@@ -308,5 +317,29 @@ const something = (function() {
         }
     };
 })();
+```
+
+## **Write the class “Calc” to make below codes work: Let a = new Calc\(2\); a.add\(2\).multiple\(3\).value\(\) = 12**
+
+```javascript
+class Calc {
+    constructor(value) {
+        this.value = value;
+    }
+    
+    add(value) {
+        this.value += value;
+        return this;
+    }
+    
+    multiple(value) {
+        this.value *= value;
+        return this;
+    }
+    
+    getValue() {
+        return this.value;
+    }
+}
 ```
 
