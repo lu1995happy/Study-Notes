@@ -16,4 +16,5 @@
   * [JavaScript Coding Questions](coding-questions/javascript-coding-questions.md)
   * [The Code Output](coding-questions/the-code-output.md)
   * [CSS Coding Questions](coding-questions/css-coding-questions.md)
+  * [React Coding Projects](coding-questions/react-coding-projects.md)
 

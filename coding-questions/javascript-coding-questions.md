@@ -12,9 +12,15 @@
 
 ## Leetcode 46: Permutations
 
+## **Leetcode 48: Rotate Image**
+
 ## **Leetcode 73: Set Matrix Zeros**
 
+## **Leetcode 88: Merge Sorted Array**
+
 ## **Leetcode 94: Binary Tree Inorder Traversal**
+
+## **Leetcode 102: Binary Tree Level Order Traversal**
 
 ## **Leetcode 110: Balanced Binary Tree**
 
@@ -27,6 +33,8 @@
 ## Leetcode 203: Remove Linked List Elements
 
 ## Leetcode 206: Reverse Linked List
+
+## Leetcode 242: Valid Anagram
 
 ## Leetcode 268: Missing Number
 
@@ -43,8 +51,6 @@ Array.prototype.double = function() {
     return this.map(val) => (val * 2);
 }
 ```
-
-## Give you an array contains duplicate numbers, print out the numbers which is duplicate 
 
 ## Given an array with integer and K, return top K largest element in the array 
 
@@ -72,10 +78,8 @@ const findMost = (arr) => {
     }
   }
   return mostNum;
-}
+} 
 ```
-
-## Given a LinkedList and a target value, remove the node that has the same value as the given target value 
 
 ## Write a function that sum\(2\)\(3\), sum\(2, 3\) will all return 5
 
@@ -91,9 +95,13 @@ function sum(a, b) {
 }
 ```
 
-## Merge two sorted array
-
 ## Given "HELLO" return "H.E.L.L.O"
+
+```javascript
+const helper = str => {
+    return str.split("").join(".");
+}
+```
 
 ## Write a function that add\(\) = 0, add\(2\)\(\) = 2, add\(2\)\(2\)\(\) = 4, add\(2\)\(3\)\(4\)\(5\)\(\) = 14
 
@@ -114,7 +122,7 @@ function add(a) {
 }
 ```
 
-## Query string constructor: Given an object, construct the query string of it
+## Stringify the object into URL: Given an object, construct the query string of it
 
 ```javascript
 // Example:
@@ -151,6 +159,16 @@ const flattenArray = (arr) => {
     }
   }
   return arr;
+}
+```
+
+## **Merge Two Object**
+
+```javascript
+const obj1 = {a: 1, b: 2};
+const obj2 = {b: 3, c: 3};
+const merge = (obj1, obj2) => {
+    return Object.assign(obj2, obj1);
 }
 ```
 
@@ -228,5 +246,67 @@ const getHTML = () => {
     }
     return res;
 }
+```
+
+## Realize the reduce function for array
+
+```javascript
+const reduce = (arr, initialValue = 0, callback) => {
+    let curValue = initialValue;
+    for (let i of arr) {
+        curValue = callback(curValue, i);
+    }
+    return curValue;
+}
+```
+
+## Sort the String first by length, then by alphabetical order. Capitalize the first character, end with "."
+
+```javascript
+// example: "bc a bb cdf cab." =>  “A bb bc cab cdf."
+
+const arrange = (sentence) => {
+  sentence = sentence.substring(0, sentence.length - 1);
+  let map = new Map();
+  let arr = sentence.split(" ");
+  for(let word of arr){
+    let len = word.length;
+    if(map.get(len) === undefined){
+      map.set(len, [word]);
+    } else {
+      map.set(len, [...map.get(len), word]);
+    }
+  }
+  let new_arr = [...map];
+  new_arr.sort((a,b) => a[0] - b[0]);
+  
+  let result = "";
+  new_arr[0][1][0] = new_arr[0][1][0].charAt(0).toUpperCase() + new_arr[0][1][0].slice(1);
+  for(let i = 0; i < new_arr.length; i++){
+    for(let j = 0; j < new_arr[i][1].length; j++){
+      result += new_arr[i][1][j];
+      if(new_arr.length - 1 === i && j === new_arr[i][1].length - 1){
+        result += '.';
+      } else {
+        result += ' ';
+      }
+    } 
+  }
+  return(result);
+}
+```
+
+## Write a function, which could be only called once
+
+```javascript
+const something = (function() {
+    let memory = false;
+    return function() {
+        if (!memory) {
+            memory = true;
+            console.log("It works!");
+        }
+    };
+})();
 ```
 

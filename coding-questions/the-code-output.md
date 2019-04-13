@@ -242,11 +242,44 @@ var bound = unbound.bind(module);
 console.log(bound());   // undefined
 ```
 
+## What is the output of this code
 
+```javascript
+setTimeout(function() {
+  console.log(1)
+}, 0)
+setTimeout(function() {
+  console.log(2)
+}, 0)
+setTimeout(function() {
+  console.log(3)
+}, 100)
+setTimeout(function() {
+  console.log(4)
+}, 100)
+setTimeout(function() {
+  console.log(5)
+}, 0)
 
+// answer: 1, 2, 5, 3, 4
+```
 
+## What is the output of this code
 
+```javascript
+function foo1() {
+  return {
+    bar: "hello"
+  };
+} // return an object
 
+function foo2() {
+  return 
+  {
+    bar: "hello"
+  };
+} // return undefined
+```
 
 
 
