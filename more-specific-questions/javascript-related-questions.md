@@ -13,7 +13,105 @@ The shallow comparison check means that JavaScript only checks that the value's 
 * false
 * NaN
 
+## 4 types of scoping
+
+* Global Scope - declared outside for any function, use it without declaring
+* Function Scope - var
+* Block Scope - let & const 
+  * const: immutable variable, must be initialized
+* Module Scope
+
+## Create an Object in 6 different ways
+
+* Object\(\) constructor 
+
+```javascript
+const obj = new Object(); 
+```
+
+* Object.create\(\) 
+  * creates a new object extending the prototype object passed as a parameter 
+
+```javascript
+const obj = Object.create(null);
+```
+
+* Bracket's syntactic sugar
+  * equals to Object.create\(null\), using a null prototype as an argument
+
+```javascript
+const obj = {};
+```
+
+* Function constructor 
+  * call a function and setting this of the function to a fresh new Object, and binding the prototype of that new Object to the function's prototype
+
+```javascript
+const obj = function(name) {
+    this.name = name
+};        
+const a = new obj("hello");
+```
+
+* Function constructor + prototype
+
+```javascript
+function myObject() {};
+myObject.prototype.name = "hello";
+const obj = new myObject();
+```
+
+* ES6 class syntax 
+
+```javascript
+class myObject {
+    constructor(name) {
+        this.name = name;
+    }
+}
+const obj = new myObject("hello");
+```
+
+* Singleton pattern 
+
+```javascript
+ const obj = new function() {this.name = "hello"};
+```
+
+## Promise
+
+* Promise represents the eventual completion of an async operation
+* It must be in one of these states
+  * pending
+    * initial state, not fulfilled or rejected
+  * fulfilled
+    * meaning that the operation completed successfully
+  * rejected
+    * meaning that the operation failed
+* It is guaranteed that a promise object will either succeed or fail
+* promise.all 
+  * returns a single promise that resolves when all of the promises in the argument have resolved or when the utterable argument contains no promises
+* create Promise example
+
+```javascript
+function asyncDoubble(n) {
+    return new Promise((resolve, reject) => {
+        if (typeof n === "number") {
+            resolve(n * 2);
+        } else {
+            reject(new Error (n + "is not a number!"));
+        }
+    });
+}
+asyncDouble(3).then(
+    data => console.log(data);
+    error => console.log(error);
+);
+```
+
 ## How can you make people not change the value
 
 Object.freeze\(\)
+
+
 

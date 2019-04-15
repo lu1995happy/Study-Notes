@@ -22,6 +22,12 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 * componentDidUpdate - also commonly used to update the DOM in response to prop or state changes.
 * componentWillUnmount - here you can cancel any outgoing network requests, or remove all eventListeners associated with the component. 
 
+![](../.gitbook/assets/image.png)
+
+## React Component
+
+A component is a function or a class which optionally accepts input and returns a React element.
+
 ## How to re-render out of Lifecycle
 
 using this.forceUpdate\(\)

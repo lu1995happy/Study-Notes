@@ -116,5 +116,10 @@ CSSOM and DOM trees are combined into a render tree
 | allow you to use additional features like local state and lifecycle hooks | receive props and renders them to the page, can use pure function |
 | to enable your component to have direct access to your store and thus holds state | also called stateless, dumb or presentational components |
 
+## setState\(\) vs forceUpdated\(\)
 
+| setState\(\) | forceUpdated\(\) |
+| :--- | :--- |
+| used to update the component state with one or more new state properties | a way to force re-render of the component and its children |
+| a way of mutating the state and managing view updates | doesn't mutate the state at all |
 
