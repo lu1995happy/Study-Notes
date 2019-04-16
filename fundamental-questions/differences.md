@@ -99,15 +99,25 @@
 | receive data and callbacks via props | provide the data and behavior to presentational or other container components |
 | rarely have own state and do with UI state instead of data state | call flux actions and provide these as callbacks to the presentational components, often stateful |
 
-## Visibility hidden vs Display none
+## Visibility: hidden vs Display: none
 
-| Visibility hidden | Display none |
+| Visibility: hidden | Display: none |
 | :--- | :--- |
-| element is hidden | element is hidden |
-| has space | no space |
-| in the render tree | not in the render tree |
+| hides the element | removes the element from the document |
+| still takes up space in the layout | doesn't take up any space |
 
-CSSOM and DOM trees are combined into a render tree
+## Display: inline vs Display: inline-block
+
+| display: inline | display: inline-block |
+| :--- | :--- |
+|  | allows to set a width and height on the element |
+|  | the top and bottom margins/paddings are respected |
+
+## Display: block vs Display: inline-block
+
+| display: block | display: inline-block |
+| :--- | :--- |
+|  | doesn't add a line-break after the element, so the element can sit next to other elements. |
 
 ## Class Component vs Functional Component
 

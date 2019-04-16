@@ -4,6 +4,16 @@
 
 The shallow comparison check means that JavaScript only checks that the value's object IDs are the same, not their contents are the same. The ID here means the memory address for where JavaScript stores the information for that particular object.
 
+## Closure
+
+A closure is an inner function that has access to the variables in the outer \(enclosing\) function's scope chain. 
+
+The closure has access to variables in three scopes
+
+* variables in its own scope
+* variables in the enclosing function's scope
+* global variables
+
 ## Falsey values
 
 * 0
@@ -112,6 +122,10 @@ asyncDouble(3).then(
 ## How can you make people not change the value
 
 Object.freeze\(\)
+
+## Significance and benefits of using Strict Mode
+
+Since "use strict" is a way to voluntarily enforce stricter parsing and error handling on the JavaScript code at runtime. Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions. 
 
 
 

@@ -28,6 +28,13 @@
 
 ## **Leetcode 125: Valid Palindrome**
 
+```javascript
+function isPalindrome(str) {
+  str = str.replace(/\W/g, '').toLowerCase();
+  return (str == str.split('').reverse().join(''));
+}
+```
+
 ## Leetcode 144: Binary Tree Preorder Traversal 
 
 ## Leetcode 151: Reverse words in a string
@@ -86,13 +93,25 @@ const findMost = (arr) => {
 ## Write a function that sum\(2\)\(3\), sum\(2, 3\) will all return 5
 
 ```javascript
-function sum(a, b) {
-    if (b === undefined) {
-        return function(b) {
-            return a + b;
-        }
+// Method 1:
+function sum(x, y) {
+    if (y !== undefined) {
+        return x + y;
     } else {
-        return a + b; 
+        return function(y) {
+            return x + y; 
+        }
+    }
+}
+
+// Method 2:
+function sum(x) {
+    if (arguments.length === 2) {
+        return arguments[0] + arguments[1];
+    }  else {
+        return function(y) {
+            return x + y;
+        }
     }
 }
 ```
@@ -342,4 +361,24 @@ class Calc {
     }
 }
 ```
+
+## Write a function, which returns false for nulls, arrays, and functions, but true for objects
+
+```javascript
+console.log((obj !== null) && (obj.constructor === Object));
+```
+
+## Create a function that, given a DOM Element on the page, will visit the element itself and _all_ of its descendents \(not just its immediate children\). For each element visited, the function should pass that element to a provided callback function.
+
+```javascript
+function Traverse(p_element,p_callback) {
+   p_callback(p_element);
+   var list = p_element.children;
+   for (var i = 0; i < list.length; i++) {
+       Traverse(list[i],p_callback);  // recursive call
+   }
+}
+```
+
+
 

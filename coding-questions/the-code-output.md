@@ -290,17 +290,79 @@ function foo2() {
 } // return undefined
 ```
 
+## What is the output of this code
 
+```javascript
+(function(){
+  var a = b = 3; // same as var a = b; b = 3;
+})();
 
+console.log("a defined? " + (typeof a !== 'undefined')); // false
+console.log("b defined? " + (typeof b !== 'undefined')); // true
+```
 
+## What is the output of this code
 
+```javascript
+var myObject = {
+    foo: "bar",
+    func: function() {
+        var self = this;
+        console.log("outer func:  this.foo = " + this.foo); // bar
+        console.log("outer func:  self.foo = " + self.foo); // bar
+        (function() {
+            console.log("inner func:  this.foo = " + this.foo); // undefined
+            console.log("inner func:  self.foo = " + self.foo); // bar
+        }());
+    }
+};
+myObject.func();
+```
 
+## What is the output of this code
 
+```javascript
+var length = 10;
+function fn() {
+	console.log(this.length);
+}
 
+var obj = {
+  length: 5,
+  method: function(fn) {
+    fn(); // 10 - the scope of this function is window
+    arguments[0](); // 2 - the scope of this function is the arguments array
+  }
+};
 
+obj.method(fn, 1);
+```
 
+## What is the output of this code
 
+```javascript
+(function () {
+    try {
+        throw new Error();
+    } catch (x) {
+        var x = 1, y = 2;
+        console.log(x); // 1
+    }
+    console.log(x); // undefined, because there's two scopes for x, only the inner scope is defined. 
+    console.log(y); // 2
+})();
+```
 
+## What is the output of this code
+
+```javascript
+var x = 21;
+var girl = function () {
+    console.log(x); // undefined, since JavaScript initialization is not hoisted.
+    var x = 20;
+};
+girl ();
+```
 
 
 

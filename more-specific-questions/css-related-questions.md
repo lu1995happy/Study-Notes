@@ -27,6 +27,12 @@ margin &gt; border &gt; padding &gt; content
 * inline-block
   * it will deal better both has the width and height setting and keep wrapped content in line
 
+## Display: none vs visibility: hidden
+
+visibility: hidden - hides the element, but it still takes up space in the layout.
+
+display: none - removes the element from the document. It does not take up any space. 
+
 ## Specificity Rules
 
 * Equal specificity: the latest rule counts
