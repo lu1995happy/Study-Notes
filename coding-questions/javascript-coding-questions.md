@@ -53,6 +53,8 @@ function isPalindrome(str) {
 
 ## Leetcode 316: Remove Duplicate Letters
 
+## Leetcode 349: Intersection of two arrays
+
 ## How to implement \[1, 2, 3\].double\(\) = \[2, 4, 6\]
 
 ```javascript
@@ -380,5 +382,13 @@ function Traverse(p_element,p_callback) {
 }
 ```
 
+## **Write a function \(getEvenAndSort\), which can be called on any array, and it returns the subarray of only the even numbers, but sorted.**
 
+```javascript
+Array.prototpye.getEvenAndSort = function() {
+    let arr = [...this];
+    arr.sort((a, b) => a - b);
+    return arr.filter(num => num % 2 === 0);
+}
+```
 

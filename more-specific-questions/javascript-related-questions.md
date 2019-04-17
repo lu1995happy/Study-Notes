@@ -119,6 +119,10 @@ asyncDouble(3).then(
 );
 ```
 
+## How does event loop works
+
+The Event Loop has one simple job - to monitor the Call Stack and Callback Queue. If the Call Stack is empty, it will take the first event from the queue and will push it to the Call Stack, which effectively runs it.
+
 ## How can you make people not change the value
 
 Object.freeze\(\)

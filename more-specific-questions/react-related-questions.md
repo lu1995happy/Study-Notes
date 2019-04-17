@@ -54,7 +54,12 @@ Since this.props and this.state may be updated asynchronously, you should not re
 
 ## How would you prevent a component from rendering
 
-Returning null from a component's render method doest not affect the firing of the component's lifecycle method.
+* return null in the render method function
+* return false in shouldComponentUpdate\(\) lifecycle method function in class based component
+
+## How to access the underlying DOM component
+
+When the ref attribute is used on an HTML element, the ref created in the constructor with React.createRef\(\) receives the underlying DOM element as its current property. 
 
 ## Why would you eject from create-react-app
 

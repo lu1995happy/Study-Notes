@@ -11,13 +11,15 @@ margin &gt; border &gt; padding &gt; content
 ## Position
 
 * Static
+  * this is the default value, all the elements are in order as they appear in the document
 * Fixed 
-  * fixed is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. A fixed element does not leave a gap in the page where it would normally have been located.
+  * the element is positioned relative to its normal position
 * Absolute
-  * absolute is positioned relative to the nearest positioned ancestor. If an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling. 
+  * the element is positioned absolutely to its first positioned parent
 * Relative
+  * the element is positioned related to the browser window
 * Sticky
-  * sticky is positioned based on the user's scroll position. It is positioned relative until a given offset position is met in the viewport, then it sticks in place.
+  * the element is positioned based on the user's scroll position
 
 ## Display
 

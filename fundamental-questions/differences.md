@@ -133,3 +133,17 @@
 | used to update the component state with one or more new state properties | a way to force re-render of the component and its children |
 | a way of mutating the state and managing view updates | doesn't mutate the state at all |
 
+## XML vs JSON
+
+| XML | JSON |
+| :--- | :--- |
+| surrounded with HTML tags | an Object |
+| slower | faster |
+
+## Local Storage vs Session Storage
+
+| Local Storage | Session Storage |
+| :--- | :--- |
+| stores data with no expiration date, and gets cleared only through JavaScript, or clearing the Browser cache / Locally Stored Data | stores data only for a session, meaning that the data is stored until the browser or tab is closed |
+| storage limit is larger | data is never transferred to the server |
+
