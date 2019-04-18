@@ -218,3 +218,63 @@ article {
 
 ```
 
+![](../.gitbook/assets/image%20%283%29.png)
+
+
+
+```markup
+<h4>Question:
+  Pls write css for these 4 divs to adapt <i>3 different screen</i>.<br>
+phone: screen smaller than 600px<br>
+tablet: screen size between 600px and 768px<br>
+Desktop: screen larger than 768px<br>
+  <p>You can find the example picture <a href="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/06/figure112.png">here</a> </p>
+</h4>
+<div class="container">
+  <div class="green col">green</div>
+  <div class="red col">red</div>
+  <div class="blue col">blue</div>
+  <div class="yellow col">yellow</div>  
+</div>
+```
+
+```css
+.container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.green { 
+  background: green;
+}
+
+.red {
+  background: red;
+}
+.blue {   
+  background: blue;
+}
+.yellow {  
+  background: yellow;
+}
+
+@media screen and (max-width: 600px) {
+.col {
+  width: 100%;
+}
+
+}
+@media only screen and (min-width: 600px) {
+  .col {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .col {
+    width: 25%;
+  }
+}
+```
+

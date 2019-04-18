@@ -24,6 +24,10 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 
 ![](../.gitbook/assets/image.png)
 
+## React - Redux Workflow
+
+![](../.gitbook/assets/image%20%281%29.png)
+
 ## React Component
 
 A component is a function or a class which optionally accepts input and returns a React element.

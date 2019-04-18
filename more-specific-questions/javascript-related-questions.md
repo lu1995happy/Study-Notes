@@ -123,6 +123,28 @@ asyncDouble(3).then(
 
 The Event Loop has one simple job - to monitor the Call Stack and Callback Queue. If the Call Stack is empty, it will take the first event from the queue and will push it to the Call Stack, which effectively runs it.
 
+## Event delegation and Event bubbling
+
+Event delegation is a technique for listening to events where you delegate a parent element as the listener for all of the events that happen inside it.
+
+Event bubbling is what the event itself does.
+
+## How to stop Event bubbling and capturing during Event delegation
+
+e.stopPropagation\(\)
+
+## Call, Apply and Bind
+
+Call invokes the function and allows you to pass in arguments one by one.
+
+Apply invokes the function and allows you to pass in arguments as an array.
+
+Bind returns a new function, allowing you to pass in a this array and any number of arguments. 
+
+## What is the drawback of creating true private methods in JavaScript
+
+They are very memory inefficient, as a new copy of the method would be created for each instance.
+
 ## How can you make people not change the value
 
 Object.freeze\(\)

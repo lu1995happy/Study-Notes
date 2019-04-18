@@ -392,3 +392,18 @@ Array.prototpye.getEvenAndSort = function() {
 }
 ```
 
+## **Create a chain of promises that will do this on each step of the chain: Step 1 - Authenticate user \(auth\(\)\), Step 2 - Get getAddress \(getAddress\(\)\), Step 3 - Edit address and edit email in parallel \(editAddress\(\), editEmail\(\)\), Step 4 – print success on the console**
+
+```javascript
+auth
+    .then(() => {
+        getAddress();
+    })
+    .then(() => {
+        return Promise.all([editAddress(), editEmail()]);
+    })
+    .then(() => {
+        console.log("success");
+})
+```
+
