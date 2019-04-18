@@ -26,6 +26,10 @@
 
 ## **Leetcode 110: Balanced Binary Tree**
 
+## **Leetcode 111: Minimum Depth of Binary Tree**
+
+## **Leetcode 114: Flatten Binary Tree to Linked List**
+
 ## **Leetcode 125: Valid Palindrome**
 
 ```javascript
@@ -38,6 +42,8 @@ function isPalindrome(str) {
 ## Leetcode 144: Binary Tree Preorder Traversal 
 
 ## Leetcode 151: Reverse words in a string
+
+## Leetcode 155: Min Stack
 
 ## Leetcode 203: Remove Linked List Elements
 
@@ -54,6 +60,8 @@ function isPalindrome(str) {
 ## Leetcode 316: Remove Duplicate Letters
 
 ## Leetcode 349: Intersection of two arrays
+
+## Leetcode 394: Decode String
 
 ## How to implement \[1, 2, 3\].double\(\) = \[2, 4, 6\]
 
@@ -405,5 +413,31 @@ auth
     .then(() => {
         console.log("success");
 })
+```
+
+## Given a 7\*3 grid of characters output a decoded message. The  message for the following would be IROCKED.
+
+```javascript
+const message = [
+  ['I', 'B', 'C', 'A', 'K', 'E', 'A'],
+  ['D', 'R', 'F', 'C', 'A', 'E', 'A'],
+  ['G', 'H', 'O', 'E', 'L', 'A', 'D']
+];
+
+const decode = message => {
+  const m = message.length;
+  const n = message[0].length;
+  let j = 0;
+  let down = -1;
+  let res = [];
+  for (let i = 0; i < n; i++) {
+    res.push(message[j][i]);
+    if (j === 0 || j === m - 1) {
+      down = -down;
+    }
+    j += down;
+  }
+  return res;
+};
 ```
 
