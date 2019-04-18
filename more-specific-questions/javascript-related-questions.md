@@ -119,6 +119,16 @@ asyncDouble(3).then(
 );
 ```
 
+## Callback Hell
+
+Callback Hell is referred to the problems caused by asynchronous AJAX calls, which means where are multiple nested callbacks. 
+
+### How to fix:
+
+* keep the code shallow
+* modularize
+* handle every single error
+
 ## How does event loop works
 
 The Event Loop has one simple job - to monitor the Call Stack and Callback Queue. If the Call Stack is empty, it will take the first event from the queue and will push it to the Call Stack, which effectively runs it.

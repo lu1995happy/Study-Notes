@@ -200,6 +200,28 @@ const flatten = arr => {
 }
 ```
 
+## **Flatten Object: Change** \[{a: 1}, {b: 2, c: 3}, {d: 4}\] to {a:1, b:2, c:3, d:4}
+
+```javascript
+const flatten = Object.assign(...arr);
+```
+
+## **Flatten Nested Object: Change {a:2, b:{c: 3}} to {a: 2, c: 3}**
+
+```javascript
+const flatten = obj => {
+  const flattened = {};
+  Object.keys(obj).forEach((key) => {
+    if (typeof obj[key] === "object") {
+      Object.assign(flattened, flatten(obj[key]));
+    } else {
+      flattened[key] = obj[key];
+    }
+  });
+  return flattened;
+};
+```
+
 ## **Merge Two Object**
 
 ```javascript
@@ -439,5 +461,32 @@ const decode = message => {
   }
   return res;
 };
+```
+
+## Write a function to remove the duplicate list items, when the button is clicked using jQuery
+
+```markup
+<ul>
+  <li>Cats</li>
+  <li>Dogs</li>
+  <li>Birds</li>
+  <li>Cats</li>
+  <li>Bears</li>
+</ul>
+<button onClick="">Remove Duplicates</button>
+```
+
+```javascript
+$("button").click(function() {
+  const seen = {};
+  $('li').each(function() {
+    const txt = $(this).text();
+    if (seen[txt])
+      $(this).remove();
+    else
+      seen[txt] = true;
+  });
+  return false;
+});
 ```
 

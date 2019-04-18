@@ -7,3 +7,12 @@
 * Update - Put
 * Delete - Delete
 
+## The advantages of NodeJS server
+
+* JavaScript as the programming language
+* Asynchronous events
+* Real-time web apps
+* NPM package manager
+* Data sharing
+* Event driven architecture
+
