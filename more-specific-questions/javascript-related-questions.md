@@ -143,6 +143,10 @@ Event bubbling is what the event itself does.
 
 e.stopPropagation\(\)
 
+## Lexical Scope
+
+Lexical scope, also known as static scope, is a convention that sets the scope of a variable so that it may only be called from within the block of code in which it is defined. The scope is determined when the code is compiled. 
+
 ## Call, Apply and Bind
 
 Call invokes the function and allows you to pass in arguments one by one.
@@ -150,6 +154,8 @@ Call invokes the function and allows you to pass in arguments one by one.
 Apply invokes the function and allows you to pass in arguments as an array.
 
 Bind returns a new function, allowing you to pass in a this array and any number of arguments. 
+
+## What are the pros and cons of using Promises instead of Callbacks
 
 ## What is the drawback of creating true private methods in JavaScript
 

@@ -30,6 +30,8 @@
 
 ## **Leetcode 114: Flatten Binary Tree to Linked List**
 
+## **Leetcode 124: Binary Tree Maximum Path Sum**
+
 ## **Leetcode 125: Valid Palindrome**
 
 ```javascript
@@ -256,7 +258,6 @@ var linkGroups = [
 const helper = id => {
     return linkGroups.filter(item => item.id === id)[0].options;
 }
-
 ```
 
 ## What if there are multiple options and you want to return them in one array
@@ -488,5 +489,45 @@ $("button").click(function() {
   });
   return false;
 });
+```
+
+## Write a function that given a time T in seconds, convert it into a string in the format "&lt;hours&gt;h&lt;minutes&gt;m&lt;seconds&gt;s"
+
+```javascript
+const solution = T => {
+    const hr = Math.floor(T/3600);
+    T %= 3600;
+    const min = Math.floor(T/60);
+    const sec = T % 60;
+    return hr + "h" + min + "m" + sec + "s";
+}
+```
+
+## Write a function that given a DOM tree, returns the maximum depth of nested &lt;ul&gt;/&lt;ol&gt; lists
+
+```javascript
+const solution = () => {
+    let maxDepth = 0, temp, parents;
+    $("ol, ul").each(function() {
+        parents = $(this).parents("ol, ul");
+        temp = parents ? parents.length + 1 : 1;
+        maxDepth = temp > maxDepth ? temp : maxDepth;
+    });
+    return maxDepth;
+}
+```
+
+## Write a function that given a DOM tree representing an HTML document, returns a string containing all visible letters, read in row-major order.
+
+```javascript
+
+    let res = "";
+    $("td").each(function() {
+        if ($(this).css("color") !== $(this).css("background-color")) {
+            res += $(this).html();
+        }
+    });
+    return res;
+}
 ```
 

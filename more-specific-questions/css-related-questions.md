@@ -35,6 +35,10 @@ visibility: hidden - hides the element, but it still takes up space in the layou
 
 display: none - removes the element from the document. It does not take up any space. 
 
+## Pseudo-Class and Examples
+
+The Pseudo-Class is used to define a special state of an element. e.g. a:hover, a:link, a:visited.
+
 ## Specificity Rules
 
 * Equal specificity: the latest rule counts

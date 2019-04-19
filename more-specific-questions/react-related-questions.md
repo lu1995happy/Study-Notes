@@ -28,6 +28,12 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 
 ![](../.gitbook/assets/image%20%281%29.png)
 
+## The differences between Redux and setState\(\)
+
+Use Redux if your state is shared across multiple components. 
+
+Use setState\(\) if it’s used only in a single component.
+
 ## React Component
 
 A component is a function or a class which optionally accepts input and returns a React element.

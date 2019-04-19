@@ -16,3 +16,9 @@
 * Data sharing
 * Event driven architecture
 
+## AJAX
+
+Asynchronous JavaScript and XML. AJAX is about loading data in the background and display it on the webpage, without reloading the whole page.
+
+
+
