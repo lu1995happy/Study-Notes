@@ -6,7 +6,7 @@ The shallow comparison check means that JavaScript only checks that the value's 
 
 ## Closure
 
-A closure is an inner function that has access to the variables in the outer \(enclosing\) function's scope chain. 
+A closure is an inner function that has access to the variables in the outer \(enclosing\) function's scope chain.  Closure is a function that returns a function. It gives the access to an outer function's scope from an inner function. To use the closure, simply define a function inside another function and return it or pass it to another function. 
 
 The closure has access to variables in three scopes
 
@@ -154,6 +154,16 @@ Call invokes the function and allows you to pass in arguments one by one.
 Apply invokes the function and allows you to pass in arguments as an array.
 
 Bind returns a new function, allowing you to pass in a this array and any number of arguments. 
+
+## The difference for call and apply
+
+Both are used to invoke a function explicitly, they execute a function in the context, or scope of the first argument that you pass to them. Call requires parameters to be listed individually; Apply requires an argument array as 2nd parameter. 
+
+## The difference for map and foreach
+
+forEach: parameter is a function, apply the function to each item. It modifies the original array. 
+
+map: apply the function to all elements,  function has two parameters, first is value, second is index. It returns a new array, the original array is not modified. 
 
 ## What are the pros and cons of using Promises instead of Callbacks
 

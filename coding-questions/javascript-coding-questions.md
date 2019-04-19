@@ -20,6 +20,24 @@
 
 ## **Leetcode 88: Merge Sorted Array**
 
+```javascript
+const merge = (nums1, m, nums2, n) => {
+    let index = m + n - 1;
+    let i = m - 1;
+    let j = n - 1;
+    while (i >= 0 && j >= 0) {
+        if (nums1[i] > nums2[j]) {
+            nums1[index--] = nums1[i--];
+        } else {
+            nums1[index--] = nums2[j--];
+        }
+    }
+    while (j >= 0) {
+        nums1[index--] = nums2[j--];
+    }
+};
+```
+
 ## **Leetcode 94: Binary Tree Inorder Traversal**
 
 ## **Leetcode 102: Binary Tree Level Order Traversal**
@@ -50,6 +68,8 @@ function isPalindrome(str) {
 ## Leetcode 203: Remove Linked List Elements
 
 ## Leetcode 206: Reverse Linked List
+
+## Leetcode 238: Product of Array Except Self
 
 ## Leetcode 242: Valid Anagram
 
@@ -489,6 +509,21 @@ $("button").click(function() {
   });
   return false;
 });
+
+// using Pure JavaScript
+document.getElementsByTagName("button")[0].addEventListener("click", () => {
+  const seen = [];
+  const lists = document.getElementsByTagName("li");
+  for (let i = 0; i < lists.length; i++) {
+    const text = lists[i].innerText;
+    if (seen[text]) {
+      lists[i].remove();
+    } else {
+      seen[text] = true;
+    }
+  }
+  return false;
+})
 ```
 
 ## Write a function that given a time T in seconds, convert it into a string in the format "&lt;hours&gt;h&lt;minutes&gt;m&lt;seconds&gt;s"
@@ -528,6 +563,37 @@ const solution = () => {
         }
     });
     return res;
+}
+```
+
+## Implement a Class, which has add, get and delete functions
+
+```javascript
+class CountMe {
+    constructor() {
+        this.map = new Map();
+    }
+    add(str) {
+        if (this.map.has(str)) {
+            this.map.set(str, this.map.get(str) + 1);
+        } else {
+            this.map.set(str, 1);
+        }
+    }
+    
+    get(str) {
+        if (this.map.has(str)) {
+            return this.map.get(str);
+        } else {
+            return 0;
+        }
+    }
+    
+    delete(str) {
+        if (this.map.has(str)) {
+            this.map.set(str, this.map.get(str) - 1);
+        }
+    }
 }
 ```
 

@@ -31,9 +31,13 @@ margin &gt; border &gt; padding &gt; content
 
 ## Display: none vs visibility: hidden
 
-visibility: hidden - hides the element, but it still takes up space in the layout.
+visibility: hidden - means that the tag will not appear on the page at all, although you can still interact with it through the DOM. There will be no space allocated for it between the other tags.
 
-display: none - removes the element from the document. It does not take up any space. 
+display: none - means that unlike display: none, the tag is not visible, but space is allocated for it on the page. The tag is rendered, it just isn't seen on the page. 
+
+## How many px is equal to 1 rem
+
+rem is a new feature for CSS3, which stands for root em. It's equal to the computed value of font-size on the root element, the rem units refer to the property's initial value. This means that 1rem equals the font size of the HTML element, which for most browser has a default value of 16px.
 
 ## Pseudo-Class and Examples
 
