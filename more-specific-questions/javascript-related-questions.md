@@ -14,6 +14,19 @@ The closure has access to variables in three scopes
 * variables in the enclosing function's scope
 * global variables
 
+## How `this` works in JavaScript
+
+The value of `this` depends on how the function is called. 
+
+The following rules are applied:
+
+* If the `new` keyword is used when calling the function, `this` inside the function is a brand new object.
+* If `apply`, `call` or `bind` are used to call/create a function, `this` inside the function is the object that is passed in as the argument. 
+* If a function is called as a method, such as `obj.method()`, `this` here is the object that the function is a property of. 
+* If a function is invoked as a free function invocation. meaning it was invoked without any of the conditions present above, `this` is the global object. In a browser, it is the `window` object. If in strict mode \(`"use strict"`\), `this` will be `undefined` instead of the global object. 
+* If multiple of the above rules apply, the rule that is higher wins and will set the `this` value.
+* If the function is an ES6 arrow function, it ignores all the rules above and receives the `this` value of its surrounding scope at the time it is created. 
+
 ## Falsey values
 
 * 0
@@ -26,10 +39,22 @@ The closure has access to variables in three scopes
 ## 4 types of scoping
 
 * Global Scope - declared outside for any function, use it without declaring
-* Function Scope - var
-* Block Scope - let & const 
-  * const: immutable variable, must be initialized
+* Function Scope - `var`
+* Block Scope - `let & const` 
+  * `const`: immutable variable, must be initialized
 * Module Scope
+
+## Prototypal Inheritance
+
+All JavaScript objects have a prototype property, that is a reference to another object. When a property is accessed on an object and if the property is not found on that object, the JavaScript engine looks at the object's prototype, and the prototype's prototype and so on, until it finds the property defined on one of the prototypes or until it reaches the end of the prototype chain. This behavior simulates classical inheritance, but it is really more of delegation than inheritance. 
+
+## The difference between `null` and `undefined`
+
+A variable that is `undefined` is a a variable that has been declared, but not assigned a value. It is of type `undefined`. 
+
+A variable that is `null` will have been explicitly assigned to the `null` value. It represents no value and is different from `undefined` in the sense that it has been explicitly assigned. It is of type `object`. 
+
+`undefined == null // true`
 
 ## Create an Object in 6 different ways
 
@@ -133,6 +158,15 @@ Callback Hell is referred to the problems caused by asynchronous AJAX calls, whi
 
 The Event Loop has one simple job - to monitor the Call Stack and Callback Queue. If the Call Stack is empty, it will take the first event from the queue and will push it to the Call Stack, which effectively runs it.
 
+## Event delegation
+
+Event delegation is a technique involving adding event listeners to a parent element instead of adding them to the descendant elements. The listener will fire whenever the event is triggered on the descendant elements due to event bubbling up the DOM. 
+
+The benefits of this technique are:
+
+* Memory footprint goes down because only one single handler is needed on the parent element, rather than having to attach event handlers on each descendant.
+* There is no need to unbind the handler from elements that are removed and to bind the event for new elements. 
+
 ## Event delegation and Event bubbling
 
 Event delegation is a technique for listening to events where you delegate a parent element as the listener for all of the events that happen inside it.
@@ -147,23 +181,19 @@ e.stopPropagation\(\)
 
 Lexical scope, also known as static scope, is a convention that sets the scope of a variable so that it may only be called from within the block of code in which it is defined. The scope is determined when the code is compiled. 
 
-## Call, Apply and Bind
+## Bind
 
-Call invokes the function and allows you to pass in arguments one by one.
+The `bind` method creates a new function that, when called, has its `this` keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called. 
 
-Apply invokes the function and allows you to pass in arguments as an array.
+## The difference for `call` and `apply`
 
-Bind returns a new function, allowing you to pass in a this array and any number of arguments. 
+Both are used to invoke functions and the first parameter will be used as the value of `this` within the function. However, `call` takes in comma-separated arguments as the next arguments while `apply` takes in an array of arguments as the next argument. 
 
-## The difference for call and apply
+## The difference for `map` and `forEach`
 
-Both are used to invoke a function explicitly, they execute a function in the context, or scope of the first argument that you pass to them. Call requires parameters to be listed individually; Apply requires an argument array as 2nd parameter. 
+`forEach`: parameter is a function, apply the function to each item. It modifies the original array. 
 
-## The difference for map and foreach
-
-forEach: parameter is a function, apply the function to each item. It modifies the original array. 
-
-map: apply the function to all elements,  function has two parameters, first is value, second is index. It returns a new array, the original array is not modified. 
+`map`: apply the function to all elements,  function has two parameters, first is value, second is index. It returns a new array, the original array is not modified. 
 
 ## What are the pros and cons of using Promises instead of Callbacks
 
