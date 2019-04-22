@@ -38,6 +38,12 @@ Use setState\(\) if it’s used only in a single component.
 
 A component is a function or a class which optionally accepts input and returns a React element.
 
+## Why need to do super\(props\)
+
+If you don't initialize state and you don't bind methods, you don't need to implement the constructor for your React component.
+
+The constructor for a React component is called before it is mounted. When implementing the constructor for a React.component subclass, you should call super\(props\) before any other statement. Otherwise, `this.props` will be undefined in the constructor, which can lead to bugs. 
+
 ## How to re-render out of Lifecycle
 
 using this.forceUpdate\(\)

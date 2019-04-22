@@ -329,7 +329,29 @@ const getHTML = () => {
 }
 ```
 
-## Realize the reduce function for array
+## Implement the forEach function
+
+```javascript
+Array.prototype.myForEach = (callback) => {
+    for (let i of this) {
+        callback(i);
+    }
+};
+```
+
+## Implement the map function
+
+```javascript
+Array.prototype.myMap = (callback) => {
+    let res = [];
+    for (let i of this) {
+        res.push(callback(i));
+    }
+    return res;
+}
+```
+
+## Implement the reduce function
 
 ```javascript
 const reduce = (arr, initialValue = 0, callback) => {

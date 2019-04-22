@@ -195,6 +195,14 @@ Both are used to invoke functions and the first parameter will be used as the va
 
 `map`: apply the function to all elements,  function has two parameters, first is value, second is index. It returns a new array, the original array is not modified. 
 
+## Event-driven programming
+
+event-driven programming a programming paradigm in which the flow of the program is determined by events such as user actions, sensor outputs, or messages from other programs or threads. 
+
+## Why arrow function is convenient
+
+Since the arrow function offers a very clean concise syntax and more intuitive scope and `this` binding. 
+
 ## What are the pros and cons of using Promises instead of Callbacks
 
 ## What is the drawback of creating true private methods in JavaScript
