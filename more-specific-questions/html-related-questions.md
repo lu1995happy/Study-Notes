@@ -16,3 +16,16 @@ HTML constraint validation is based on:
 * CSS Pseudo Selectors - e.g :disabled, :valid, :required
 * DOM Properties and Methods 
 
+## The difference between cookie, sessionStorage and localStorage
+
+All the above-mentioned technologies are key-value storage mechanisms on the client side. They are only able to store values are strings.
+
+|  | cookie | localStorage | sessionStorage |
+| :--- | :--- | :--- | :--- |
+| initiator | client or server. Server can use Set-Cookie header | client | client |
+| expiry | manually set | forever | on tab close |
+| persistent across browser sessions | depends on whether expiration is set | yes | no |
+| sent to server with every HTTP request | cookies are automatically being sent via cookie header | no | no |
+| capacity | 4kb | 5mb | 5mb |
+| accessibility | any window | any window | same tab |
+

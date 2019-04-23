@@ -39,10 +39,6 @@ display: none - means that unlike display: none, the tag is not visible, but spa
 
 rem is a new feature for CSS3, which stands for root em. It's equal to the computed value of font-size on the root element, the rem units refer to the property's initial value. This means that 1rem equals the font size of the HTML element, which for most browser has a default value of 16px.
 
-## Pseudo-Class and Examples
-
-The Pseudo-Class is used to define a special state of an element. e.g. a:hover, a:link, a:visited.
-
 ## Specificity Rules
 
 * Equal specificity: the latest rule counts
@@ -51,6 +47,8 @@ The Pseudo-Class is used to define a special state of an element. e.g. a:hover, 
 * A class selector beats any number of element selectors
 * The universal selector and inherited values have a specificity of 0
 
+inline style &gt; ID selector &gt; class, attribute and pseudo-class selector &gt; tag and pseudo-element selector
+
 ## Responsive Design
 
 * Media query 
@@ -58,11 +56,29 @@ The Pseudo-Class is used to define a special state of an element. e.g. a:hover, 
 * Flexbox 
   * Need a container with attributes display: flex, flex-direction: column/row\(-reserve\), flex-wrap: \(no\)wrap\(-reverse\), flex-flow: setting both the flex-direction and flex-wrap
 
+## The advantages and disadvantages of using CSS preprocessors
+
+advantages: 
+
+* CSS is made more maintainable
+* easy to write nested selectors
+* variables for consistent theming. Can share theme files across different projects
+* mixins to generate repeated CSS
+* splitting your code into multiple files. CSS files can be split up too but doing so will require an HTTP request to download each CSS file
+
+disadvantages:
+
+* requires tools for preprocessing. Re-compilation time can be slow
+
 ## Pseudo Class
 
 * It is used to define a special state of an element 
 * active, checked, disabled, first-child, link, visited
 * Pseudo elements: after, before, first-letter, first-line, selection
+
+## Pseudo elements
+
+A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element. e.g. :first-letter, :before, :after.
 
 ## Accessibility
 
