@@ -4,6 +4,8 @@
 
 ## Leetcode 3: Longest substring without repeating characters
 
+## Leetcode 8: String to Integer
+
 ## Leetcode 20: Valid Parentheses
 
 ## Leetcode 33: Search In Rotated Sorted Array
@@ -13,6 +15,27 @@
 ## Leetcode 39: Combination Sum
 
 ## Leetcode 46: Permutations
+
+```javascript
+const permutation = str => {
+    const res = [];
+    helper(str, res, "");
+    return res;
+};
+
+const helper = (str, res, cur) => {
+    if (str.length === cur.length) {
+        res.push(cur);
+        return;
+    }
+    for (let i = 0; i < str.length; i++) {
+        if (cur.includes(str[i])) {
+            continue;   
+        }  
+        helper(str, res, cur + str[i]);      
+    }
+};
+```
 
 ## **Leetcode 48: Rotate Image**
 
@@ -65,11 +88,15 @@ function isPalindrome(str) {
 
 ## Leetcode 155: Min Stack
 
+## Leetcode 189: Rotate Array
+
 ## Leetcode 203: Remove Linked List Elements
 
 ## Leetcode 206: Reverse Linked List
 
 ## Leetcode 238: Product of Array Except Self
+
+## Leetcode 239: Sliding Window Maximum
 
 ## Leetcode 242: Valid Anagram
 
@@ -617,5 +644,47 @@ class CountMe {
         }
     }
 }
+```
+
+## Write a function that accomplish iterator function
+
+```javascript
+var myIterator = iterator("test");
+myIterator.next();
+myIterator.next();
+
+function iterator(str) {
+    let i = 0; 
+    return {
+        next: () => {
+            return i < str.length ? str[i++] : "no more element";
+        }
+    };
+};
+```
+
+## Write a function that deletes the key in the nested Object
+
+```javascript
+const deleteNode = (obj, node) => {
+  helper(obj, node, obj);
+  return obj;
+}
+
+const helper = (obj, node, curNode) => {
+  if (!curNode.children) {
+    return;
+  }
+  if (curNode.children.map(e => e.name).includes(node.name)) {
+      curNode.children = curNode.children.filter(e => e.name !== node.name);
+      return;
+  }
+
+  curNode.children.forEach(e => {
+      helper(obj, node, e);
+  })
+}
+
+console.log(JSON.stringify(deleteNode(obj, {name: 'bird'})));
 ```
 

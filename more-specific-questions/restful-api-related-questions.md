@@ -38,3 +38,13 @@ Disadvantages:
 * Some web-crawlers do not execute JavaScript and would not see content that has been loaded by JavaScript. 
 * Basically most of the disadvantages of an SPA. 
 
+## 5 ways to reduce the page loading speed
+
+* Optimize Images
+* Browser Caching 
+* Compression
+* Optimize Your CSS
+* Keep the Scripts below the fold
+
+
+
