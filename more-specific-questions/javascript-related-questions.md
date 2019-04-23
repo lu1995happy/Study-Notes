@@ -4,6 +4,12 @@
 
 The shallow comparison check means that JavaScript only checks that the value's object IDs are the same, not their contents are the same. The ID here means the memory address for where JavaScript stores the information for that particular object.
 
+## Hoisting
+
+Hoisting is a term used to explain the behavior of variable declarations in your code. Variables declared or initialized with the var keyword will have their declaration "moved" up to the top of the current scope. 
+
+However, only the variable declarations and function declarations are hoisted. Variable assignments and function expressions are not hoisted. 
+
 ## Closure
 
 A closure is an inner function that has access to the variables in the outer \(enclosing\) function's scope chain.  Closure is a function that returns a function. It gives the access to an outer function's scope from an inner function. To use the closure, simply define a function inside another function and return it or pass it to another function. 
@@ -47,6 +53,10 @@ The following rules are applied:
 ## Prototypal Inheritance
 
 All JavaScript objects have a prototype property, that is a reference to another object. When a property is accessed on an object and if the property is not found on that object, the JavaScript engine looks at the object's prototype, and the prototype's prototype and so on, until it finds the property defined on one of the prototypes or until it reaches the end of the prototype chain. This behavior simulates classical inheritance, but it is really more of delegation than inheritance. 
+
+## The difference between attribute and property
+
+Attributes are defined on the HTML markup but properties are defined on the DOM. 
 
 ## The difference between `null` and `undefined`
 
@@ -158,6 +168,10 @@ Callback Hell is referred to the problems caused by asynchronous AJAX calls, whi
 
 The Event Loop has one simple job - to monitor the Call Stack and Callback Queue. If the Call Stack is empty, it will take the first event from the queue and will push it to the Call Stack, which effectively runs it.
 
+## Event bubbling
+
+When an event triggers on a DOM element, it will attempt to handle the vent if there is a listener attached, then the event is bubbled up to its parent and the same thing happens. The bubbling occurs up the element's ancestors all the way to the document. Event bubbling is the mechanism behind event delegation. 
+
 ## Event delegation
 
 Event delegation is a technique involving adding event listeners to a parent element instead of adding them to the descendant elements. The listener will fire whenever the event is triggered on the descendant elements due to event bubbling up the DOM. 
@@ -205,6 +219,17 @@ Since the arrow function offers a very clean concise syntax and more intuitive s
 
 ## What are the pros and cons of using Promises instead of Callbacks
 
+props:
+
+* avoid callback hell which can be unreadable
+* makes it easy to write sequential asynchronous code that is readable with `.then()`
+* makes it easy to write parallel asynchronous code with `Promise.all()`
+
+cons:
+
+* slightly more complex code
+* in older browsers where ES6 is not supported, you need to load a polyfill in order to use it
+
 ## What is the drawback of creating true private methods in JavaScript
 
 They are very memory inefficient, as a new copy of the method would be created for each instance.
@@ -213,9 +238,25 @@ They are very memory inefficient, as a new copy of the method would be created f
 
 Object.freeze\(\)
 
-## Significance and benefits of using Strict Mode
+## The advantages and disadvantages using Strict Mode
 
-Since "use strict" is a way to voluntarily enforce stricter parsing and error handling on the JavaScript code at runtime. Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions. 
+"use strict" is a statement used to enable strict mode to entire scripts or individual functions. Strict mode is a way to opt into a restricted variant of JavaScript.
+
+advantages:
+
+* makes it impossible to accidentally create global variables
+* makes assignments which would otherwise silently fail to throw an exception
+* makes attempts to delete undeletable properties throw
+* requires that function parameter names be unique
+* this is undefined in the global context
+* it catches some common coding bloopers, throwing exceptions
+* it disables features that are confusing or poorly thought out
+
+disadvantages
+
+* many missing features that some developers might be used to
+* no more access to function.caller and function.arguments
+* concatenation of scripts written in different strict modes might cause issues
 
 
 
