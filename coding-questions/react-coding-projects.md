@@ -1,6 +1,6 @@
 # React Coding Projects
 
-
+## Like/Dislike Component
 
 ![](https://lh4.googleusercontent.com/gcRnGn8UoEXIsIlif94tvW7EcHcDgFZm1HIkQUogztQ_qJa8cdLLtcJTbln4u8QgE2k4zjlyq0RgLhJcVlNwBLTKhOmoaJCYsD_dR2pYQMWIC9-aegXUoqZiZPljiwyUj2-E31sL7emNu07e5g)
 
@@ -101,7 +101,7 @@ export default class LikeDislike extends Component {
 }
 ```
 
-## 
+## Counter Component
 
 ![](https://lh4.googleusercontent.com/lmUWF6xlKd06uAfcb3_njwVRD5Koq8vFlaDYHakAPT5cU-fMb4Tw7eK4UoisAgSlPA_7w4QU2dB7fFCTIjkfyEHEbaTvRw27jitp44BveUczEuVHO7DumzhWGdsd51yn2DusmPigE4cGbAgjJA)
 
@@ -139,148 +139,91 @@ export default class Counter extends Component {
     	);
 	}
 }
-
 ```
 
-## 
-
-![](https://lh4.googleusercontent.com/zTQjlH2xgU9gmlSiw4WqwcAHSQWKlzzi7hOy-MOM_AU_9L2lUIw04LQdjSMfWnu3TU5hPDk2ncG699DwDx-QXxlrmuJQRuyKFPNTPo0t5XY31j2BjbMJFqtzk5mExsGuVNd2NLXH9NN-4llxbQ)
-
-```markup
-<div class="container">
-  <header> Header </header>
-  <aside> Aside </aside>
-  <section> 
-    <div class="content1"> 1 </div>
-    <div class="content2"> 2 </div>
-  </section>
-  <article> Article </article>  
-</div>
-```
-
-```css
-* {
-  box-sizing: border-box;
-}
-
-.container {
-  width: 50vw;
-  height: 80vw;
-  border: solid;
-  position: relative;
-}
-
-header {
-  text-align: center;
-  border-bottom: dotted;
-  height: 3vw;
-  line-height: 3vw;
-}
-
-aside {
-  width: 10vw;
-  height: 77vw;
-  border-right: dotted;
-  line-height: 77vw;
-  text-align: center;
-  float: left;
-}
-
-section {
-  position: absolute;
-  width: 40vw;
-  height: 38.5vw;
-  border-bottom: dotted;
-  right: 0;
-}
-
-div.content1, div.content2 {
-  height: 38.5vw;
-  width: 20vw;
-  float:left;
-  line-height: 38.5vw;
-  text-align: center;
-}
-
-div.content1 {
-  border-right: dotted;
-}
-
-article {
-  height: 38.5vw;
-  width: 40vw;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  line-height:38.5vw;
-  text-align: center;
-}
-
-```
-
-![](../.gitbook/assets/image%20%283%29.png)
-
-
-
-```markup
-<h4>Question:
-  Pls write css for these 4 divs to adapt <i>3 different screen</i>.<br>
-phone: screen smaller than 600px<br>
-tablet: screen size between 600px and 768px<br>
-Desktop: screen larger than 768px<br>
-  <p>You can find the example picture <a href="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/06/figure112.png">here</a> </p>
-</h4>
-<div class="container">
-  <div class="green col">green</div>
-  <div class="red col">red</div>
-  <div class="blue col">blue</div>
-  <div class="yellow col">yellow</div>  
-</div>
-```
-
-```css
-.container {
-  width: 100%;
-  height: 200px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.green { 
-  background: green;
-}
-
-.red {
-  background: red;
-}
-.blue {   
-  background: blue;
-}
-.yellow {  
-  background: yellow;
-}
-
-@media screen and (max-width: 600px) {
-.col {
-  width: 100%;
-}
-
-}
-@media only screen and (min-width: 600px) {
-  .col {
-    width: 50%;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .col {
-    width: 25%;
-  }
-}
-```
+## Walmart Checkout Component
 
 ![](../.gitbook/assets/image%20%284%29.png)
 
 > [https://codesandbox.io/s/0qqwjkryq0](https://codesandbox.io/s/0qqwjkryq0)
 
+## Chinese Restaurant App
 
+![](https://lh3.googleusercontent.com/Az3GaKpOVjNSG-VCe-KFMwAGu9ivcNKf-RHpVAz9V7cF0hObiwJSTztpgdmQJnNpOaTQa9PaCrwVyO_bWrek0tFPR3ks9DtE0pK1XXWTZ3xkfmYnhf5_chZZD4cggKVubtQrcbHx)
+
+> [https://github.com/wenjun9/Menu](https://github.com/wenjun9/Menu)
+
+## Quiz Reducer Problem 
+
+When this form is submitted, you should render additional text at the top of the page that says "You selected: the text for the answer they selected" and below that, the other potential answers each with the number of times each was selected by other users next to it \(which is found the "responses" attribute in the Json\). 
+
+1. Fork this fiddle: [https://jsfiddle.net/ebayfred/n431oxwz/](https://jsfiddle.net/ebayfred/n431oxwz/) 
+
+2. Change the JavaScript, HTML, and CSS panels to solve the problem \(as described in the summary, preferably with React templates\) 
+
+3. As part of the solution, implement the questionReducer. It’s a standard Redux reducer that takes a state and action and returns a new state. 
+
+a. The state is the questions part of the last challenge. 
+
+b. The action is dispatched when someone picks an answer to a question. It contains both the question ID and answer ID. The matching question/answer’s responses should be incremented.
+
+> [https://jsfiddle.net/Sharonliao/5sebvL0w/](https://jsfiddle.net/Sharonliao/5sebvL0w/) \(color\)
+>
+> [https://jsfiddle.net/nvj4exgm/61/](https://jsfiddle.net/nvj4exgm/61/) \(animal\)
+
+## Like Button Component 
+
+![](../.gitbook/assets/image%20%285%29.png)
+
+![](../.gitbook/assets/image%20%287%29.png)
+
+```jsx
+import React, { Component } from 'react';
+
+export default class LikeButton extends Component {
+  state = {
+    number: 100,
+    liked: false
+  }
+
+  addLike = () => {
+    this.setState({ liked: true, number: this.state.number + 1});
+  }
+
+  removeLike = () => {
+    this.setState({ liked: false, number: this.state.number - 1});
+  }
+
+  render() {
+    return (
+      <>
+        <div>
+          {
+            !this.state.liked ?
+            <button className="like-button" onClick={this.addLike}>
+            Like | <span className="likes-counter">{this.state.number}</span>
+            </button> :
+            <button className="like-button liked" onClick={this.removeLike}>
+            Like | <span className="likes-counter">{this.state.number}></span>
+            </button>
+          }
+        </div>
+        <style>
+          {`
+            .like-button {
+              font-size: 1rem;
+              padding: 5px 10px;
+              color: white;
+            }
+            .liked {
+              font-weight: bold;
+              color: red;
+            }
+          `}
+        </style>
+      </>
+    );
+  }
+}
+```
 

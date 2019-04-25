@@ -690,3 +690,21 @@ const helper = (obj, node, curNode) => {
 console.log(JSON.stringify(deleteNode(obj, {name: 'bird'})));
 ```
 
+## Write a function gamble\(N, K\) that N is the final gold and K is the round that he all-in
+
+```javascript
+const gamble = (N, K) => {
+    let res = 0;
+    while (N !== 1 && K) {
+        res++;
+        if (N % 2 === 0) {
+            N /= 2;
+            K--;
+        } else {
+            N--;
+        }
+    }
+    return res + N - 1;
+}
+```
+
