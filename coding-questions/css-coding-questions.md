@@ -38,7 +38,7 @@ float: right
 
 ## Write some CSS code for 4 different screen types
 
-![](../.gitbook/assets/image%20%283%29.png)
+![](../.gitbook/assets/image%20%286%29.png)
 
 ```markup
 <h4>Question:
@@ -170,4 +170,52 @@ article {
   text-align: center;
 }
 ```
+
+## Design a nav bar using HTML and CSS
+
+```markup
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li style="float:right"><a class="active" href="#about">About</a></li>
+</ul>
+```
+
+```css
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+```
+
+## Using LESS to display the layout
+
+![](../.gitbook/assets/image%20%282%29.png)
+
+
 

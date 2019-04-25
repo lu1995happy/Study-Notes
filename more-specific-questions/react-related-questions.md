@@ -26,7 +26,7 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 
 ## React - Redux Workflow
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/image%20%287%29.png)
 
 ## The differences between Redux and setState\(\)
 
@@ -86,6 +86,10 @@ Since this.props and this.state may be updated asynchronously, you should not re
 ## How to access the underlying DOM component
 
 When the ref attribute is used on an HTML element, the ref created in the constructor with React.createRef\(\) receives the underlying DOM element as its current property. 
+
+## Shadow DOM
+
+Shadow DOM provides a way to attach a hidden separated DOM to an element. It allows use to keep the markup structure, style and behavior hidden and separate from other code on the page so that different parts do not clash, and the code can be kept nice and clean.
 
 ## Why would you eject from create-react-app
 

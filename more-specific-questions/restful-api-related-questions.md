@@ -46,6 +46,10 @@ Disadvantages:
 * Optimize Your CSS
 * Keep the Scripts below the fold
 
+## The workflow for JSON web token
+
+![](../.gitbook/assets/image%20%284%29.png)
+
 ## How do you parse JSON in backend
 
 use body-parser module
