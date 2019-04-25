@@ -364,5 +364,21 @@ var girl = function () {
 girl ();
 ```
 
+## What is the output of this code
 
+```javascript
+const {
+  a: aa,
+  b: bb
+} = {	
+  aa: "a",
+  a: "test",
+  b: "bb",
+  bb: "b"
+}
+console.log(a);   // reference error
+console.log(aa);  // test
+console.log(b);  // reference error
+console.log(bb);  // bb
+```
 

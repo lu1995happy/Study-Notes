@@ -16,6 +16,10 @@ HTML constraint validation is based on:
 * CSS Pseudo Selectors - e.g :disabled, :valid, :required
 * DOM Properties and Methods 
 
+## The difference between attribute and property
+
+Attributes are defined on the HTML markup but properties are defined on the DOM. 
+
 ## The difference between cookie, sessionStorage and localStorage
 
 All the above-mentioned technologies are key-value storage mechanisms on the client side. They are only able to store values are strings.

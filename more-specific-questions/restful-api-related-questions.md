@@ -46,5 +46,9 @@ Disadvantages:
 * Optimize Your CSS
 * Keep the Scripts below the fold
 
+## How do you parse JSON in backend
+
+use body-parser module
+
 
 

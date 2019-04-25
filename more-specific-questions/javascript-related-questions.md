@@ -20,6 +20,14 @@ The closure has access to variables in three scopes
 * variables in the enclosing function's scope
 * global variables
 
+## Higher-order function
+
+A higher-order function is any function that takes one or more functions as arguments, which it uses to operate on some data, and/or returns a function as a result. Higher-order functions are meant to abstract some operation that is performed repeatedly. e.g.`map`, `forEach`, `filter`, `reduce`, `bind`. 
+
+## Currying
+
+Currying is a pattern where a function with more than one parameter is broken into multiple functions that, when called in series, will accumulate all of the required parameters one at a time. This technique can be useful for making code written in functional style easier to read and compose. It's important to node that for a function be curried, it needs to start out as one function, then broken out into a sequence of functions that each accepts one parameter. 
+
 ## How `this` works in JavaScript
 
 The value of `this` depends on how the function is called. 
@@ -53,10 +61,6 @@ The following rules are applied:
 ## Prototypal Inheritance
 
 All JavaScript objects have a prototype property, that is a reference to another object. When a property is accessed on an object and if the property is not found on that object, the JavaScript engine looks at the object's prototype, and the prototype's prototype and so on, until it finds the property defined on one of the prototypes or until it reaches the end of the prototype chain. This behavior simulates classical inheritance, but it is really more of delegation than inheritance. 
-
-## The difference between attribute and property
-
-Attributes are defined on the HTML markup but properties are defined on the DOM. 
 
 ## The difference between `null` and `undefined`
 
@@ -164,9 +168,9 @@ Callback Hell is referred to the problems caused by asynchronous AJAX calls, whi
 * modularize
 * handle every single error
 
-## How does event loop works
+## Event Loop
 
-The Event Loop has one simple job - to monitor the Call Stack and Callback Queue. If the Call Stack is empty, it will take the first event from the queue and will push it to the Call Stack, which effectively runs it.
+The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the task queue. If the call stack is empty and there are callback functions in the tack queue, a function is dequeued and pushed onto the call stack to be executed. 
 
 ## Event bubbling
 
@@ -258,5 +262,9 @@ disadvantages
 * no more access to function.caller and function.arguments
 * concatenation of scripts written in different strict modes might cause issues
 
+## How can you share code between files
 
+On the client \(browser environment\), as long as the variables/functions are declared in the global scope, all scripts can refer to them.
+
+On the server \(Node.js\), Each file is treated as a module and it can export variables and functions by attaching them to the `module.exports` object.
 
