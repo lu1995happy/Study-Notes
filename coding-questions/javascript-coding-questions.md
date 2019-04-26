@@ -606,3 +606,101 @@ const gamble = (N, K) => {
 }
 ```
 
+## Use NodeJS to write a function that send response as "Hello"
+
+```javascript
+app.get("/test", (req, res, err) => {
+    if (err) {
+        res.status(500).json({err});
+    } else {
+        res.status(200).json({message: "Hello"});
+    }
+});
+
+// use the next middleware
+app.get("/test", (req, res, err) => {
+    req.message = "Hello";
+    next();
+}, (req, res, next) => {
+    res.status(200).json({message: req.message});
+});
+```
+
+## English number to normal number
+
+```javascript
+const wordToNumber = word => {
+  if (word === "zero") {
+    return 0;
+  }
+  const units = ["thousand", "million", "billion"];
+  const nums = [
+    "",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+    "eleven",
+    "twelve",
+    "thirteen",
+    "fourteen",
+    "fifteen",
+    "sixteen",
+    "seventeen",
+    "eighteen",
+    "nineteen"
+  ];
+  const tens = [
+    "",
+    "",
+    "twenty",
+    "thirty",
+    "forty",
+    "fifty",
+    "sixty",
+    "seventy",
+    "eighty",
+    "ninety"
+  ];
+  const words = word.split(" ");
+  let res = "";
+  for (let i = words.length - 1; i >= 0; i--) {
+    const curWord = words[i];
+    if (curWord === "negative") {
+      res = "-" + res;
+      return Number.parseInt(res);
+    }
+    const indexOfNums = nums.indexOf(curWord);
+    if (indexOfNums !== -1) {
+      res = indexOfNums + res;
+      if (i - 1 >= 0 && indexOfNums <= 9 && tens.indexOf(words[i - 1]) !== -1) {
+        res = tens.indexOf(words[i - 1]) + res;
+        i--;
+      }
+    } else {
+      const indexOfTens = tens.indexOf(curWord);
+      if (indexOfTens !== -1) {
+        res = indexOfTens + "0" + res;
+      } else {
+        if (curWord === "hundred") {
+          while (res.length % 3 !== 2) {
+            res = "0" + res;
+          }
+        } else {
+          while (res.length != (units.indexOf(curWord) + 1) * 3) {
+            res = "0" + res;
+          }
+        }
+      }
+    }
+  }
+  return Number.parseInt(res);
+};
+```
+

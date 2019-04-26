@@ -411,3 +411,31 @@ input[type="password"] {
 }
 ```
 
+## Toggle Component
+
+```jsx
+import React, { Component } from 'react';
+
+class Toggle extends Component {
+  state = {
+    text: "Hello",
+    display: false
+  };
+
+  toggleGreeting = () => {
+    this.setState({display: !this.state.display});
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.toggleGreeting}>Button</button>
+        <p>{this.state.display ? this.state.text : null}</p>
+      </div>
+    );
+  }
+}
+
+export default Toggle;
+```
+

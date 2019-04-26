@@ -217,5 +217,25 @@ li a:hover {
 
 ![](../.gitbook/assets/image%20%282%29.png)
 
+## Add animation to change the height 
 
+```css
+<style>
+    div {
+        animation: changeHeight 5s;
+    }
+    @keyframes changeHeight {
+        from {
+            height: 0px;
+        }
+        to {
+            height: 100px;
+        }
+    }
+</style>
+
+<body>
+    <div>Absolute</div>
+</body>
+```
 

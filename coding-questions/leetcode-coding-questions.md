@@ -71,6 +71,8 @@ const merge = (nums1, m, nums2, n) => {
 
 ## **Leetcode 114: Flatten Binary Tree to Linked List**
 
+## **Leetcode 118: Pascal's Triangle**
+
 ## **Leetcode 124: Binary Tree Maximum Path Sum**
 
 ## **Leetcode 125: Valid Palindrome**
@@ -106,9 +108,13 @@ function isPalindrome(str) {
 
 ## Leetcode 283: Move Zeros
 
+## Leetcode 287: Find the Duplicate Number
+
 ## Leetcode 300: Longest Increasing Subsequence
 
 ## Leetcode 316: Remove Duplicate Letters
+
+## Leetcode 322: Coin Change
 
 ## Leetcode 349: Intersection of two arrays
 
