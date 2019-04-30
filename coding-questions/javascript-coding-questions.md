@@ -704,3 +704,31 @@ const wordToNumber = word => {
 };
 ```
 
+## Event Capture Related Question
+
+```markup
+<ul id="list">
+  <li class="item-1">Item 1</li>
+  <li class="item-2">Item 2</li>
+  <li class="item-3">Item 3</li>
+  <li class="item-4">Item 4</li>
+  <li class="item-5">Item 5</li>
+</ul>
+```
+
+```javascript
+document.getElementById("list").addEventListener("click", function(){
+  console.log("list is clicked");
+});
+
+for (let i = 1; i <= 5; i++) {
+  liDomArr = document.getElementsByClassName(`item-${i}`);
+  liDomArr[0].addEventListener("click", function(event){
+    if (i === 5) {
+      event.stopPropagation();
+    } 
+    console.log(`item ${i} is clicked`);
+  });
+}
+```
+

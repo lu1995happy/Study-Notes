@@ -7,6 +7,10 @@
 * Update - Put
 * Delete - Delete
 
+## NodeJS architecture 
+
+Single Threaded Event Loop Model 
+
 ## The advantages of NodeJS server
 
 * JavaScript as the programming language

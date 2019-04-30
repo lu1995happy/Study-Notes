@@ -14,11 +14,14 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 
 ## React Lifecycle Methods 
 
+* constructor
 * componentWillMount - this is most commonly used for app configuration in your root component. 
+* render
 * componentDidMount - here you want to do all the setup you couldn't do without a DOM, and start getting all the data you need. Also if you want to set up eventListeners etc, this lifecycle hook is a good place to do that.
 * componentWillReceiveProps - this lifecycle acts on particular prop changes to trigger state transitions.
 * shouldComponentUpdate - if you are worried about wasted renders, shouldComponentUpdate is a great place to improve performance as it allows you to prevent a re-render. If component received new prop. shouldComponentUpdate should always return a boolean and based on what this is will determine if the component is re-rendered or not.
 * componentWillUpdate - rarely used. It can be used instead of componentWillReceiveProps on a component that also has shouldComponentUpdate \(but no access to previous props\).
+* render
 * componentDidUpdate - also commonly used to update the DOM in response to prop or state changes.
 * componentWillUnmount - here you can cancel any outgoing network requests, or remove all eventListeners associated with the component. 
 
@@ -26,7 +29,7 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 
 ## React - Redux Workflow
 
-![](../.gitbook/assets/image%20%287%29.png)
+![](../.gitbook/assets/image%20%288%29.png)
 
 ## The differences between Redux and setState\(\)
 
@@ -37,6 +40,35 @@ Use setState\(\) if it’s used only in a single component.
 ## React Component
 
 A component is a function or a class which optionally accepts input and returns a React element.
+
+## The advantages and disadvantages of server-side rendering
+
+advantages:
+
+* search engines can crawl the site for better SEO
+* initial loading becomes faster
+* great for static sites
+
+disadvantages:
+
+* frequent server requests
+* full page reloads, overall slow page rendering
+* non-rich site interactions
+
+## The advantages and disadvantages of client-side rendering
+
+advantages:
+
+* rich site interactions
+* fast website rendering after the initial load
+* great for web applications
+* robust selection of JavaScript libraries
+
+disadvantages:
+
+* low SEO if not implemented correctly
+* initial load might require more time
+* in most cases, requires an external library
 
 ## Why need to do super\(props\)
 

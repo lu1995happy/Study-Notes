@@ -38,7 +38,7 @@ float: right
 
 ## Write some CSS code for 4 different screen types
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%287%29.png)
 
 ```markup
 <h4>Question:
@@ -237,5 +237,129 @@ li a:hover {
 <body>
     <div>Absolute</div>
 </body>
+```
+
+## Implement the tooltip
+
+![](../.gitbook/assets/image%20%286%29.png)
+
+```markup
+<div class="tooltip">
+  <div class="arrow" style="left:50px"></div>
+  <div class="arrow" style="left: 100px"></div>
+</div>
+```
+
+```css
+.tooltip {
+  width: 150px;
+  height: 50px;
+  border: solid;
+  z-index: -1;
+
+}
+
+.arrow{
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  position: absolute;
+  border-right: solid;
+  border-bottom: solid;
+  background: white;  
+  top: 56px;
+}
+```
+
+## Center the div element both in horizontal and vertical
+
+```markup
+<div class="container">Hello World!</div>
+```
+
+```css
+.container {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:400px;
+}
+```
+
+## Design 2\*2 responsive layout
+
+```markup
+<h4>Given the following HTML code:
+Write css code that have 2 x 2 layout, responsive, different background color,do not modify html code (adding class is not allowed)
+follow up: can add class to the HTML, but ensure browser compatibility
+</h4>
+<section>
+  <article>one</article>
+  <article>two</article>
+  <article>three</article>
+  <article>four</article>
+</section>
+```
+
+```css
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+article:nth-child(1) {
+  background: green;
+  width: 50%;
+}
+
+article:nth-child(2) {
+  background: yellow;
+  width: 50%;
+}
+
+article:nth-child(3) {
+  background: red;
+  width: 50%;
+}
+
+article:nth-child(4) {
+  background: blue;
+  width: 50%;
+}
+```
+
+```css
+article {
+  height: 100px;
+}
+
+article:nth-child(1) {
+  background: green;
+  width: 50%;
+}
+
+article:nth-child(2) {
+  background: yellow;
+  width: 50%;
+}
+
+article:nth-child(3) {
+  background: red;
+  width: 50%;
+}
+
+article:nth-child(4) {
+  background: blue;
+  width: 50%;
+}
+
+article:nth-of-type(2n + 1) {
+  float: left;
+}
+
+article:nth-of-type(2n) {
+  float: right;
+}
 ```
 

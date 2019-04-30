@@ -98,6 +98,10 @@ Every object has a property called "prototype". It's also an object.
 
 Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope. 
 
+## Webpack
+
+Webpack is a module bundler
+
 ## Accessibility
 
 * subtitle

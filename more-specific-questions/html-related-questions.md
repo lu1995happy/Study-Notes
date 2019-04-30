@@ -1,6 +1,13 @@
 # HTML Related Questions
 
-## What is HTML attribute
+## What is HTML data-\* attribute
+
+The data attributes are used to store custom data private to the page or application. The data attributes give us the ability to embed custom data attributes on all HTML elements. The stored data can then be used in the page's JavaScript to create a more engaging user experience \(without any AJAX calls or sever-side database queries\). 
+
+The data attributes consist of two parts:
+
+* The attribute name should not contain any uppercase letters, and must be at least one character long after the prefix "data-"
+* The attribute value can be any string
 
 ## HTML5 aside element
 

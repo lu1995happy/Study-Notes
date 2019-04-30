@@ -262,6 +262,10 @@ disadvantages
 * no more access to function.caller and function.arguments
 * concatenation of scripts written in different strict modes might cause issues
 
+## What is module and how do you use that
+
+A module is a separated part of a program. It helps developers to separate functionality and organize the codebase by using export and import. 
+
 ## How can you share code between files
 
 On the client \(browser environment\), as long as the variables/functions are declared in the global scope, all scripts can refer to them.
