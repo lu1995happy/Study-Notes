@@ -363,3 +363,56 @@ article:nth-of-type(2n) {
 }
 ```
 
+## Hover Increase the element
+
+```markup
+<div class="element"></div>
+```
+
+```css
+.element {
+  width: 50px;
+  height: 30px;
+  background-color: pink;
+  transition: width 2s;
+}
+
+.element:hover {
+  width: 100px;
+  height: 30px;
+  background-color: pink;
+}
+```
+
+## Hover expand the div
+
+```markup
+<div class="container">
+  <p> SomeThing here </p>
+</div>
+<div class="border-box"></div>
+```
+
+```css
+.container{
+  border: solid;
+  height: 0px;
+  width: 200px;
+  overflow: hidden;
+}
+
+.container:hover{
+  height: 100px;
+  -webkit-transition: height 2s;  
+}
+
+.border-box{
+  box-sizing: border-box;
+  position: relative;
+  top: 50px;
+  width: 200px;
+  padding: 2px;
+  border: solid 5px;
+}
+```
+

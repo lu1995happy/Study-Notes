@@ -158,6 +158,10 @@ asyncDouble(3).then(
 );
 ```
 
+## Callback function
+
+A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action. e.g. addEventListener
+
 ## Callback Hell
 
 Callback Hell is referred to the problems caused by asynchronous AJAX calls, which means where are multiple nested callbacks. 
@@ -194,6 +198,12 @@ Event bubbling is what the event itself does.
 ## How to stop Event bubbling and capturing during Event delegation
 
 e.stopPropagation\(\)
+
+## The difference between setTimeout and setInterval
+
+setTimeout sets a timer which executes a function or specified piece of code once after the timer  expires.
+
+setInterval repeatedly calls a function or executes a code snippet, with a fixed time delay between each call. 
 
 ## Lexical Scope
 

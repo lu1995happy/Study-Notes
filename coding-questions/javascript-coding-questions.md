@@ -732,3 +732,9 @@ for (let i = 1; i <= 5; i++) {
 }
 ```
 
+## Deep Clone Object
+
+```javascript
+JSON.parse(JSON.stringify(obj));
+```
+

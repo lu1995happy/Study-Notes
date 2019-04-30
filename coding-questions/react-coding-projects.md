@@ -12,17 +12,14 @@ import React, { Component } from 'react';
 
 export default class LikeDislike extends Component {
 
-	constructor(props){
-    super(props);
-    this.state = {
+  state = {
       likes:100,
       dislikes:25,
       isLike: false,
       isDislike: false
-    }
-  }
+  };
   
-	like = () => {
+  like = () => {
     if (this.state.isLike){
       this.setState({
         likes:this.state.likes-1,
@@ -41,11 +38,11 @@ export default class LikeDislike extends Component {
               likes:this.state.likes+1,
               isLike:true
           });
-      }
+        }
     }
   }
   
-	dislike = () => {
+  dislike = () => {
     if(this.state.isLike){
       this.setState({
         likes:this.state.likes-1,
@@ -66,15 +63,15 @@ export default class LikeDislike extends Component {
     }
   }
   
-	render() {
-		let likeBtnClass = cx({
-			'like-button': true,
-			liked: this.state.isLike
+  render() {
+	let likeBtnClass = cx({
+		'like-button': true,
+		liked: this.state.isLike
     });
 
     let dislikeBtnClass = cx({
-			'dislike-button': true,
-			disliked: this.state.isDislike
+		'dislike-button': true,
+		disliked: this.state.isDislike
     });
 
     return (
@@ -85,15 +82,15 @@ export default class LikeDislike extends Component {
           <button className = {this.state.isDislike?"dislike-button disliked":"dislike-button"} onClick = {this.dislike}>Dislike | <span className = "dislikes-counter">{this.state.dislikes}</span></button>
         </div>
         <style>{`
-            .like-button, .dislike-button {
-                font-size: 1rem;
-                padding: 5px 10px;
-                color:   #585858;
-            }
-            .liked, .disliked {
-                font-weight: bold;
-                color: #1565c0;
-            }
+          .like-button, .dislike-button {
+            font-size: 1rem;
+            padding: 5px 10px;
+            color:   #585858;
+          }
+          .liked, .disliked {
+            font-weight: bold;
+            color: #1565c0;
+          }
         `}</style>
       </div>
     );
@@ -170,62 +167,6 @@ b. The action is dispatched when someone picks an answer to a question. It conta
 > [https://jsfiddle.net/Sharonliao/5sebvL0w/](https://jsfiddle.net/Sharonliao/5sebvL0w/) \(color\)
 >
 > [https://jsfiddle.net/nvj4exgm/61/](https://jsfiddle.net/nvj4exgm/61/) \(animal\)
-
-## Like Button Component 
-
-![](../.gitbook/assets/image%20%285%29.png)
-
-![](../.gitbook/assets/image%20%283%29.png)
-
-```jsx
-import React, { Component } from 'react';
-
-export default class LikeButton extends Component {
-  state = {
-    number: 100,
-    liked: false
-  }
-
-  addLike = () => {
-    this.setState({ liked: true, number: this.state.number + 1});
-  }
-
-  removeLike = () => {
-    this.setState({ liked: false, number: this.state.number - 1});
-  }
-
-  render() {
-    return (
-      <>
-        <div>
-          {
-            !this.state.liked ?
-            <button className="like-button" onClick={this.addLike}>
-            Like | <span className="likes-counter">{this.state.number}</span>
-            </button> :
-            <button className="like-button liked" onClick={this.removeLike}>
-            Like | <span className="likes-counter">{this.state.number}></span>
-            </button>
-          }
-        </div>
-        <style>
-          {`
-            .like-button {
-              font-size: 1rem;
-              padding: 5px 10px;
-              color: white;
-            }
-            .liked {
-              font-weight: bold;
-              color: red;
-            }
-          `}
-        </style>
-      </>
-    );
-  }
-}
-```
 
 ## Radio Button Component
 
