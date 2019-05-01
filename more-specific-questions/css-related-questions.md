@@ -35,6 +35,13 @@ visibility: hidden - means that the tag will not appear on the page at all, alth
 
 display: none - means that unlike display: none, the tag is not visible, but space is allocated for it on the page. The tag is rendered, it just isn't seen on the page. 
 
+## The difference between CSS Grid and Flex-box
+
+* CSS Grid Layout is a two-dimensional system, meaning it can handle both columns and rows, unlike flex-box which is largely a one-dimensional system either in a column or a row
+* CSS Grid's approach is layout-first while flex-box's approach is content-first
+* Flex-box layout is most appropriate to the components of an application and small-scale layouts, while the Grid layout is intended for larger scale layouts which aren't linear in their design
+* Flex-box is for defining a layout as a row or a column, whereas Grid is for defining a grid and fit content into it in two-dimensions
+
 ## How many px is equal to 1 rem
 
 rem is a new feature for CSS3, which stands for root em. It's equal to the computed value of font-size on the root element, the rem units refer to the property's initial value. This means that 1rem equals the font size of the HTML element, which for most browser has a default value of 16px.
@@ -79,6 +86,10 @@ disadvantages:
 ## Pseudo elements
 
 A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element. e.g. :first-letter, :before, :after.
+
+## Mixin in SASS
+
+A mixin lets you make groups of CSS declarations that you want to reuse throughout your site. You can even pass in values to make your mixin more flexible. A good use of a mixin is for vendor prefixes. 
 
 ## Accessibility
 

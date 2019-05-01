@@ -7,9 +7,23 @@
 * Update - Put
 * Delete - Delete
 
+## The difference between PUT, POST and PATCH method
+
+
+
 ## NodeJS architecture 
 
 Single Threaded Event Loop Model 
+
+## MVC and Flux
+
+MVC works both in server and client side development. MVC architecture: the user updates the controller, the controller manipulates the model, the model updates the view, and finally the user can see the view.
+
+Flux is used for building client-side web applications. It implements React's com-posable view components by utilizing a unidirectional data flow. 
+
+## The difference between throw and reject
+
+Any time you are inside a promise callback, you can use `throw`. However, if you are in any other asynchronous callback, you must use `reject`. Moreover, `reject` does not terminate control flow like a `return` statement does. In contrast `throw` does terminate control flow.
 
 ## The advantages of NodeJS server
 

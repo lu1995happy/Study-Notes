@@ -62,6 +62,12 @@ The following rules are applied:
 
 All JavaScript objects have a prototype property, that is a reference to another object. When a property is accessed on an object and if the property is not found on that object, the JavaScript engine looks at the object's prototype, and the prototype's prototype and so on, until it finds the property defined on one of the prototypes or until it reaches the end of the prototype chain. This behavior simulates classical inheritance, but it is really more of delegation than inheritance. 
 
+## The difference between classical inheritance and prototype inheritance
+
+classical inheritance: a description of the object to be created. Classes inherit from classes and create subclass relationships.
+
+prototypal inheritance: a prototype is a working object instance. Objects inherit directly from other objects. 
+
 ## The difference between `null` and `undefined`
 
 A variable that is `undefined` is a a variable that has been declared, but not assigned a value. It is of type `undefined`. 
@@ -204,6 +210,16 @@ e.stopPropagation\(\)
 setTimeout sets a timer which executes a function or specified piece of code once after the timer  expires.
 
 setInterval repeatedly calls a function or executes a code snippet, with a fixed time delay between each call. 
+
+## The difference between setImmediate and process.nextTick
+
+process.nextTick fires immediately on the same phase.
+
+setImmediate fires on the following iteration or "tick" of the event loop.
+
+## The difference between new and Object.create
+
+`new` is `Object.create` with additionally running the `constructor` function. And giving the `constructor` the chance to `return` the actual object that should be the result of the expression instead of `this`. 
 
 ## Lexical Scope
 
