@@ -1,6 +1,6 @@
 # JavaScript Related Questions
 
-## What is shallow comparison check
+## Shallow Comparison Check
 
 The shallow comparison check means that JavaScript only checks that the value's object IDs are the same, not their contents are the same. The ID here means the memory address for where JavaScript stores the information for that particular object.
 
@@ -20,7 +20,7 @@ The closure has access to variables in three scopes
 * variables in the enclosing function's scope
 * global variables
 
-## Higher-order function
+## Higher-Order Function
 
 A higher-order function is any function that takes one or more functions as arguments, which it uses to operate on some data, and/or returns a function as a result. Higher-order functions are meant to abstract some operation that is performed repeatedly. e.g.`map`, `forEach`, `filter`, `reduce`, `bind`. 
 
@@ -28,7 +28,7 @@ A higher-order function is any function that takes one or more functions as argu
 
 Currying is a pattern where a function with more than one parameter is broken into multiple functions that, when called in series, will accumulate all of the required parameters one at a time. This technique can be useful for making code written in functional style easier to read and compose. It's important to node that for a function be curried, it needs to start out as one function, then broken out into a sequence of functions that each accepts one parameter. 
 
-## How `this` works in JavaScript
+## `this` in JavaScript
 
 The value of `this` depends on how the function is called. 
 
@@ -41,7 +41,7 @@ The following rules are applied:
 * If multiple of the above rules apply, the rule that is higher wins and will set the `this` value.
 * If the function is an ES6 arrow function, it ignores all the rules above and receives the `this` value of its surrounding scope at the time it is created. 
 
-## Falsey values
+## Falsey Values
 
 * 0
 * null
@@ -50,7 +50,7 @@ The following rules are applied:
 * false
 * NaN
 
-## 4 types of scoping
+## 4 types of Scoping
 
 * Global Scope - declared outside for any function, use it without declaring
 * Function Scope - `var`
@@ -62,13 +62,13 @@ The following rules are applied:
 
 All JavaScript objects have a prototype property, that is a reference to another object. When a property is accessed on an object and if the property is not found on that object, the JavaScript engine looks at the object's prototype, and the prototype's prototype and so on, until it finds the property defined on one of the prototypes or until it reaches the end of the prototype chain. This behavior simulates classical inheritance, but it is really more of delegation than inheritance. 
 
-## The difference between classical inheritance and prototype inheritance
+## Classical inheritance vs Prototypal inheritance
 
 classical inheritance: a description of the object to be created. Classes inherit from classes and create subclass relationships.
 
 prototypal inheritance: a prototype is a working object instance. Objects inherit directly from other objects. 
 
-## The difference between `null` and `undefined`
+## `null` vs `undefined`
 
 A variable that is `undefined` is a a variable that has been declared, but not assigned a value. It is of type `undefined`. 
 
@@ -164,7 +164,7 @@ asyncDouble(3).then(
 );
 ```
 
-## Callback function
+## Callback Function
 
 A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action. e.g. addEventListener
 
@@ -182,11 +182,11 @@ Callback Hell is referred to the problems caused by asynchronous AJAX calls, whi
 
 The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the task queue. If the call stack is empty and there are callback functions in the tack queue, a function is dequeued and pushed onto the call stack to be executed. 
 
-## Event bubbling
+## Event Bubbling
 
 When an event triggers on a DOM element, it will attempt to handle the vent if there is a listener attached, then the event is bubbled up to its parent and the same thing happens. The bubbling occurs up the element's ancestors all the way to the document. Event bubbling is the mechanism behind event delegation. 
 
-## Event delegation
+## Event Delegation
 
 Event delegation is a technique involving adding event listeners to a parent element instead of adding them to the descendant elements. The listener will fire whenever the event is triggered on the descendant elements due to event bubbling up the DOM. 
 
@@ -195,7 +195,7 @@ The benefits of this technique are:
 * Memory footprint goes down because only one single handler is needed on the parent element, rather than having to attach event handlers on each descendant.
 * There is no need to unbind the handler from elements that are removed and to bind the event for new elements. 
 
-## Event delegation and Event bubbling
+## Event Delegation vs Event Bubbling
 
 Event delegation is a technique for listening to events where you delegate a parent element as the listener for all of the events that happen inside it.
 
@@ -205,19 +205,19 @@ Event bubbling is what the event itself does.
 
 e.stopPropagation\(\)
 
-## The difference between setTimeout and setInterval
+## `setTimeout` and `setInterval`
 
 setTimeout sets a timer which executes a function or specified piece of code once after the timer  expires.
 
 setInterval repeatedly calls a function or executes a code snippet, with a fixed time delay between each call. 
 
-## The difference between setImmediate and process.nextTick
+## `setImmediate` vs `process.nextTick`
 
 process.nextTick fires immediately on the same phase.
 
 setImmediate fires on the following iteration or "tick" of the event loop.
 
-## The difference between new and Object.create
+## `new` vs `Object.create`
 
 `new` is `Object.create` with additionally running the `constructor` function. And giving the `constructor` the chance to `return` the actual object that should be the result of the expression instead of `this`. 
 
@@ -229,25 +229,25 @@ Lexical scope, also known as static scope, is a convention that sets the scope o
 
 The `bind` method creates a new function that, when called, has its `this` keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called. 
 
-## The difference for `call` and `apply`
+## `Call` vs `Apply`
 
 Both are used to invoke functions and the first parameter will be used as the value of `this` within the function. However, `call` takes in comma-separated arguments as the next arguments while `apply` takes in an array of arguments as the next argument. 
 
-## The difference for `map` and `forEach`
+## `Map` vs `forEach`
 
 `forEach`: parameter is a function, apply the function to each item. It modifies the original array. 
 
 `map`: apply the function to all elements,  function has two parameters, first is value, second is index. It returns a new array, the original array is not modified. 
 
-## Event-driven programming
+## Event-Driven Programming
 
 event-driven programming a programming paradigm in which the flow of the program is determined by events such as user actions, sensor outputs, or messages from other programs or threads. 
 
-## Why arrow function is convenient
+## Why Arrow Function is Convenient
 
 Since the arrow function offers a very clean concise syntax and more intuitive scope and `this` binding. 
 
-## What are the pros and cons of using Promises instead of Callbacks
+## Using Promises instead of Callbacks - pros & cons
 
 props:
 
@@ -260,15 +260,25 @@ cons:
 * slightly more complex code
 * in older browsers where ES6 is not supported, you need to load a polyfill in order to use it
 
-## What is the drawback of creating true private methods in JavaScript
+## Creating true private methods in JavaScript
 
 They are very memory inefficient, as a new copy of the method would be created for each instance.
+
+## Software Design Pattern
+
+* Singleton
+* Factory method
+* Strategy
+* Observer
+* Builder
+* Adapter
+* State
 
 ## How can you make people not change the value
 
 Object.freeze\(\)
 
-## The advantages and disadvantages using Strict Mode
+## Strict Mode - pros & cons 
 
 "use strict" is a statement used to enable strict mode to entire scripts or individual functions. Strict mode is a way to opt into a restricted variant of JavaScript.
 

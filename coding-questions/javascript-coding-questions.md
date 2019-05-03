@@ -738,3 +738,79 @@ for (let i = 1; i <= 5; i++) {
 JSON.parse(JSON.stringify(obj));
 ```
 
+## Traverse two DOM tree to see if their descendent elements have the same text
+
+```javascript
+const BFS = (root1, root2) => {
+    const arr1 = [root1];
+    const arr2 = [root2];
+    while (arr1.length && arr2.length) {
+        let node1 = arr1.shift();
+        arr1.push(...node1.childNodes);
+        let node2 = arr2.shift();
+        arr2.push(...node2.childNodes);
+        if (node1.innerHTML === node2.innerHTML) {
+            return true;
+        }
+    }
+    return false;
+}
+```
+
+## Send request to server A, got a token, and then if success, send to sever B to get the data
+
+```javascript
+axios.get(url_a)
+    .then(response => response.json())
+    .then(data => console.log(data.token))
+    .then(axios.get(url_b)
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
+    )
+    .catch(error => console.log(error));
+```
+
+## Split an array into two equal sum subarrays
+
+```javascript
+const findElement = (arr) => {
+    let leftSum = 0, rightSum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        leftSum += arr[i];
+    }
+    for (let i = arr.length - 1; i >= 0; i--) {
+        leftSum -= arr[i];
+        rightSum += arr[i];
+        if (leftSum === rightSum) {
+             return i;
+        }
+    }
+    return -1;
+}
+```
+
+## Longest Common Subsequence
+
+```javascript
+const lcs = (s, t) => {
+    const m = s.length, n = t.length;
+    let res = [];
+    for (let i = 0; i <= m; i++) {
+        res[i] = [];
+        for (let j = 0; j <= n; j++) {
+            if (i === 0 || j === 0) {
+                res[i][j] = 0; 
+            } else {
+                if (s[i - 1] === t[j - 1]) {
+                    res[i][j] = res[i - 1][j - 1] + 1; 
+                } else {
+                    res[i][j] = Math.max(res[i - 1][j], res[i][j - 1]);
+                }
+            }
+        }
+    }
+    return res[m][n];
+}
+```
+

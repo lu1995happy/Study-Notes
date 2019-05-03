@@ -4,7 +4,7 @@
 
 React creates a virtual DOM. When state changes in a component it firstly runs a "diffing" algorithm, which identifies what has changed in the virtual DOM. The second step is reconciliation, where it updates the DOM with the results of diff.
 
-## What are the advantages of using React?
+## React Advantages
 
 * It's easy to know how a component is rendered, you just need to look at the render function.
 * JSX makes it easy to read the code of your components. It's also really easy to see the layout, or how components are plugged/combined with each other.
@@ -31,7 +31,7 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 
 ![](../.gitbook/assets/image%20%288%29.png)
 
-## The differences between Redux and setState\(\)
+## Redux vs setState\(\)
 
 Use Redux if your state is shared across multiple components. 
 
@@ -41,7 +41,7 @@ Use setState\(\) if it’s used only in a single component.
 
 A component is a function or a class which optionally accepts input and returns a React element.
 
-## The advantages and disadvantages of server-side rendering
+## Server-Side Rendering - pros & cons 
 
 advantages:
 
@@ -55,7 +55,7 @@ disadvantages:
 * full page reloads, overall slow page rendering
 * non-rich site interactions
 
-## The advantages and disadvantages of client-side rendering
+## Client-Side Rendering - pros & cons
 
 advantages:
 
@@ -70,7 +70,7 @@ disadvantages:
 * initial load might require more time
 * in most cases, requires an external library
 
-## Why need to do super\(props\)
+## Why need super\(props\)
 
 If you don't initialize state and you don't bind methods, you don't need to implement the constructor for your React component.
 
@@ -80,15 +80,19 @@ The constructor for a React component is called before it is mounted. When imple
 
 using this.forceUpdate\(\)
 
-## How to do user authentication login
+## User Authentication Login
 
 The React App sends the Auth to the server, and then the server sends back a Token that will be stored in the JavaScript localStorage. After that we can use the Token we received to request for protected resources from the server.
 
-## Error Handling method - Error Boundary
+## Error Handling Method - Error Boundary
 
 Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
 
 A class component becomes an error boundary if it defines a new lifecycle method called `componentDidCatch(error, info)`
+
+## Composition vs inheritance in React
+
+React has a powerful composition model, and composition is recommended instead of inheritance to reuse code between components. 
 
 ## Where in a React component should you make an AJAX request?
 
@@ -98,11 +102,11 @@ componentDidMount is where an AJAX request should be made in a React component. 
 
 In HTML, form elements such as &lt;input&gt;, &lt;textarea&gt; and &lt;select&gt; typically maintain their own state and update it based on user input. When a user submits a form the values from the aforementioned elements are sent with the form. With React it works differently. The component containing the form will keep track of the value of the input in its state and will re-render the component each time the callback function e.g. onChange is fired as the state will be updated. An input form element whose value is controlled by React in this way is called a "controlled component".
 
-## What are refs used for in React
+## Refs
 
 Refs are created using React.createRef\(\) and attached to React elements via the ref attribute. Refs are commonly assigned to an instance property when a component is constructed so they can be referenced throughout the component. Refs provide a way to access DOM nodes or React elements created in the render method. Good examples of when to use refs are for managing focus/text selection or media playback, triggering imperative animations, or integrating with third-party DOM libraries. 
 
-## What is a higher order component
+## Higher Order Component
 
 A higher order component is a function that takes a component and returns a new component. HOC allows you to reuse code, logic and bootstrap abstraction.The most common is probably Redux's connect function. Beyond simply sharing utility libraries and simple composition, HOC is the best way to share behavior between React components. If you find yourself writing a lot of code in different places that does the same thing, you may be able to refactor that code into a reusable HOC.
 

@@ -2,11 +2,11 @@
 
 ## How does Redux work
 
-## What is Redux
+## Redux
 
 The basic idea of redux is that the entire application state is kept in a single store. The store is simply a JavaScript object. The only way to change the state is by firing actions from your application and then writing reducers for these actions that modify the state. The entire state transition is kept inside reducers and should not have any side-effects. 
 
-## What is shallow equality checking and deep equality checking in Redux
+## Shallow Equality Check vs Deep Equality Check in Redux
 
 Shallow equality checking \(or reference equality\) simply checks that two different variables reference the same object; in contrast, deep equality checking \(or value equality\) must check every value of two object's properties.  
 

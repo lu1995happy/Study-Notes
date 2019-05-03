@@ -35,12 +35,16 @@ visibility: hidden - means that the tag will not appear on the page at all, alth
 
 display: none - means that unlike display: none, the tag is not visible, but space is allocated for it on the page. The tag is rendered, it just isn't seen on the page. 
 
-## The difference between CSS Grid and Flex-box
+## CSS Grid vs Flex-box
 
 * CSS Grid Layout is a two-dimensional system, meaning it can handle both columns and rows, unlike flex-box which is largely a one-dimensional system either in a column or a row
 * CSS Grid's approach is layout-first while flex-box's approach is content-first
 * Flex-box layout is most appropriate to the components of an application and small-scale layouts, while the Grid layout is intended for larger scale layouts which aren't linear in their design
 * Flex-box is for defining a layout as a row or a column, whereas Grid is for defining a grid and fit content into it in two-dimensions
+
+## Animation vs Transition
+
+Animations within CSS3 allow the appearance and behavior of an element to be altered in multiple keyframes. Transitions provide a change from one state to another, while animations can set multiple points of transition upon different keyframes. 
 
 ## How many px is equal to 1 rem
 
@@ -63,7 +67,7 @@ inline style &gt; ID selector &gt; class, attribute and pseudo-class selector &g
 * Flexbox 
   * Need a container with attributes display: flex, flex-direction: column/row\(-reserve\), flex-wrap: \(no\)wrap\(-reverse\), flex-flow: setting both the flex-direction and flex-wrap
 
-## The advantages and disadvantages of using CSS preprocessors
+## CSS preprocessors - pros & cons
 
 advantages: 
 

@@ -7,6 +7,7 @@
 | library | framework |
 | JSX | typescript |
 | one direction data-flow | bi-direction data-flow |
+| one way data binding | two way data binding |
 | component based | MVC, component based |
 
 ## State vs Props
