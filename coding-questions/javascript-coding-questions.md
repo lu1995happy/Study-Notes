@@ -4,7 +4,7 @@
 
 ```javascript
 Array.prototype.double = function() {
-    return this.map(val) => (val * 2);
+    return this.map((val) => (val * 2));
 }
 ```
 

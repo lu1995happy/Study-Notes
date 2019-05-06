@@ -6,7 +6,7 @@ The shallow comparison check means that JavaScript only checks that the value's 
 
 ## Hoisting
 
-Hoisting is a term used to explain the behavior of variable declarations in your code. Variables declared or initialized with the var keyword will have their declaration "moved" up to the top of the current scope. 
+Hoisting is a term used to explain the behavior of variable declarations in your code. Variables declared or initialized with the `var` keyword will have their declaration "moved" up to the top of the current scope. 
 
 However, only the variable declarations and function declarations are hoisted. Variable assignments and function expressions are not hoisted. 
 

@@ -41,6 +41,12 @@ Use setState\(\) if it’s used only in a single component.
 
 A component is a function or a class which optionally accepts input and returns a React element.
 
+## One way data binding in React vs Two way data binding in Angular
+
+In Angular, if you change the UI element, then the corresponding model state changes as well. Additionally, if you change the model state, then the UI element changes.
+
+In React, when the model state update, it will render the change in the UI element. However, if you change the UI element, the model state does not change. 
+
 ## Server-Side Rendering - pros & cons 
 
 advantages:
@@ -131,35 +137,35 @@ Shadow DOM provides a way to attach a hidden separated DOM to an element. It all
 
 Until you eject you are unable to configure web-pack or babel presets.
 
-## What are props in React
+## Props in React
 
 props are properties that are passed into a child component from its parent, and are read only. 
 
-## What is the difference between component props and state
+## Props vs State
 
 props are read only and passed in from parent to child component. State is an internal object for a particular react component and can change, as it determines the state of the component. It's not visible to other components. 
 
-## What is a pure component
+## Pure Component
 
 A pure \(functional\) component in React is stateless \(like a dumb component\) and always renders the same given the same set of input props. 
 
-## What is a pure functional component in React
+## Pure Functional Component 
 
 A component that has no internal state of its own, nor any side effects, and thus is often written as a function as opposed to an ES6 class. 
 
-## What is the render method for
+## Why need render method
 
 To determine what should be rendered for a particular component. Could be a complex nested object of other child React components, or it could be as simple as a primitive JavaScript object. 
 
-## What are PropTypes in React
+## PropTypes
 
 They help indicate to React what data types a React component's properties are and should accept. 
 
-## How Virtual DOM works in React
+## How Virtual DOM works
 
 React builds up its own "virtual DOM" which is a lightweight representation of the DOM optimized for React's diffing algorithms and reconciliation process. Virtual DOM changes eventually propagate to the actual DOM at the end of the reconciliation process. 
 
-## Test method in React
+## Test method
 
 Jest and Enzyme
 

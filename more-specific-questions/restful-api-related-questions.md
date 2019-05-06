@@ -44,7 +44,7 @@ AJAX \(Asynchronous JavaScript and XML\) is to create asynchronous web applicati
 
 The `XMLHttpReques`t API is frequently used for the asynchronous communication or these days, the `fetch` API. 
 
-## What are the advantages and disadvantages of using AJAX
+## AJAX - pros & cons
 
 Advantages:
 
