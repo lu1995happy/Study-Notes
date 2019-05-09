@@ -1,4 +1,4 @@
-# CSS Coding Questions
+# CSS Coding
 
 ## How to display two inner div in a line
 
@@ -38,7 +38,7 @@ float: right
 
 ## Write some CSS code for 4 different screen types
 
-![](../.gitbook/assets/image%20%287%29.png)
+![](../.gitbook/assets/image%20%288%29.png)
 
 ```markup
 <h4>Question:
@@ -413,6 +413,45 @@ article:nth-of-type(2n) {
   width: 200px;
   padding: 2px;
   border: solid 5px;
+}
+```
+
+## Show 3 colorful rectangle each row
+
+```markup
+<!-- // Can't changing html 
+1. show 3 colorful rectangle each row. 
+2. color should be yellow,green,yellow,green,... 
+3. resize the window the rectangle width/height ratio didn't change -->
+<section>
+  <article>item1</article>
+  <article>item2</article>
+  <article>item3</article>
+  <article>item4</article>
+  <article>item5</article>
+  <article>item6</article>
+  <article>item7</article>
+  <article>item8</article>
+  <article>item9</article>
+</section>
+```
+
+```css
+section{
+  display: flex;
+  flex-wrap: wrap;
+}
+article {
+  width: 33%;
+  padding-top: 20%;
+}
+article:nth-of-type(2n) {
+  background-color: green;
+  color: green;
+}
+article:nth-of-type(2n+1) {
+  background-color: yellow;
+  color: yellow;
 }
 ```
 

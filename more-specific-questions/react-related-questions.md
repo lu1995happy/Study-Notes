@@ -1,4 +1,4 @@
-# React Related Questions
+# React
 
 ## How does React work
 
@@ -29,7 +29,7 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 
 ## React - Redux Workflow
 
-![](../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/image%20%289%29.png)
 
 ## Redux vs setState\(\)
 
@@ -40,6 +40,14 @@ Use setState\(\) if it’s used only in a single component.
 ## React Component
 
 A component is a function or a class which optionally accepts input and returns a React element.
+
+## React Router
+
+React Router is the standard routing library for React. React Router keeps your UI in sync with the URL. It has a simple API with powerful features like lazy code loading, dynamic route matching, and location transition handling. 
+
+## Synthetic Event
+
+Synthetic Event is a cross-browser wrapper around the browser's native event. It has the same interface as the browser's native event, including `stopPropagation()` and `preventDefault()`, except the events work identically across all browsers. 
 
 ## One way data binding in React vs Two way data binding in Angular
 
@@ -99,6 +107,16 @@ A class component becomes an error boundary if it defines a new lifecycle method
 ## Composition vs inheritance in React
 
 React has a powerful composition model, and composition is recommended instead of inheritance to reuse code between components. 
+
+## Rendering Multiple Components
+
+* You can build collections of elements and include them in JSX using curly braces {}.
+* Using `<React.Fragment />`
+* Return an array of elements using Map function and assign key to them 
+
+## Keys
+
+Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity. 
 
 ## Where in a React component should you make an AJAX request?
 

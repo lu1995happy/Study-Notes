@@ -1,4 +1,4 @@
-# JavaScript Coding Questions
+# JavaScript Coding
 
 ## How to implement \[1, 2, 3\].double\(\) = \[2, 4, 6\]
 
@@ -259,35 +259,49 @@ const getHTML = () => {
 ## Implement the forEach function
 
 ```javascript
-Array.prototype.myForEach = (callback) => {
-    for (let i of this) {
-        callback(i);
-    }
+Array.prototype.myEach = function(callback) {
+    for (var i = 0; i < this.length; i++)
+        callback(this[i], i, this);
 };
 ```
 
 ## Implement the map function
 
 ```javascript
-Array.prototype.myMap = (callback) => {
-    let res = [];
-    for (let i of this) {
-        res.push(callback(i));
+Array.prototype.myMap = function(callback) {
+    arr = [];
+    for (var i = 0; i < this.length; i++)
+        arr.push(callback(this[i], i, this));
+    return arr;
+};
+```
+
+## Implement the filter function 
+
+```javascript
+Array.prototype.myFilter = function(callback, context) {
+    arr = [];
+    for (var i = 0; i < this.length; i++) {
+        if (callback.call(context, this[i], i, this))
+            arr.push(this[i]);
     }
-    return res;
-}
+    return arr;
+};
 ```
 
 ## Implement the reduce function
 
 ```javascript
-const reduce = (arr, initialValue = 0, callback) => {
-    let curValue = initialValue;
-    for (let i of arr) {
-        curValue = callback(curValue, i);
+Array.prototype.myReduce = function(callback, initialVal) {
+    var accumulator = (initialVal === undefined) ? undefined : initialVal;
+    for (var i = 0; i < this.length; i++) {
+        if (accumulator !== undefined)
+            accumulator = callback.call(undefined, accumulator, this[i], i, this);
+        else
+            accumulator = this[i];
     }
-    return curValue;
-}
+    return accumulator;
+};
 ```
 
 ## Sort the String first by length, then by alphabetical order. Capitalize the first character, end with "."
@@ -812,5 +826,53 @@ const lcs = (s, t) => {
     }
     return res[m][n];
 }
+```
+
+## Pass value from Child Component to Parent Component
+
+```jsx
+// Parent:
+<Button onClick={this.handleClick}></Button>
+```
+
+```jsx
+// Children:
+handleClick = () => {
+    this.props.onClick(value);
+}
+```
+
+## Change the JavaScript to make it work
+
+```javascript
+$(document).ready( function() {
+  var buttons = $('button');
+
+  for( var i = 0; i < buttons.length; ++i ) {
+    buttons.eq(i).click(
+    	// ONLY EDIT THE CODE BELOW THIS LINE
+    	function() {
+      	$('ul').append('<li>' + i + '</li>')
+    	}
+    	// ONLY EDIT THE CODE ABOVE THIS LINE
+    );
+  }
+});
+```
+
+```javascript
+$(document).ready( function() {
+  var buttons = $('button');
+
+  for( var i = 0; i < buttons.length; ++i ) {
+    buttons.eq(i).click(
+    	// ONLY EDIT THE CODE BELOW THIS LINE
+    	(function(num) {
+      	return () => $('ul').append('<li>' + num + '</li>')
+    	})(i)
+    	// ONLY EDIT THE CODE ABOVE THIS LINE
+    );
+  }
+});
 ```
 

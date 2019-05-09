@@ -1,4 +1,4 @@
-# The Code Output
+# Code Output
 
 ## How many times is the string "Hello" printed
 

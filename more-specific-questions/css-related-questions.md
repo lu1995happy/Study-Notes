@@ -1,4 +1,4 @@
-# CSS Related Questions
+# CSS
 
 ## Box Model
 
@@ -34,6 +34,20 @@ margin &gt; border &gt; padding &gt; content
 visibility: hidden - means that the tag will not appear on the page at all, although you can still interact with it through the DOM. There will be no space allocated for it between the other tags.
 
 display: none - means that unlike display: none, the tag is not visible, but space is allocated for it on the page. The tag is rendered, it just isn't seen on the page. 
+
+## Z-index
+
+The z-index property specifies the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order. z-index only works on positioned elements. 
+
+## How to add a padding but not influence the box size
+
+`box-sizing: border-box`;
+
+## CSS selectors
+
+![](../.gitbook/assets/image%20%2810%29.png)
+
+![](../.gitbook/assets/image%20%2814%29.png)
 
 ## CSS Grid vs Flex-box
 

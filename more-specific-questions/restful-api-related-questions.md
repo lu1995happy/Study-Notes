@@ -1,4 +1,4 @@
-# RESTful API Related Questions
+# RESTful API
 
 ## Can you map CRUD to http methods on a RESTful API
 
@@ -9,16 +9,6 @@
 
 ## The difference between PUT, POST and PATCH method
 
-
-
-## NodeJS architecture 
-
-Single Threaded Event Loop Model 
-
-## How to do auth in NodeJS
-
-Using Passport.js. Passport is authentication middleware for NodeJS. Passport can be easily dropped into any Express-based web applications. It's a comprehensive set of strategies supports authentication using a username and password, Facebook, Twitter. 
-
 ## MVC vs Flux
 
 MVC works both in server and client side development. MVC architecture: the user updates the controller, the controller manipulates the model, the model updates the view, and finally the user can see the view.
@@ -28,15 +18,6 @@ Flux is used for building client-side web applications. It implements React's co
 ## Throw vs Reject
 
 Any time you are inside a promise callback, you can use `throw`. However, if you are in any other asynchronous callback, you must use `reject`. Moreover, `reject` does not terminate control flow like a `return` statement does. In contrast `throw` does terminate control flow.
-
-## The advantages of NodeJS server
-
-* JavaScript as the programming language
-* Asynchronous events
-* Real-time web apps
-* NPM package manager
-* Data sharing
-* Event driven architecture
 
 ## AJAX
 
@@ -67,6 +48,14 @@ Since difference browser may require different API for the same functionality, y
 ## Continuous Integration
 
 Continuous Integration is a development practice that requires developers to integrate code into a shared repository several times a day. Each check-in is then verified by an automated build, allowing teams to detect problems early. 
+
+## Cross-Domain Solution \(CDS\)
+
+A cross-domain solution is a means of information assurance that provides the ability to manually or automatically access or transfer information between two or more differing security domains. 
+
+## Cross-Origin Resource Sharing \(CORS\)
+
+Cross-Origin Resource Sharing \(CORS\) is a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin \(domain\) have permission to access selected resources from a server at a different origin. A web application executes a cross-origin HTTP request when it requests a resource that has a different origin \(domain, protocol, and port\) than its own origin. 
 
 ## 5 ways to reduce the page loading speed
 

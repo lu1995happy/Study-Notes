@@ -1,4 +1,4 @@
-# Leetcode Coding Questions
+# Leetcode Coding
 
 ## Leetcode 1: Two Sum
 

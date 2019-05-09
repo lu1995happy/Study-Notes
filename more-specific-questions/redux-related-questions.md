@@ -1,6 +1,8 @@
-# Redux Related Questions
+# Redux
 
 ## How does Redux work
+
+![](../.gitbook/assets/image%20%287%29.png)
 
 ## Redux
 
@@ -41,6 +43,8 @@ The store is a JavaScript object that holds application state. Along with this i
 * Registers listeners via subscribe\(listener\)
 * Handles unregistering of listeners via the function returned by subscribe\(listener\)
 
+The only way to change the state inside it is to dispatch an action on it. 
+
 ## Action
 
 Actions are plain JavaScript objects. They must have a type indicating the type of action being performed. In essence, actions are payload of information that send data from your application to your store. 
@@ -53,6 +57,18 @@ A reducer is simply a pure function that takes the previous state and an action,
 
 Redux thunk is a middleware that allows you to write action creators that return a function instead of an action. The thunk can then be used to delay the dispatch of an action if a certain condition is met. This allows you to handle the asynchronous dispatching of actions. This also allows you to dispatch multiple actions. 
 
+## createStore
+
+Creates a Redux store that holds the complete state tree of your app. There should only be a single store in your app. 
+
+* `reducer` - a reducing function that returns the next state tree, given the current state tree and an action to handle. 
+* `[preloadedState]`- the initial state. 
+* `[enhancer]`- the store enhancer. The only store enhancer that ships with Redux is `applyMiddleware()`
+
+## combineReducers
+
+The `combineReducers` helper function turns an object whose values are different reducing functions into a single reducing function you can pass to `createStore`.
+
 ## Middleware for handling asynchronous calls
 
 Redux Thunk, Redux Promise, Redux Saga
@@ -61,9 +77,21 @@ Redux Thunk, Redux Promise, Redux Saga
 
 Functions typically seen in Redux applications that provide functions to Redux on how to map state / dispatch function to a set of props. 
 
+## Redux Saga vs Redux Thunk
 
+Redux Thunk can never act in response to an action. Redux Saga, on the other hand, subscribes to the store and can trigger a saga to run or continue when a certain action is dispatched. 
 
+## Component vs Container in React Redux
 
+`Component` is part of the React API. A Component is a class or function that describes part of a React UI. 
+
+`Container` is an informal term for a React component that is connected to a redux store. Containers receive Redux state updates and dispatch actions, and they usually don't render DOM elements, they delegate rendering to presentational child components. 
+
+## React State vs Redux State
+
+React state is stored locally within a component. When it needs to be shared with other components, it is passed down through props. 
+
+When using Redux, state is stored globally in the Redux store. Any component that needs access to a value may subscribe to the store and gain access to that value. 
 
 
 

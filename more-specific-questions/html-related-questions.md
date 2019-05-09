@@ -1,4 +1,4 @@
-# HTML Related Questions
+# HTML
 
 ## What is HTML data-\* attribute
 
@@ -8,6 +8,10 @@ The data attributes consist of two parts:
 
 * The attribute name should not contain any uppercase letters, and must be at least one character long after the prefix "data-"
 * The attribute value can be any string
+
+## HTML semantic element
+
+A semantic element clearly describes its meaning to both the browser and the developer. e.g. &lt;form&gt;, &lt;table&gt;, &lt;article&gt;
 
 ## HTML5 aside element
 

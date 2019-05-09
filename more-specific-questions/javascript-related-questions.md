@@ -1,4 +1,8 @@
-# JavaScript Related Questions
+# JavaScript
+
+## How JavaScript work
+
+![](../.gitbook/assets/image%20%2811%29.png)
 
 ## Shallow Comparison Check
 
@@ -40,6 +44,12 @@ The following rules are applied:
 * If a function is invoked as a free function invocation. meaning it was invoked without any of the conditions present above, `this` is the global object. In a browser, it is the `window` object. If in strict mode \(`"use strict"`\), `this` will be `undefined` instead of the global object. 
 * If multiple of the above rules apply, the rule that is higher wins and will set the `this` value.
 * If the function is an ES6 arrow function, it ignores all the rules above and receives the `this` value of its surrounding scope at the time it is created. 
+
+## window vs document
+
+`window` is the main JavaScript object root, like the global object in the browser, also can be treated as the root of the DOM. 
+
+`document` is the main object of the rendered DOM. 
 
 ## Falsey Values
 
@@ -177,6 +187,13 @@ Callback Hell is referred to the problems caused by asynchronous AJAX calls, whi
 * keep the code shallow
 * modularize
 * handle every single error
+
+## How to make HTTP request
+
+* AJAX
+* jQuery 
+* Fetch
+* Axios
 
 ## Event Loop
 
