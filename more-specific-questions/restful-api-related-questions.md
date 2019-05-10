@@ -9,6 +9,14 @@
 
 ## The difference between PUT, POST and PATCH method
 
+## HTTP Status Code
+
+* 1xx: Informational
+* 2xx: Success
+* 3xx: Redirection
+* 4xx: Client Error
+* 5xx: Server Error
+
 ## MVC vs Flux
 
 MVC works both in server and client side development. MVC architecture: the user updates the controller, the controller manipulates the model, the model updates the view, and finally the user can see the view.

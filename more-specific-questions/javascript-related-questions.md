@@ -195,6 +195,23 @@ Callback Hell is referred to the problems caused by asynchronous AJAX calls, whi
 * Fetch
 * Axios
 
+## Fetch 
+
+A Fetch API provides a fetch method defined on a window object, which you can use to perform requests and sent it to the server. This method returns a Promise that you can use to retrieve the response of the request. 
+
+## Null process
+
+A null process - which takes its name from the concept of null pointers - is what happens when no formal process is put in place
+
+## BFS vs DFS
+
+| BFS | DFS |
+| :--- | :--- |
+| BFS visit nodes level by level in Graph | DFS visit nodes of graph depth wise. It visits nodes until reach a leaf or a node which doesn't have non-visited nodes |
+| A node is fully explored before any other can begin | Exploration of a node is suspended as soon as another unexplored is found |
+| Uses Queue data structure to store un-explored nodes | Uses Stack data structure to store un-explored nodes |
+| BFS is slower and require more memory | DFS is faster and require less memory  |
+
 ## Event Loop
 
 The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the task queue. If the call stack is empty and there are callback functions in the tack queue, a function is dequeued and pushed onto the call stack to be executed. 
@@ -318,6 +335,10 @@ disadvantages
 ## What is module and how do you use that
 
 A module is a separated part of a program. It helps developers to separate functionality and organize the codebase by using export and import. 
+
+## How to make JavaScript Multi-thread
+
+HTML5 Web Workers
 
 ## How can you share code between files
 

@@ -876,3 +876,15 @@ $(document).ready( function() {
 });
 ```
 
+## Remove duplicate number
+
+```javascript
+const arr = [1,1,1,1,2,2,2,3,3,4,5];
+
+unique = [...new Set(arr)];
+
+uniqueArray = arr.filter((item, pos) => {
+    return arr.indexOf(item) === pos;
+});
+```
+

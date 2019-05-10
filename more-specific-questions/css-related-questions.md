@@ -56,6 +56,8 @@ The z-index property specifies the stack order of an element. An element with gr
 * Flex-box layout is most appropriate to the components of an application and small-scale layouts, while the Grid layout is intended for larger scale layouts which aren't linear in their design
 * Flex-box is for defining a layout as a row or a column, whereas Grid is for defining a grid and fit content into it in two-dimensions
 
+shorthand for using Flex-box: performance issues and browser compatibility. 
+
 ## Animation vs Transition
 
 Animations within CSS3 allow the appearance and behavior of an element to be altered in multiple keyframes. Transitions provide a change from one state to another, while animations can set multiple points of transition upon different keyframes. 
