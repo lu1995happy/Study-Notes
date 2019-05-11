@@ -174,18 +174,18 @@ function TreeNode(val) {
 
 // BFS
 const inorderTraversal = (root) => {
-    const stack = [], res = [];
-    while (root || stack.length) {
-        if (root) {
-            stack.push(root);
-            root = root.left;
-        } else {
-            root = stack.pop();
-            res.push(root.val);
-            root = root.right;
-        }
+  const res = [], stack = [];
+  while (root || stack.length) {
+    if (root) {
+      stack.push(root);
+      root = root.left;
+    } else {
+      root = stack.pop();
+      res.push(root.val);
+      root = root.right;
     }
-    return res;
+  }
+  return res;
 }
 
 // DFS
@@ -208,6 +208,7 @@ const dfs = (root, res) => {
 ## **Leetcode 102: Binary Tree Level Order Traversal**
 
 ```javascript
+// BFS
 const levelorderTraversal = (root) => {
     const queue = [], res = [];
     if (!root) {
@@ -230,6 +231,25 @@ const levelorderTraversal = (root) => {
         res.push(temp);
     }
     return res;
+}
+
+// DFS
+const levelorderTraversal = (root) => {
+  const res = [];
+  dfs(res, root, 0);
+  return res;
+}
+
+const dfs = (res, root, height) => {
+  if (!root) {
+    return;
+  }
+  if (height >= res.length) {
+    res.push([]);
+  }
+  res[height].push(root.val);
+  dfs(res, root.left, height + 1);
+  dfs(res, root.right, height + 1);
 }
 ```
 
@@ -259,18 +279,18 @@ function isPalindrome(str) {
 
 // BFS
 const preorderTraversal = (root) => {
-    const res = [], stack = [];
-    while (root) {
-        res.push(root.val);
-        if (root.right) {
-            stack.push(root.right);
-        }
-        root = root.left;
-        if (!root && stack) {
-            root = stack.pop();
-        }
+  const res = [], stack = [];
+  while (root || stack.length) {
+    if (root) {
+      res.push(root.val);
+      stack.push(root);
+      root = root.left;
+    } else {
+      root = stack.pop();
+      root = root.right;
     }
-    return res;
+  }
+  return res;
 }
 
 // DFS 
@@ -294,6 +314,22 @@ const dfs = (root, res) => {
 
 ```javascript
 // Binary Tree Post-order Traversal: (left, right, root)
+
+// BFS
+const postorderTraversal = (root) => {
+  const stack = [], res = [];
+  while (root || stack.length) {
+    if (root) {
+      stack.push(root);
+      res.unshift(root.val);
+      root = root.right;
+    } else {
+      root = stack.pop();
+      root = root.left;
+    }
+  }
+  return res;
+}
 
 // DFS
 const postorderTraversal = (root) => {
