@@ -164,7 +164,74 @@ const merge = (nums1, m, nums2, n) => {
 
 ## **Leetcode 94: Binary Tree Inorder Traversal**
 
+```javascript
+function TreeNode(val) {
+    this.val = val;
+    this.left = this.right = null;
+}
+
+// Binary Tree In-order Traversal: (left, root, right)
+
+// BFS
+const inorderTraversal = (root) => {
+    const stack = [], res = [];
+    while (root || stack.length) {
+        if (root) {
+            stack.push(root);
+            root = root.left;
+        } else {
+            root = stack.pop();
+            res.push(root.val);
+            root = root.right;
+        }
+    }
+    return res;
+}
+
+// DFS
+const inorderTraversal = (root) => {
+    const res = [];
+    dfs(root, res);
+    return res;
+}
+
+const dfs = (root, res) => {
+    if (!root) {
+        return;
+    }
+    dfs(root.left, res);
+    res.push(root.val);
+    dfs(root.right, res);
+}
+```
+
 ## **Leetcode 102: Binary Tree Level Order Traversal**
+
+```javascript
+const levelorderTraversal = (root) => {
+    const queue = [], res = [];
+    if (!root) {
+        return res;
+    }
+    queue.push(root);
+    while (queue.length) {
+        const temp = [];
+        const size = queue.length; 
+        for (let i = 0; i < size; i++) {
+            const node = queue.shift();
+            temp.push(node.val);
+            if (node.left) {
+                queue.push(node.left);
+            }
+            if (node.right) {
+                queue.push(node.right);
+            }
+        }
+        res.push(temp);
+    }
+    return res;
+}
+```
 
 ## **Leetcode 110: Balanced Binary Tree**
 
@@ -186,6 +253,64 @@ function isPalindrome(str) {
 ```
 
 ## Leetcode 144: Binary Tree Preorder Traversal 
+
+```javascript
+// Binary Tree Pre-order Traversal: (root, left, right)
+
+// BFS
+const preorderTraversal = (root) => {
+    const res = [], stack = [];
+    while (root) {
+        res.push(root.val);
+        if (root.right) {
+            stack.push(root.right);
+        }
+        root = root.left;
+        if (!root && stack) {
+            root = stack.pop();
+        }
+    }
+    return res;
+}
+
+// DFS 
+const preorderTraversal = (root) => {
+    const res = [];
+    dfs(root, res);
+    return res;
+}
+
+const dfs = (root, res) => {
+    if (!root) {
+        return;
+    }
+    res.push(root.val);
+    dfs(root.left, res);
+    dfs(root.right, res);
+}
+```
+
+## Leetcode 145: Binary Tree Postorder Traversal
+
+```javascript
+// Binary Tree Post-order Traversal: (left, right, root)
+
+// DFS
+const postorderTraversal = (root) => {
+    const res = [];
+    dfs(root, res);
+    return res;
+}
+
+const dfs = (root, res) => {
+    if (!root) {
+        return;
+    }
+    dfs(root.left, res);
+    dfs(root.right, res);
+    res.push(root.val);
+}
+```
 
 ## Leetcode 151: Reverse words in a string
 
@@ -220,4 +345,24 @@ function isPalindrome(str) {
 ## Leetcode 349: Intersection of two arrays
 
 ## Leetcode 394: Decode String
+
+## Leetcode 412: Fizz Buzz
+
+```javascript
+const fizzBuzz = (n) => {
+    const res = [];
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            res.push("FizzBuzz");
+        } else if (i % 3 === 0) {
+            res.push("Fizz");
+        } else if (i % 5 === 0) {
+            res.push("Buzz");
+        } else {
+            res.push(i.toString());
+        }
+    }
+    return res;
+}
+```
 
