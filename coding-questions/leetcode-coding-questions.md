@@ -2,17 +2,118 @@
 
 ## Leetcode 1: Two Sum
 
+```javascript
+const twoSum = (nums, target) => {
+    let map = new Map();
+    let res = [];
+    for (let i = 0; i < nums.length; i++) {
+        if (map.has(target - nums[i])) {
+            res[0] = i;
+            res[1] = map.get(target - nums[i]);
+            return res;
+        } else {
+            map.set(nums[i], i);
+        }
+    }
+    return res;
+}
+```
+
 ## Leetcode 3: Longest substring without repeating characters
 
-## Leetcode 8: String to Integer
+```javascript
+const lengthOfLongestSubstring = (s) => {
+    if (s.length === 0) {
+        return 0;
+    }
+    let res = 0;
+    let map = new Map();
+    for (let i = 0, j = 0; i < s.length; i++) {
+        if (map.has(s[i])) {
+            j = Math.max(j, map.get(s[i]) + 1);
+        }
+        map.set(s[i], i);
+        res = Math.max(res, i - j + 1);
+    }
+    return res;
+}
+```
 
 ## Leetcode 20: Valid Parentheses
 
+```javascript
+const isValid = (s) => {
+    if (s.length % 2 !== 0) {
+        return false;
+    }
+    let stack = [];
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === "(") {
+            stack.push(")");
+        } else if (s[i] === "[") {
+            stack.push("]");
+        } else if (s[i] === "{") {
+            stack.push("}");
+        } else if (stack.length === 0 || stack.pop() !== s[i]) {
+            return false;
+        }
+    }
+    return stack.length === 0;
+}
+```
+
 ## Leetcode 33: Search In Rotated Sorted Array
+
+```javascript
+const search = (nums, target) => {
+    let low = 0, high = nums.length - 1;
+    while (low < high) {
+        let mid = Number.parseInt((low + high) / 2);
+        if (nums[mid] === target) {
+            return mid;
+        }
+        if (nums[low] <= nums[mid]) {
+            if (target >= nums[low] && target < nums[mid]) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        } else {
+            if (target > nums[mid] && target <= nums[high]) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+    }
+    return nums[low] === target ? low : -1;
+}
+```
 
 ## Leetcode 36: Valid Sudoku
 
 ## Leetcode 39: Combination Sum
+
+```javascript
+const combinationSum = (candidates, target) => {
+    const backtrack = (nums, remain, res, list, start) => {
+        if (remain < 0) {
+            return res;
+        }
+        if (remain === 0) {
+            res.push(list.slice());
+            return res;
+        }
+        for (let i = start; i < nums.length; i++) {
+            list.push(nums[i]);
+            backtrack(nums, remain - nums[i], res, list, i);
+            list.pop();
+        }
+        return res;
+    }
+    return backtrack(candidates, target, [], [], 0);
+}
+```
 
 ## Leetcode 46: Permutations
 
