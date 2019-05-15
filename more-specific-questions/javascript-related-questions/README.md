@@ -2,7 +2,7 @@
 
 ## How JavaScript work
 
-![](../.gitbook/assets/image%20%2811%29.png)
+![](../../.gitbook/assets/image%20%2811%29.png)
 
 ## Shallow Comparison Check
 
@@ -339,6 +339,40 @@ A module is a separated part of a program. It helps developers to separate funct
 ## How to make JavaScript Multi-thread
 
 HTML5 Web Workers
+
+## 4 ways to Deep Copy Object
+
+* Using iteration
+
+```javascript
+const iterationCopy = (obj) => {
+    let res = {};
+    for (let prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            res[prop] = obj[prop];
+        }
+    }
+    return res;
+}
+```
+
+* Converting to JSON and back
+
+```javascript
+JSON.parse(JSON.stringify(obj));
+```
+
+* Using Object.assign
+
+```javascript
+Object.assign({}, obj);
+```
+
+* Using Spread Operator
+
+```javascript
+newObject = {...oldObject};
+```
 
 ## How can you share code between files
 
