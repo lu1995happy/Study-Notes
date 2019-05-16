@@ -4,16 +4,42 @@
 
 ```jsx
 import React, { Component } from "react";
+import Person from "./Person/Person";
 
 class App extends Component {
     state = {
-        persons: [{name: "Harry", age: 28}]
+        person: [
+            {name: "Harry", age: 24}
+        ]
+    };
+    
+    switchNameHandler = (newName) => {
+        this.setState({
+            person: [
+                {name: newName, age: 24}
+            ]
+        });
+    };
+    
+    nameChangedHandler = (event) => {
+        this.setState({
+            person: [
+                {name: event.target.value, age: 24}
+            ]
+        });
     };
     
     render() {
         return (
             <div className="App"> 
-                <h1>Hi</h1>
+                <button onClick={() => this.switchNameHandler("Harry Lu")}>Switch Name</button>
+                <Person 
+                    name={this.state.person[0].name}
+                    age={this.state.person[0].age}
+                    click={this.switchNameHandler.bind(this, "Harry!!!")}
+                    changed={this.nameChangedHandler}
+                > My Hobbies: Sing, Dance, Rap, Basketball
+                </Person>
             </div>
         );
     }
@@ -30,8 +56,9 @@ import React from "react";
 const person = (props) => {
     return (
         <div>
-            <p>I'm {props.name} and I am {props.age} years old!</p>
+            <p> onClick={props.click} I'm {props.name} and I am {props.age} years old!</p>
             <p>{props.children}</p> // anything between the parent's opening and closing tag
+            <input type="text" onChange={props.changed} value={props.name} /> // two way data binding 
         </div>
     );
 };
