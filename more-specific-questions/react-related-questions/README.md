@@ -25,11 +25,11 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 * componentDidUpdate - also commonly used to update the DOM in response to prop or state changes.
 * componentWillUnmount - here you can cancel any outgoing network requests, or remove all eventListeners associated with the component. 
 
-![](../.gitbook/assets/image.png)
+![](../../.gitbook/assets/image.png)
 
 ## React - Redux Workflow
 
-![](../.gitbook/assets/image%20%289%29.png)
+![](../../.gitbook/assets/image%20%289%29.png)
 
 ## Redux vs setState\(\)
 
