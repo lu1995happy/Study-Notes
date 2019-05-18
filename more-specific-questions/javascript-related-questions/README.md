@@ -342,7 +342,7 @@ HTML5 Web Workers
 
 ## 4 ways to Deep Copy Object
 
-* Using iteration
+* Using iteration - not work for nested objects
 
 ```javascript
 const iterationCopy = (obj) => {
@@ -362,13 +362,13 @@ const iterationCopy = (obj) => {
 JSON.parse(JSON.stringify(obj));
 ```
 
-* Using Object.assign
+* Using Object.assign - not work for nested objects
 
 ```javascript
 Object.assign({}, obj);
 ```
 
-* Using Spread Operator
+* Using Spread Operator - not work for nested objects
 
 ```javascript
 newObject = {...oldObject};
