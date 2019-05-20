@@ -1,7 +1,6 @@
 # Table of contents
 
 * [React Interview Questions](README.md)
-* [Differences](differences.md)
 * [HTML](html-related-questions.md)
 * [CSS](css-related-questions.md)
 * [JavaScript](javascript-related-questions/README.md)
@@ -12,6 +11,7 @@
 * [Redux](redux-related-questions.md)
 * [NodeJS](nodejs.md)
 * [RESTful API](restful-api-related-questions.md)
+* [Differences](differences.md)
 * [Coding Questions](coding-questions/README.md)
   * [Leetcode Coding](coding-questions/leetcode-coding-questions.md)
   * [JavaScript Coding](coding-questions/javascript-coding-questions.md)
