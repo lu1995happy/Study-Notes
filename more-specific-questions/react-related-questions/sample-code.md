@@ -103,3 +103,31 @@ const App = props => {
 export default App;
 ```
 
+## ErrorBoundary 
+
+```jsx
+// must wrap the code you want to test using high order components 
+import React, { Component } from 'react';
+
+class ErrorBoundary extends Component {
+  state = {
+    hasError: false,
+    errorMessage: ''
+  }
+
+  componentDidCatch = (error, info) => {
+    this.setState({ hasError: true, errorMessage: error });
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <h1>{this.state.errorMessage}</h1>;
+    } else {
+      return this.props.children;
+    }
+  }
+}
+
+export default ErrorBoundary;
+```
+

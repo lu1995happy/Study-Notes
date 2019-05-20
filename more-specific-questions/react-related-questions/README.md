@@ -1,5 +1,9 @@
 # React
 
+## React
+
+React is a Javascript library for building User Interfaces.
+
 ## How does React work
 
 React creates a virtual DOM. When state changes in a component it firstly runs a "diffing" algorithm, which identifies what has changed in the virtual DOM. The second step is reconciliation, where it updates the DOM with the results of diff.
@@ -55,6 +59,13 @@ In Angular, if you change the UI element, then the corresponding model state cha
 
 In React, when the model state update, it will render the change in the UI element. However, if you change the UI element, the model state does not change. 
 
+## Two Kinds of Applications 
+
+| Single Page Applications | Multi Page Applications |
+| :--- | :--- |
+| Only ONE HTML Page, Content is \(re\)rendered on Client | Multiple HTML Pages, Content is rendered on Server. |
+| Typically only ONE ReactDOM.render\(\) call | One ReactDOM.render\(\) call per "widget" |
+
 ## Server-Side Rendering - pros & cons 
 
 advantages:
@@ -97,6 +108,12 @@ using this.forceUpdate\(\)
 ## User Authentication Login
 
 The React App sends the Auth to the server, and then the server sends back a Token that will be stored in the JavaScript localStorage. After that we can use the Token we received to request for protected resources from the server.
+
+## 3 ways for Debugging React Apps
+
+* Finding Logical Errors by using Chrome Developer Tools - Check your code inside Source
+* Working with the React Developer Tools Chrome Extension 
+* Using Error Boundaries \(**only use Error Boundaries for cases where you know that it might fail and you can't control that\)** [**ErrorBoundary Sample Code**](sample-code.md#errorboundary)\*\*\*\*
 
 ## Error Handling Method - Error Boundary
 
