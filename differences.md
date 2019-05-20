@@ -34,12 +34,6 @@
 | :--- | :--- |
 | the tag of an object representation of a DOM node | a function or a class which optionally accepts input and returns a React element |
 
-## Controlled Component vs Uncontrolled Component
-
-| Controlled Component | Uncontrolled Component |
-| :--- | :--- |
-| the value of form elements \(input, textarea, select\) is stored in react component and changed by event handler | the value of form elements is stored in DOM not in react component, we can use refs to operate the DOM element |
-
 ## Component vs Pure Component
 
 | Component  | Pure Component |
@@ -100,26 +94,6 @@
 | receive data and callbacks via props | provide the data and behavior to presentational or other container components |
 | rarely have own state and do with UI state instead of data state | call flux actions and provide these as callbacks to the presentational components, often stateful |
 
-## Visibility: hidden vs Display: none
-
-| Visibility: hidden | Display: none |
-| :--- | :--- |
-| hides the element | removes the element from the document |
-| still takes up space in the layout | doesn't take up any space |
-
-## Display: inline vs Display: inline-block
-
-| display: inline | display: inline-block |
-| :--- | :--- |
-|  | allows to set a width and height on the element |
-|  | the top and bottom margins/paddings are respected |
-
-## Display: block vs Display: inline-block
-
-| display: block | display: inline-block |
-| :--- | :--- |
-|  | doesn't add a line-break after the element, so the element can sit next to other elements. |
-
 ## Class Component vs Functional Component
 
 | Class Component | Functional Component |
@@ -140,11 +114,4 @@
 | :--- | :--- |
 | surrounded with HTML tags | an Object |
 | slower | faster |
-
-## Local Storage vs Session Storage
-
-| Local Storage | Session Storage |
-| :--- | :--- |
-| stores data with no expiration date, and gets cleared only through JavaScript, or clearing the Browser cache / Locally Stored Data | stores data only for a session, meaning that the data is stored until the browser or tab is closed |
-| storage limit is larger | data is never transferred to the server |
 

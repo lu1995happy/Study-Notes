@@ -32,10 +32,12 @@ class App extends Component {
     render() {
         return (
             <div className="App"> 
+                // first way to pass method references between components
                 <button onClick={() => this.switchNameHandler("Harry Lu")}>Switch Name</button>
                 <Person 
                     name={this.state.person[0].name}
                     age={this.state.person[0].age}
+                    // second way to pass method references between components
                     click={this.switchNameHandler.bind(this, "Harry!!!")}
                     changed={this.nameChangedHandler}
                 > My Hobbies: Sing, Dance, Rap, Basketball
@@ -67,6 +69,12 @@ export default person;
 ```
 
 ## React Hooks - useState
+
+useState\(\) returns an array with exactly two elements: 
+
+\(1\) Your current state value, \(2\) A method to update your state value.
+
+useState\(\) will replace the old state instead of merging. 
 
 ```jsx
 import React, { useState } from "react";

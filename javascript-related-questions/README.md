@@ -1,8 +1,22 @@
 # JavaScript
 
+## JavaScript
+
+JavaScript is a high-level, interpreted programming language.
+
+## ES6 New Features
+
+* let, const
+* class
+* arrow function
+* spread and destructing
+* modules
+* promise
+* symbol
+
 ## How JavaScript work
 
-![](../../.gitbook/assets/image%20%2811%29.png)
+![](../.gitbook/assets/image%20%2811%29.png)
 
 ## Shallow Comparison Check
 

@@ -29,11 +29,11 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 * componentDidUpdate - also commonly used to update the DOM in response to prop or state changes.
 * componentWillUnmount - here you can cancel any outgoing network requests, or remove all eventListeners associated with the component. 
 
-![](../../.gitbook/assets/image.png)
+![](../.gitbook/assets/image.png)
 
 ## React - Redux Workflow
 
-![](../../.gitbook/assets/image%20%289%29.png)
+![](../.gitbook/assets/image%20%289%29.png)
 
 ## Redux vs setState\(\)
 
@@ -103,7 +103,7 @@ The constructor for a React component is called before it is mounted. When imple
 
 ## How to re-render out of Lifecycle
 
-using this.forceUpdate\(\)
+this.forceUpdate\(\)
 
 ## User Authentication Login
 
@@ -137,11 +137,13 @@ Keys help React identify which items have changed, are added, or are removed. Ke
 
 ## Where in a React component should you make an AJAX request?
 
-componentDidMount is where an AJAX request should be made in a React component. This method will be executed when the component "mounts" \(is added to the DOM\) for the first time. This method is only executed once during the component's life. Importantly, you can't guarantee the AJAX request will have resolved before the component mounts. If it doesn't, that would mean that you had be trying to setState on an unmounted component, which would not work. Making your AJAX request in componentDidMount will guarantee that there's a component to update. 
+componentDidMount
 
-## What are controlled components
+## Controlled Component vs Uncontrolled Component
 
-In HTML, form elements such as &lt;input&gt;, &lt;textarea&gt; and &lt;select&gt; typically maintain their own state and update it based on user input. When a user submits a form the values from the aforementioned elements are sent with the form. With React it works differently. The component containing the form will keep track of the value of the input in its state and will re-render the component each time the callback function e.g. onChange is fired as the state will be updated. An input form element whose value is controlled by React in this way is called a "controlled component".
+| Controlled Component | Uncontrolled Component |
+| :--- | :--- |
+| the value of form elements \(input, textarea, select\) is stored in react component and changed by event handler | the value of form elements is stored in DOM not in react component, we can use refs to operate the DOM element |
 
 ## Refs
 
@@ -172,13 +174,9 @@ Shadow DOM provides a way to attach a hidden separated DOM to an element. It all
 
 Until you eject you are unable to configure web-pack or babel presets.
 
-## Props in React
-
-props are properties that are passed into a child component from its parent, and are read only. 
-
 ## Props vs State
 
-props are read only and passed in from parent to child component. State is an internal object for a particular react component and can change, as it determines the state of the component. It's not visible to other components. 
+props are properties that are passed into a child component from its parent, and are read only.  State is an internal object for a particular react component and can change, as it determines the state of the component. It's not visible to other components. 
 
 ## Pure Component
 

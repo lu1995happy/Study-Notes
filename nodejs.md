@@ -1,5 +1,13 @@
 # NodeJS
 
+## Node.JS
+
+Node.JS is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code server-side.
+
+## Express
+
+Express.JS is a web application framework for Node.JS. It is designed for building web applications and APIs.
+
 ## NodeJS architecture 
 
 Single Threaded Event Loop Model 
