@@ -41,9 +41,11 @@ Use Redux if your state is shared across multiple components.
 
 Use setState\(\) if it’s used only in a single component.
 
-## React Component
+## Elements vs Components
 
-A component is a function or a class which optionally accepts input and returns a React element.
+React elements are the building blocks of React applications. An element describes what you want to see on the screen. React elements are immutable. Typically, elements are not used directly, but get returned from components. 
+
+React components are small, reusable pieces of code that return a React element to be rendered to the page. The simplest version of React component is a plain JavaScript function that returns a React element. 
 
 ## React Router
 
@@ -95,6 +97,20 @@ disadvantages:
 * initial load might require more time
 * in most cases, requires an external library
 
+## PureComponent
+
+`React.PureComponent`is similar to `React.Component`. The difference between them is that `React.Component` doesn't implement `shouldComponentUpdate()`, but `React.PureComponent` implements it with a shallow prop and state comparison. 
+
+## React.memo
+
+`React.memo` is a higher order component. It's similar to `React.PureComponent` but for function components instead of classes. 
+
+If your function component renders the same result given the same props, you can wrap it in a call to `React.memo` for a performance boost in some cases by memoizing the result. This means that React will skip rendering the component, and reuse the last rendered result. 
+
+By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can also provide a custom comparison function as the second argument. 
+
+This method only exists as a performance optimization. 
+
 ## Why need super\(props\)
 
 If you don't initialize state and you don't bind methods, you don't need to implement the constructor for your React component.
@@ -135,7 +151,7 @@ React has a powerful composition model, and composition is recommended instead o
 
 ## Keys
 
-Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity. 
+A "key" is a special string attribute you need to include when creating arrays of elements. Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside an array to give the elements a stable identity. 
 
 ## Where in a React component should you make an AJAX request?
 
@@ -143,9 +159,11 @@ componentDidMount
 
 ## Controlled Component vs Uncontrolled Component
 
-| Controlled Component | Uncontrolled Component |
-| :--- | :--- |
-| the value of form elements \(input, textarea, select\) is stored in react component and changed by event handler | the value of form elements is stored in DOM not in react component, we can use refs to operate the DOM element |
+An input form element whose value is controlled by React is called a controlled component. When a user enters data into a controlled component a change event handler is triggered and your code decides whether the input is valid \(by re-rendering with the updated value\). If you do not re-render then the form element will remain unchanged. 
+
+An uncontrolled component works like form elements do outside of React. When a user inputs data into a form field \(an input box, dropdown, etc\) the updated information is reflected without React needing to do anything. However, this also means that you can't force the field to have a certain value.
+
+In most cases you should use controlled components. 
 
 ## Single-page Application
 
@@ -153,7 +171,7 @@ A single-page application is an application that loads a single HTML page and al
 
 ## Refs
 
-Refs are created using React.createRef\(\) and attached to React elements via the ref attribute. Refs are commonly assigned to an instance property when a component is constructed so they can be referenced throughout the component. Refs provide a way to access DOM nodes or React elements created in the render method. Good examples of when to use refs are for managing focus/text selection or media playback, triggering imperative animations, or integrating with third-party DOM libraries. 
+React supports a special attribute that you can attach to any component. The ref attribute can be an object created by `React.createRef()`function or a callback function. When the ref attribute is a callback function, the function receives the underlying DOM element or class instance as its argument. This allows you to have direct access to the DOM element or component instance. 
 
 ## Higher Order Component
 
@@ -184,7 +202,11 @@ Until you eject you are unable to configure web-pack or babel presets.
 
 ## Props vs State
 
-props are properties that are passed into a child component from its parent, and are read only.  State is an internal object for a particular react component and can change, as it determines the state of the component. It's not visible to other components. 
+`Props` are inputs to a React component. They are data passed down from a parent component to a child component. Props are read only. 
+
+`State` is an internal object for a particular react component and can change, as it determines the state of the component. It's not visible to other components. 
+
+`props.children` contains the content between the opening and closing tags of a component.
 
 only changes in `props` and/or `state` trigger React to re-render the components and potentially update the DOM in the browser. 
 
@@ -206,9 +228,44 @@ They help indicate to React what data types a React component's properties are a
 
 [PropTypes Sample Code](sample-code.md#using-proptypes-to-check-the-input-data-types)
 
+## Optimizing Performance
+
+* Use the Production Build
+* Profiling Components with the Chrome Performance Tab
+* Profiling Components with the DevTools Profiler
+* Virtualize Long Lists
+* Avoid Reconciliation
+* shouldComponentUpdate in Action
+* The Power Of Not Mutating Data
+* Using Immutable Data Structures 
+
+## Reconciliation 
+
+When a component's props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM. This process is called Reconciliation. 
+
 ## How Virtual DOM works
 
 React builds up its own "virtual DOM" which is a lightweight representation of the DOM optimized for React's diffing algorithms and reconciliation process. Virtual DOM changes eventually propagate to the actual DOM at the end of the reconciliation process. 
+
+## Compilers - Babel
+
+A JavaScript compiler takes JavaScript code, transforms it and returns JavaScript code in a different format. The most common use case is to take ES6 syntax and transform it into syntax that older browsers are capable of interpreting.
+
+## Bundlers - Webpack & Browserify
+
+Bundlers take JavaScript and CSS code written as separate modules, and combine them together into a few files better optimized for the browsers. 
+
+## Package Managers - NPM & Yarn
+
+Package managers are tools that allow you to manager dependencies in your project. 
+
+## Accessibility
+
+* Semantic HTML
+* Accessible Forms
+* Focus Control
+* Mouse and pointer events
+* More Complex Widgets
 
 ## Test method
 
