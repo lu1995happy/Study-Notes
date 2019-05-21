@@ -111,6 +111,14 @@ By default it will only shallowly compare complex objects in the props object. I
 
 This method only exists as a performance optimization. 
 
+## React.Fragment
+
+The `React.Fragment` component lets you return multiple elements in a `render()` method without creating an additional DOM element. You can also use it with the shorthand `<></>`syntax. 
+
+## React.lazy
+
+`React.lazy()` lets you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading components that aren't used during the initial render. 
+
 ## Why need super\(props\)
 
 If you don't initialize state and you don't bind methods, you don't need to implement the constructor for your React component.
