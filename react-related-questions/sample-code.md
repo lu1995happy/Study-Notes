@@ -1,4 +1,4 @@
-# Sample Code
+# React Sample Code
 
 ## Class Component - Presentational, Dumb, Stateless
 
@@ -68,49 +68,6 @@ const person = (props) => {
 export default person;
 ```
 
-## React Hooks - useState
-
-useState\(\) returns an array with exactly two elements: 
-
-\(1\) Your current state value, \(2\) A method to update your state value.
-
-useState\(\) will replace the old state instead of merging. 
-
-```jsx
-import React, { useState } from "react";
-import Person from "./Person/Person";
-
-const App = props => {
-    const [personState, setPersonState] = useState({
-        person: [
-            { name: "Harry", age: 24 }
-        ]
-    });
-    
-    const [otherState, setOtherState] = useState("some other value");
-    
-    const switchNameHandler = () => {
-        setPersonState({
-            person: [
-                {name: "Harry Lu", age: 25}
-            ]
-        });
-    };
-    
-    return (
-        <div className="App">
-            <button onClick={this.switchNameHandler}>Switch Name</button>
-            <Person
-                name={personState.person[0].name}
-                age={personState.person[0].age}
-            /> 
-        </div>
-    );
-}
-
-export default App;
-```
-
 ## ErrorBoundary 
 
 ```jsx
@@ -137,5 +94,70 @@ class ErrorBoundary extends Component {
 }
 
 export default ErrorBoundary;
+```
+
+## Three ways using Higher Order Component
+
+```jsx
+// This one just do wrap other component
+const aux = props => props.children; 
+
+export default aux;
+```
+
+```jsx
+// This one just add styling to the children component
+import React from 'react';
+
+// const withClass = props => (
+//   <div className={props.classes}>
+//     {props.children}
+//   </div>
+// );
+
+const withClass = (WrappedComponent, className) => {
+  return props => (
+    <div className={className}>
+        // getting the props from the child compoent
+        <WrappedComponent {...props}/> 
+    </div>
+  );
+}
+
+export default withClass;
+```
+
+```jsx
+// This is the built-in way that works same as the first one
+import React, {Fragment} from 'react';
+
+<Fragment>
+    // some content
+</Fragment>
+```
+
+## Using PropTypes to check the input Data types
+
+```jsx
+// Use this to check the input data types of the props
+import PropTypes from 'prop-types';
+
+Person.propTypes = {
+  click: PropTypes.func,
+  name: PropTypes.string,
+  age: PropTypes.number,
+  changed: PropTypes.func
+};
+```
+
+## Better way to use setState\(\)
+
+```jsx
+// the better way to update the state when you are depending on old state
+this.setState((prevState, props) => {
+    return {
+        state: prevState.counter + 1
+    };
+});
 ```
 

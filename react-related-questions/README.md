@@ -113,13 +113,15 @@ The React App sends the Auth to the server, and then the server sends back a Tok
 
 * Finding Logical Errors by using Chrome Developer Tools - Check your code inside Source
 * Working with the React Developer Tools Chrome Extension 
-* Using Error Boundaries \(**only use Error Boundaries for cases where you know that it might fail and you can't control that\)** [**ErrorBoundary Sample Code**](sample-code.md#errorboundary)\*\*\*\*
+* Using Error Boundaries \(**only use Error Boundaries for cases where you know that it might fail and you can't control that\)** 
 
 ## Error Handling Method - Error Boundary
 
 Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
 
 A class component becomes an error boundary if it defines a new lifecycle method called `componentDidCatch(error, info)`
+
+[**ErrorBoundary Sample Code**](sample-code.md#errorboundary)\*\*\*\*
 
 ## Composition vs inheritance in React
 
@@ -145,6 +147,10 @@ componentDidMount
 | :--- | :--- |
 | the value of form elements \(input, textarea, select\) is stored in react component and changed by event handler | the value of form elements is stored in DOM not in react component, we can use refs to operate the DOM element |
 
+## Single-page Application
+
+A single-page application is an application that loads a single HTML page and all the necessary assets \(such as JavaScript and CSS\) required for the application to run. Any interactions with the page or subsequent pages do not require a round trip to the server which means the page is not reloaded.
+
 ## Refs
 
 Refs are created using React.createRef\(\) and attached to React elements via the ref attribute. Refs are commonly assigned to an instance property when a component is constructed so they can be referenced throughout the component. Refs provide a way to access DOM nodes or React elements created in the render method. Good examples of when to use refs are for managing focus/text selection or media playback, triggering imperative animations, or integrating with third-party DOM libraries. 
@@ -152,6 +158,8 @@ Refs are created using React.createRef\(\) and attached to React elements via th
 ## Higher Order Component
 
 A higher order component is a function that takes a component and returns a new component. HOC allows you to reuse code, logic and bootstrap abstraction.The most common is probably Redux's connect function. Beyond simply sharing utility libraries and simple composition, HOC is the best way to share behavior between React components. If you find yourself writing a lot of code in different places that does the same thing, you may be able to refactor that code into a reusable HOC.
+
+[Higher Order Component Sample Code](sample-code.md#three-ways-using-higher-order-component)
 
 ## Why is it advised to pass a callback function to setState as opposed to an Object
 
@@ -178,6 +186,8 @@ Until you eject you are unable to configure web-pack or babel presets.
 
 props are properties that are passed into a child component from its parent, and are read only.  State is an internal object for a particular react component and can change, as it determines the state of the component. It's not visible to other components. 
 
+only changes in `props` and/or `state` trigger React to re-render the components and potentially update the DOM in the browser. 
+
 ## Pure Component
 
 A pure \(functional\) component in React is stateless \(like a dumb component\) and always renders the same given the same set of input props. 
@@ -193,6 +203,8 @@ To determine what should be rendered for a particular component. Could be a comp
 ## PropTypes
 
 They help indicate to React what data types a React component's properties are and should accept. 
+
+[PropTypes Sample Code](sample-code.md#using-proptypes-to-check-the-input-data-types)
 
 ## How Virtual DOM works
 

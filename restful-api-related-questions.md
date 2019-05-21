@@ -1,6 +1,6 @@
 # RESTful API
 
-## Can you map CRUD to http methods on a RESTful API
+## Map CRUD to HTTP methods on a RESTful API
 
 * Create - Post
 * Read - Get
