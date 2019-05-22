@@ -154,9 +154,10 @@ Person.propTypes = {
 
 ```jsx
 // the better way to update the state when you are depending on old state
+// Since setState updates the state asynchronously
 this.setState((prevState, props) => {
     return {
-        state: prevState.counter + 1
+        counter: prevState.counter + 1
     };
 });
 ```

@@ -205,6 +205,8 @@ const dfs = (root, res) => {
 }
 ```
 
+## **Leetcode 100: Same Tree**
+
 ## **Leetcode 102: Binary Tree Level Order Traversal**
 
 ```javascript
@@ -348,6 +350,8 @@ const dfs = (root, res) => {
 }
 ```
 
+## Leetcode 148: Sort List
+
 ## Leetcode 151: Reverse words in a string
 
 ## Leetcode 155: Min Stack
@@ -401,4 +405,8 @@ const fizzBuzz = (n) => {
     return res;
 }
 ```
+
+## Leetcode 680: Valid Palindrome II
+
+## Leetcode 695: Max Area of Island
 

@@ -38,6 +38,8 @@ The closure has access to variables in three scopes
 * variables in the enclosing function's scope
 * global variables
 
+We can use Closure to declare a private variable.
+
 ## Higher-Order Function
 
 A higher-order function is any function that takes one or more functions as arguments, which it uses to operate on some data, and/or returns a function as a result. Higher-order functions are meant to abstract some operation that is performed repeatedly. e.g.`map`, `forEach`, `filter`, `reduce`, `bind`. 
@@ -307,10 +309,6 @@ cons:
 
 * slightly more complex code
 * in older browsers where ES6 is not supported, you need to load a polyfill in order to use it
-
-## Creating true private methods in JavaScript
-
-They are very memory inefficient, as a new copy of the method would be created for each instance.
 
 ## Software Design Pattern
 
