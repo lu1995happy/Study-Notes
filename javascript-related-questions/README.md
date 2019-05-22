@@ -394,3 +394,7 @@ On the client \(browser environment\), as long as the variables/functions are de
 
 On the server \(Node.js\), Each file is treated as a module and it can export variables and functions by attaching them to the `module.exports` object.
 
+## Test Method
+
+Jasmine 
+
