@@ -931,3 +931,23 @@ wait().then((data) => {
 }) // {a: 1, b: 2}
 ```
 
+## Call the callback function with delay time in the array
+
+```javascript
+const times = [200, 500, 300];
+
+const wait = (time) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("test");
+        }, time);
+    })
+}
+
+const solution = async () => {
+    for (let i = 0; i < times.length; i++) {
+        await wait(times[i]);
+    }
+}
+```
+
