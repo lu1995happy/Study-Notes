@@ -888,3 +888,46 @@ uniqueArray = arr.filter((item, pos) => {
 });
 ```
 
+## Combine an object with same key value
+
+```javascript
+// input: const obj = [{k: "a", v: 2}, {k: "b", v: 3}, {k: "c", v: 7}, {k: "c", v: 5}];
+// output: [{a: 4}, {b: 6}, {c: 19}];
+
+const multi_reduce = (arr) => {
+  return arr.reduce((res, element) => {
+    const index = res.findIndex(item => item[element.k]);
+    if (index > 0) {
+      res[index][element.k] += element.v;
+    } else {
+      const obj = {};
+      obj[element.k] = element.v * 2;
+      res.push(obj);
+    }
+    return res;
+  }, []);
+}
+```
+
+## Pass two Promise result into a new Promise
+
+```javascript
+const promise = (obj) => {
+  return new Promise((resolve => {
+    setTimeout(() => {
+      resolve(obj);
+    }, 0);
+  }))
+}
+
+const wait = async () => {
+  const val1 = await promise({a: 1});
+  const val2 = await promise({b: 2});
+  return await promise({...val1, ...val2});
+}
+
+wait().then((data) => {
+  console.log(data);
+}) // {a: 1, b: 2}
+```
+
