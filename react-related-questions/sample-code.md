@@ -1,6 +1,6 @@
 # React Sample Code
 
-## Class Component - Presentational, Dumb, Stateless
+## Class Component - Containers, Smart, Stateful
 
 ```jsx
 import React, { Component } from "react";
@@ -50,7 +50,7 @@ class App extends Component {
 export default App;
 ```
 
-## Functional Component - Containers, Smart, Stateful
+## Functional Component - Presentational, Dumb, Stateless
 
 ```jsx
 import React from "react";
