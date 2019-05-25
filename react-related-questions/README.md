@@ -209,6 +209,10 @@ React supports a special attribute that you can attach to any component. The ref
 
 By using Refs, you can create reusable component as much as you want. 
 
+## Forwarding Refs
+
+Ref forwarding is a technique for automatically passing a ref through a component to one of its children. This is typically not necessary for most components in the application. However, it can be useful for some kinds of components, especially in reusable component libraries. 
+
 ## Higher Order Component
 
 A higher order component is a function that takes a component and returns a new component. HOC allows you to reuse code, logic and bootstrap abstraction.The most common is probably Redux's connect function. Beyond simply sharing utility libraries and simple composition, HOC is the best way to share behavior between React components. If you find yourself writing a lot of code in different places that does the same thing, you may be able to refactor that code into a reusable HOC.
