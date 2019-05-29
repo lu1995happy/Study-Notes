@@ -109,17 +109,24 @@ class ErrorBoundary extends Component {
     hasError: false,
     errorMessage: ''
   }
+  
+  static getDerivedStateFromError(error) {
+    // update state so the next render will show the fallback UI.
+    return { hasError: true };
+  }
 
   componentDidCatch = (error, info) => {
+    // you can also log the error to an error reporting service
+    // logErrorToMyService(error, info);
     this.setState({ hasError: true, errorMessage: error });
   }
 
   render() {
     if (this.state.hasError) {
+      // you can render any custom fallback UI
       return <h1>{this.state.errorMessage}</h1>;
-    } else {
-      return this.props.children;
-    }
+    } 
+    return this.props.children;
   }
 }
 
@@ -164,20 +171,6 @@ import React, {Fragment} from 'react';
 <Fragment>
     // some content
 </Fragment>
-```
-
-## Using PropTypes to check the input Data types
-
-```jsx
-// Use this to check the input data types of the props
-import PropTypes from 'prop-types';
-
-Person.propTypes = {
-  click: PropTypes.func,
-  name: PropTypes.string,
-  age: PropTypes.number,
-  changed: PropTypes.func
-};
 ```
 
 ## Better way to use setState\(\)
@@ -320,7 +313,7 @@ function Component() {
 }
 ```
 
-## Context & Ref & Fragment
+## Context & Ref & Fragment & PropTypes
 
 ```jsx
 import React, { Component } from 'react';
@@ -392,5 +385,20 @@ export default Person;
 >
   <Person/>
 </AuthContext.Provider>
+```
+
+## forwardRef
+
+```jsx
+// You can now get a ref directly to the DOM button
+const ref = React.createRef();
+<FancyButton ref={ref}>Click me!</FancyButton>;
+
+const FancyButton = React.forwardRef((props, ref) => (
+    // ref.current now point to the <button> DOM node
+    <button ref={ref} {...props}> 
+        {props.children}
+    </button>
+));
 ```
 

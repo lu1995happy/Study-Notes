@@ -174,7 +174,16 @@ The React App sends the Auth to the server, and then the server sends back a Tok
 
 Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
 
-A class component becomes an error boundary if it defines a new lifecycle method called `componentDidCatch(error, info)`
+A class component becomes an error boundary if it defines either \(or both\) of the lifecycle methods `static getDerivedStateFromError()` or `componentDidCatch()`. Use `static getDerivedStateFromError()` to render a fallback UI after an error has been thrown. Use `componentDidCatch()` to log error information. 
+
+Error Boundary does not catch errors for:
+
+* Event handlers
+* Asynchronous code
+* Server side rendering
+* Errors thrown in the error boundary itself
+
+Errors that were not caught by any error boundary will result in unmounting of the whole React component tree.
 
 [**ErrorBoundary Sample Code**](sample-code.md#errorboundary)\*\*\*\*
 
@@ -281,7 +290,7 @@ To determine what should be rendered for a particular component. Could be a comp
 
 They help indicate to React what data types a React component's properties are and should accept. 
 
-[PropTypes Sample Code](sample-code.md#using-proptypes-to-check-the-input-data-types)
+[PropTypes Sample Code](sample-code.md#context-and-ref-and-fragment)
 
 ## Optimizing Performance
 
