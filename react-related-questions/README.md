@@ -144,6 +144,12 @@ The `React.Fragment` component lets you return multiple elements in a `render()`
 
 `React.lazy()` lets you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading components that aren't used during the initial render. 
 
+[React.lazy & Suspense Code Sample](sample-code.md#react-lazy)
+
+## Suspense
+
+The suspense component shows the fallback content while you are waiting for the child components to load when the parent component renders. 
+
 ## Why need super\(props\)
 
 If you don't initialize state and you don't bind methods, you don't need to implement the constructor for your React component.
@@ -197,6 +203,8 @@ An input form element whose value is controlled by React is called a controlled 
 An uncontrolled component works like form elements do outside of React. When a user inputs data into a form field \(an input box, dropdown, etc\) the updated information is reflected without React needing to do anything. However, this also means that you can't force the field to have a certain value.
 
 In most cases you should use controlled components. 
+
+[Controlled Components Code Sample](sample-code.md#controlled-component)
 
 ## Single-page Application
 

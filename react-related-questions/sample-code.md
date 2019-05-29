@@ -273,3 +273,50 @@ class App extends Component {
 export default App;
 ```
 
+## Controlled Component
+
+In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with `setState()`.
+
+We can combine the two by making the React state be the "single source of truth". Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a "controlled component".
+
+```jsx
+class Form extends React.Component {
+    state = { value: "" };
+    handleChange = (event) => {
+        this.setState({ value: event.target.value });
+    };
+    handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state.value);
+    }
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <label> Name:
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
+        );
+    }
+}
+```
+
+## React Lazy & Suspense
+
+`React.lazy` takes a function that must call a dynamic `import()`. This must return a `Promise` which resolves to a module with a default export containing a React component. 
+
+```jsx
+const MyComponent = React.lazy(() => import("./myComponent"));
+
+function Component() {
+    return (
+        <div>
+            <Suspense fallback={<div>Loading...</div>}>
+                <MyComponent />
+            </Suspense>
+        </div>
+    );
+}
+```
+
