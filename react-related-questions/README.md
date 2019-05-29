@@ -18,23 +18,12 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 
 ## React Lifecycle Methods 
 
-* constructor
-* componentWillMount - this is most commonly used for app configuration in your root component. 
-* render
-* componentDidMount - here you want to do all the setup you couldn't do without a DOM, and start getting all the data you need. Also if you want to set up eventListeners etc, this lifecycle hook is a good place to do that.
-* componentWillReceiveProps - this lifecycle acts on particular prop changes to trigger state transitions.
-* shouldComponentUpdate - if you are worried about wasted renders, shouldComponentUpdate is a great place to improve performance as it allows you to prevent a re-render. If component received new prop. shouldComponentUpdate should always return a boolean and based on what this is will determine if the component is re-rendered or not.
-* componentWillUpdate - rarely used. It can be used instead of componentWillReceiveProps on a component that also has shouldComponentUpdate \(but no access to previous props\).
-* render
-* componentDidUpdate - also commonly used to update the DOM in response to prop or state changes.
-* componentWillUnmount - here you can cancel any outgoing network requests, or remove all eventListeners associated with the component. 
-
 Mounting 
 
 * constructor\(\)
 * static getDerivedStateFromProps\(\)
 * render\(\)
-* componentDidMount\(\)
+* componentDidMount\(\) - runs after the component output has been rendered to the DOM. 
 
 Updating
 
@@ -58,6 +47,12 @@ Error Handling
 ## React - Redux Workflow
 
 ![](../.gitbook/assets/image%20%289%29.png)
+
+## Toolchains -  contains package manager, bundler and compiler
+
+* Create React App - single-page application
+* NextJS - static and server-rendered applications including styling and routing solutions
+* Gatsby - static websites 
 
 ## Redux vs setState\(\)
 
