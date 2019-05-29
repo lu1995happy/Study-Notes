@@ -60,6 +60,12 @@ Use Redux if your state is shared across multiple components.
 
 Use setState\(\) if it’s used only in a single component.
 
+## Using State Correctly
+
+* Do not modify state directly
+* State updates may be asynchronous
+* State updates are merges
+
 ## Elements vs Components
 
 React elements are the building blocks of React applications. An element describes what you want to see on the screen. React elements are immutable. Typically, elements are not used directly, but get returned from components. 
@@ -74,11 +80,11 @@ React Router is the standard routing library for React. React Router keeps your 
 
 Synthetic Event is a cross-browser wrapper around the browser's native event. It has the same interface as the browser's native event, including `stopPropagation()` and `preventDefault()`, except the events work identically across all browsers. 
 
-## One way data binding in React vs Two way data binding in Angular
+## One way data flow in React vs Two way data binding in Angular
 
 In Angular, if you change the UI element, then the corresponding model state changes as well. Additionally, if you change the model state, then the UI element changes.
 
-In React, when the model state update, it will render the change in the UI element. However, if you change the UI element, the model state does not change. 
+In React, when the model state update, it will render the change in the UI element. However, if you change the UI element, the model state does not change. Any state is always owned by some specific component, and any data or UI derived from that state can only affect components below them in the tree. 
 
 ## Two Kinds of Applications 
 
@@ -223,6 +229,12 @@ Since this.props and this.state may be updated asynchronously, you should not re
 * return null in the render method function
 * return false in shouldComponentUpdate\(\) lifecycle method function in class based component
 
+## Conditional Rendering
+
+* if else statement
+* true && expression
+* condition ? true : false
+
 ## How to access the underlying DOM component
 
 When the ref attribute is used on an HTML element, the ref created in the constructor with React.createRef\(\) receives the underlying DOM element as its current property. 
@@ -281,6 +293,16 @@ When a component's props or state change, React decides whether an actual DOM up
 ## How Virtual DOM works
 
 React builds up its own "virtual DOM" which is a lightweight representation of the DOM optimized for React's diffing algorithms and reconciliation process. Virtual DOM changes eventually propagate to the actual DOM at the end of the reconciliation process. 
+
+## Steps for building React Project
+
+* Break the UI into a Component Hierarchy
+* Build a static version in React
+* Identify the minimal \(but complete\) representation of UI state
+* Identify where your state should live
+* Add inverse Data Flow
+
+React Documentation
 
 ## Compilers - Babel
 

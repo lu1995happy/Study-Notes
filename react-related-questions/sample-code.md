@@ -32,12 +32,12 @@ class App extends Component {
     render() {
         return (
             <div className="App"> 
-                // first way to pass method references between components
+                // first way to pass arugments to event handlers
                 <button onClick={() => this.switchNameHandler("Harry Lu")}>Switch Name</button>
                 <Person 
                     name={this.state.person[0].name}
                     age={this.state.person[0].age}
-                    // second way to pass method references between components
+                    // second way to pass augments to event handlers
                     click={this.switchNameHandler.bind(this, "Harry!!!")}
                     changed={this.nameChangedHandler}
                 > My Hobbies: Sing, Dance, Rap, Basketball
@@ -66,6 +66,36 @@ const person = (props) => {
 };
 
 export default person;
+```
+
+## Three way to handle events 
+
+* Bind this in the constructor
+
+```jsx
+constructor(props) {
+    super(props);
+    this.state = {};
+    this.handleClick = this.handleClick.bind(this);
+}
+```
+
+* Using arrow functions
+
+```jsx
+handleClick = () => {
+    console.log("this is:", this);
+}
+```
+
+* Using arrow functions in the callback - Since callback is created each time the button renders. If this callback is passed as a prop to lower components, those components might do an extra re-rendering, which will cause performance problems. 
+
+```jsx
+render() {
+    return (
+        <button onClick={(e) => this.handleClick(e)}> Click me </button>
+    );
+}
 ```
 
 ## ErrorBoundary 
@@ -155,9 +185,9 @@ Person.propTypes = {
 ```jsx
 // the better way to update the state when you are depending on old state
 // Since setState updates the state asynchronously
-this.setState((prevState, props) => {
+this.setState((state, props) => {
     return {
-        counter: prevState.counter + 1
+        counter: state.counter + props.increment
     };
 });
 ```
