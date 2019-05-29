@@ -302,7 +302,7 @@ React builds up its own "virtual DOM" which is a lightweight representation of t
 * Identify where your state should live
 * Add inverse Data Flow
 
-React Documentation
+[React Documentation](https://reactjs.org/docs/thinking-in-react.html)
 
 ## Compilers - Babel
 
