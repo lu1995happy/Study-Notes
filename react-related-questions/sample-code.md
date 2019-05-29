@@ -320,3 +320,77 @@ function Component() {
 }
 ```
 
+## Context & Ref & Fragment
+
+```jsx
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classes from './Person.css';
+
+class Person extends Component {
+  constructor(props) {
+    super(props);
+    this.inputElementRef = React.createRef();
+  }
+  
+  // creates a Context object. When React renders a component
+  // that subscribes to this Context object it will read the 
+  // current context value from the closest matching Provider
+  // above it in the tree. 
+  const AuthContext = React.createContext({
+    authenticated: false,
+    login: () => {}
+  });
+
+  static contextType = AuthContext;
+
+  componentDidMount() {
+    // this.inputElement.focus();
+    this.inputElementRef.current.focus();
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        // <AuthContext.Consumer>
+        //  {context => 
+        //    context.authenticated ? <p>Authenticated</p> : <p>Please log in</p>}
+        // </AuthContext.Consumer>
+        {this.context.authenticated ? (
+          <p>Authenticated!</p>
+        ) : (
+          <p>Please log in</p>
+        )}
+        <p>{this.props.children}</p>
+        <input
+          // ref={(inputEl) => {this.inputElement = inputEl}}
+          ref={this.inputElementRef}
+          type="text"
+          onChange={this.props.changed}
+          value={this.props.name}
+        />
+      </React.Fragment>
+    );
+  }
+}
+
+Person.propTypes = {
+  click: PropTypes.func,
+  name: PropTypes.string,
+  age: PropTypes.number,
+  changed: PropTypes.func
+};
+
+export default Person;
+
+// code in the parent file
+<AuthContext.Provider
+  value={{
+    authenticated: this.state.authenticated,
+    login: this.loginHandler
+  }}
+>
+  <Person/>
+</AuthContext.Provider>
+```
+

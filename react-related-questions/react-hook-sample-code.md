@@ -1,6 +1,6 @@
 # React Hook Sample Code
 
-## React Hooks - useState
+## useState
 
 useState\(\) returns an array with exactly two elements: 
 
@@ -43,5 +43,39 @@ const App = props => {
 export default App;
 ```
 
-## 
+## useEffect & useRef & useContext
+
+```jsx
+import React, { useEffect, useRef, useContext } from 'react';
+import AuthContext from '../../context/auth-context';
+
+const cockpit = props => {
+  const toggleBtnRef = useRef(null);
+  const authContext = useContext(AuthContext);
+
+  useEffect(() => {
+    // Http request...
+    // same as componentDidMount and componentDidUpdate
+    // setTimeout(() => {
+    //   alert('Saved data to cloud!');
+    // }, 1000);
+    toggleBtnRef.current.click();
+    return () => {
+      // clean-up code here
+      // same as componentWillUnmount 
+    };
+  }, []); // only re-run the effect if the value inside changes
+
+  return (
+    <div>
+      <button ref={toggleBtnRef}>
+        Toggle Persons
+      </button>
+      <button onClick={authContext.login}>Log in</button>
+    </div>
+  );
+};
+
+export default React.memo(cockpit);
+```
 
