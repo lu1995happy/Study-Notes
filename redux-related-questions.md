@@ -40,6 +40,14 @@ A shallow equality check is therefore as simple and as fast as `a === b`, wherea
 
 It's for this improvement in performance that Redux uses shallow equality checking. 
 
+## Action
+
+Actions are plain JavaScript objects. They must have a type indicating the type of action being performed. In essence, actions are payload of information that send data from your application to your store. 
+
+## Reducer
+
+A reducer is simply a pure function that takes the previous state and an action, and returns the next state. 
+
 ## Store
 
 The store is a JavaScript object that holds application state. Along with this it also has the following responsibilities:
@@ -50,14 +58,6 @@ The store is a JavaScript object that holds application state. Along with this i
 * Handles unregistering of listeners via the function returned by subscribe\(listener\)
 
 The only way to change the state inside it is to dispatch an action on it. 
-
-## Action
-
-Actions are plain JavaScript objects. They must have a type indicating the type of action being performed. In essence, actions are payload of information that send data from your application to your store. 
-
-## Reducer
-
-A reducer is simply a pure function that takes the previous state and an action, and returns the next state. 
 
 ## Redux Thunk
 

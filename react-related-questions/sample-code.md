@@ -295,6 +295,34 @@ class Form extends React.Component {
 }
 ```
 
+## Uncontrolled Component
+
+```jsx
+class Form extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.input = React.createRef();
+    }
+    
+    handleSubmit(event) {
+        event.preventDefault();
+        console.log(this.input.current.value);
+    }
+    
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <label> Name:
+                    <input type="text" ref={this.input} />
+                </label>
+                <input type="submit" value="Submit" />
+            <
+        );
+    }
+}
+```
+
 ## React Lazy & Suspense
 
 `React.lazy` takes a function that must call a dynamic `import()`. This must return a `Promise` which resolves to a module with a default export containing a React component. 
@@ -400,5 +428,18 @@ const FancyButton = React.forwardRef((props, ref) => (
         {props.children}
     </button>
 ));
+```
+
+## Portals 
+
+```jsx
+render() {
+    // React does not create a new div. It renders the children into domNode. 
+    // domNode is any valid DOM node, regardless of its location in the DOM.
+    return ReactDOM.createPortal(
+        this.props.children,=
+        domNode
+    );
+}
 ```
 

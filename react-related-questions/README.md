@@ -231,6 +231,12 @@ By using Refs, you can create reusable component as much as you want.
 
 Ref forwarding is a technique for automatically passing a ref through a component to one of its children. This is typically not necessary for most components in the application. However, it can be useful for some kinds of components, especially in reusable component libraries. 
 
+## Portals
+
+Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
+
+A typical use case for portals is when a parent component has an `overflow: hidden` or `z-index` style, but you need the child to visually " break out" of its container. 
+
 ## Higher Order Component
 
 A higher order component is a function that takes a component and returns a new component. HOC allows you to reuse code, logic and bootstrap abstraction.The most common is probably Redux's connect function. Beyond simply sharing utility libraries and simple composition, HOC is the best way to share behavior between React components. If you find yourself writing a lot of code in different places that does the same thing, you may be able to refactor that code into a reusable HOC.
@@ -256,10 +262,6 @@ Since this.props and this.state may be updated asynchronously, you should not re
 
 When the ref attribute is used on an HTML element, the ref created in the constructor with React.createRef\(\) receives the underlying DOM element as its current property. 
 
-## Shadow DOM
-
-Shadow DOM provides a way to attach a hidden separated DOM to an element. It allows use to keep the markup structure, style and behavior hidden and separate from other code on the page so that different parts do not clash, and the code can be kept nice and clean.
-
 ## Why would you eject from create-react-app
 
 Until you eject you are unable to configure web-pack or babel presets.
@@ -268,7 +270,7 @@ Until you eject you are unable to configure web-pack or babel presets.
 
 `Props` are inputs to a React component. They are data passed down from a parent component to a child component. Props are read only. 
 
-`State` is an internal object for a particular react component and can change, as it determines the state of the component. It's not visible to other components. 
+`State` is an internal object for a particular react component and can change, as it determines the state of the component. It's not visible to other components.  
 
 `props.children` contains the content between the opening and closing tags of a component.
 
@@ -307,9 +309,26 @@ They help indicate to React what data types a React component's properties are a
 
 When a component's props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM. This process is called Reconciliation. 
 
+## The Diffing Algorithm
+
+When diffing two trees, React first compares the two root elements. The behavior is different depending on the types of the root elements. 
+
+React implements a heuristic O\(n\) algorithm based on two assumptions: 
+
+* Two elements of different types will produce different trees
+* The developer can hint at which child elements may be stable across different renders with a key prop.
+
 ## How Virtual DOM works
 
 React builds up its own "virtual DOM" which is a lightweight representation of the DOM optimized for React's diffing algorithms and reconciliation process. Virtual DOM changes eventually propagate to the actual DOM at the end of the reconciliation process. 
+
+## Shadow DOM
+
+The Shadow DOM is a browser technology designed primarily for scoping variables and CSS in web components. 
+
+## React Fiber
+
+Fiber is new reconciliation engine in React 16. Its main goal is to enable incremental rendering of the virtual DOM.
 
 ## Steps for building React Project
 
@@ -340,6 +359,16 @@ Package managers are tools that allow you to manager dependencies in your projec
 * Focus Control
 * Mouse and pointer events
 * More Complex Widgets
+
+## Strict Mode
+
+StrictMode is a tool for highlighting potential problems in an application:
+
+* Identifying components with unsafe lifecycles
+* Warning about legacy string ref API usage
+* Warning about deprecated findDOMNode usage
+* Detecting unexpected side effects
+* Detecting legacy context API 
 
 ## Test method
 

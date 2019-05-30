@@ -214,7 +214,6 @@ function test(){
  console.log(n); // undefined
 }
 console.log(n); // 9
-
 ```
 
 ## What is the output of this code
