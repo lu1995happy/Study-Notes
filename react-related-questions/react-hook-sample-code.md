@@ -79,3 +79,24 @@ const cockpit = props => {
 export default React.memo(cockpit);
 ```
 
+## Counter Example
+
+```jsx
+import React, { useState } from "react";
+
+const App = (props) => {
+
+  const [counter, setCounter] = useState(0);
+
+  return (
+    <React.Fragment>
+      <span>You Clicked {counter} times!</span>
+      <button onClick={() => setCounter(counter + 1)}>Increase</button>
+      <button onClick={() => setCounter(counter - 1)}>Decrease</button>
+    </React.Fragment>
+  );
+}
+
+export default App;
+```
+
