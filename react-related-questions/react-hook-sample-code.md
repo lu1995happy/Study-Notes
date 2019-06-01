@@ -31,7 +31,7 @@ const App = props => {
     
     return (
         <div className="App">
-            <button onClick={this.switchNameHandler}>Switch Name</button>
+            <button onClick={switchNameHandler}>Switch Name</button>
             <Person
                 name={personState.person[0].name}
                 age={personState.person[0].age}
