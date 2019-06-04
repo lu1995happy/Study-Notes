@@ -191,3 +191,168 @@ export const TodoContext = React.createContext({
 
 ## Using Regular React
 
+{% code-tabs %}
+{% code-tabs-item title="App.js" %}
+```jsx
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import AddTodo from "./AddTodo";
+import Filter from "./Filter";
+import Todo from "./Todo";
+
+class App extends Component {
+
+  state = {
+    todos: [],
+    filter: "All"
+  }
+
+  addTodo = (todo) => {
+    this.setState({
+      todos: [
+        ...this.state.todos,
+        {text: todo, completed: false}
+      ]
+    });
+  }
+
+  toggleTodoHandler = (index) => {
+    this.setState({
+      todos: [
+        ...this.state.todos.slice(0, index),
+        {
+          ...this.state.todos[index],
+          completed: !this.state.todos[index].completed
+        },
+        ...this.state.todos.slice(index + 1)
+      ]
+    })
+  }
+
+  setFilterHandler = (filter) => {
+    this.setState({
+      filter: filter
+    })
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <AddTodo addTodo={this.addTodo}/>
+        <Todo todoList={this.state.todos} toggleTodo={this.toggleTodoHandler} currentFilter={this.state.filter}/>
+        <Filter currentFilter={this.state.filter} setFilter={this.setFilterHandler}/>
+      </React.Fragment>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+{% code-tabs %}
+{% code-tabs-item title="AddTodo.js" %}
+```jsx
+import React, { Component } from "react";
+
+class AddTodo extends Component {
+  
+  state = { value: "" };
+
+  onChangeHandler = (e) => {
+    this.setState({ value: e.target.value })
+  };
+
+  onClickHandler = () => {
+    this.props.addTodo(this.state.value);
+    this.setState({ value: "" });
+  };
+
+  render() {
+    return (
+      <div>
+        <input type="text" value={this.state.value} onChange={this.onChangeHandler} />
+        <button onClick={this.onClickHandler}> Add Todo </button>
+      </div>
+    );
+  }
+}
+
+export default AddTodo;
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+{% code-tabs %}
+{% code-tabs-item title="Filter.js" %}
+```jsx
+import React from "react";
+
+const Filter = (props) => {
+  
+  const showAllHandler = () => {
+    props.setFilter("All");
+  }
+
+  const showActiveHandler = () => {
+    props.setFilter("Active");
+  }
+
+  const showCompletedHandler = () => {
+    props.setFilter("Completed");
+  }
+
+  return (
+    <React.Fragment>
+      <span>Show:</span>
+      <button onClick={showAllHandler} disabled={props.currentFilter === "All"}>All</button>
+      <button onClick={showActiveHandler} disabled={props.currentFilter === "Active"}>Active</button>
+      <button onClick={showCompletedHandler} disabled={props.currentFilter === "Completed"}>Completed</button>
+    </React.Fragment>
+  );
+}
+
+export default Filter;
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+{% code-tabs %}
+{% code-tabs-item title="Todo.js" %}
+```jsx
+import React from "react";
+
+const Todo = (props) => {
+
+  const TodoList = props.todoList.filter((todo) => {
+    if (props.currentFilter === "All") {
+      return true;
+    } else if (props.currentFilter === "Active") {
+      return !todo.completed;
+    } else {
+      return todo.completed;
+    }
+  })
+
+  return(
+    <React.Fragment>
+      {TodoList.map((todo, index) => {
+        return (<li 
+          key={index} 
+          onClick={() => props.toggleTodo(index)} 
+          style={{textDecoration: todo.completed ? "line-through" : "none"}}
+        >
+          {todo.text}
+        </li>
+      )}
+    )}
+    </React.Fragment>
+  );
+}
+
+export default Todo;
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
