@@ -1,3 +1,7 @@
+---
+description: 'Write TodoList in 3 ways: React, React Hooks, React Context API'
+---
+
 # Todo-List
 
 ## Using React Context API
@@ -185,6 +189,167 @@ export const TodoContext = React.createContext({
   todo: [],
   filter: "All"
 });
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+## Using React Hooks
+
+{% code-tabs %}
+{% code-tabs-item title="App.js" %}
+```jsx
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import AddTodo from "./AddTodo";
+import Filter from "./Filter";
+import Todo from "./Todo";
+
+const App = () => {
+
+  const [todoState, setTodos] = useState({ todos: [] });
+  const [filterState, setFilter] = useState({ filter: "All" });
+
+  const addTodo = (todo) => {
+    setTodos({
+      todos: [
+        ...todoState.todos,
+        {text: todo, completed: false}
+      ]
+    });
+  }
+
+  const toggleTodoHandler = (index) => {
+    setTodos({
+      todos: [
+        ...todoState.todos.slice(0, index),
+        {
+          ...todoState.todos[index],
+          completed: !todoState.todos[index].completed
+        },
+        ...todoState.todos.slice(index + 1)
+      ]
+    })
+  }
+
+  const setFilterHandler = (filter) => {
+    setFilter({
+      filter: filter
+    })
+  }
+
+  return (
+    <React.Fragment>
+      <AddTodo addTodo={addTodo}/>
+      <Todo todoList={todoState.todos} toggleTodo={toggleTodoHandler} currentFilter={filterState.filter}/>
+      <Filter currentFilter={filterState.filter} setFilter={setFilterHandler}/>
+    </React.Fragment>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+{% code-tabs %}
+{% code-tabs-item title="AddTodo.js" %}
+```jsx
+import React, { useState } from "react";
+
+const AddTodo = (props) => {
+  
+  const [state, setState] = useState({ value: "" });
+
+  const onChangeHandler = (e) => {
+    setState({ value: e.target.value })
+  };
+
+  const onClickHandler = () => {
+    props.addTodo(state.value);
+    setState({ value: "" });
+  };
+
+  return (
+    <div>
+      <input type="text" value={state.value} onChange={onChangeHandler} />
+      <button onClick={onClickHandler}> Add Todo </button>
+    </div>
+  );
+}
+
+export default AddTodo;
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+{% code-tabs %}
+{% code-tabs-item title="Filter.js" %}
+```jsx
+import React from "react";
+
+const Filter = (props) => {
+  
+  const showAllHandler = () => {
+    props.setFilter("All");
+  }
+
+  const showActiveHandler = () => {
+    props.setFilter("Active");
+  }
+
+  const showCompletedHandler = () => {
+    props.setFilter("Completed");
+  }
+
+  return (
+    <React.Fragment>
+      <span>Show:</span>
+      <button onClick={showAllHandler} disabled={props.currentFilter === "All"}>All</button>
+      <button onClick={showActiveHandler} disabled={props.currentFilter === "Active"}>Active</button>
+      <button onClick={showCompletedHandler} disabled={props.currentFilter === "Completed"}>Completed</button>
+    </React.Fragment>
+  );
+}
+
+export default Filter;
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+{% code-tabs %}
+{% code-tabs-item title="Todo.js" %}
+```jsx
+import React from "react";
+
+const Todo = (props) => {
+
+  const TodoList = props.todoList.filter((todo) => {
+    if (props.currentFilter === "All") {
+      return true;
+    } else if (props.currentFilter === "Active") {
+      return !todo.completed;
+    } else {
+      return todo.completed;
+    }
+  })
+
+  return(
+    <React.Fragment>
+      {TodoList.map((todo, index) => {
+        return (<li 
+          key={index} 
+          onClick={() => props.toggleTodo(index)} 
+          style={{textDecoration: todo.completed ? "line-through" : "none"}}
+        >
+          {todo.text}
+        </li>
+      )}
+    )}
+    </React.Fragment>
+  );
+}
+
+export default Todo;
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
