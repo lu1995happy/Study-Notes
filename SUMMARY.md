@@ -6,7 +6,6 @@
 * [JavaScript](javascript-related-questions/README.md)
   * [ES6 New Features](javascript-related-questions/es6-new-features.md)
 * [React](react-related-questions/README.md)
-  * [JSX](react-related-questions/jsx.md)
   * [React Lifecycle](react-related-questions/react-lifecycle.md)
   * [React Sample Code](react-related-questions/sample-code.md)
   * [React Hook Sample Code](react-related-questions/react-hook-sample-code.md)
