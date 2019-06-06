@@ -6,11 +6,11 @@ Cascading Style Sheets \(CSS\) is a style sheet language used for describing the
 
 ## CSS3 New Features
 
-* media query
-* selector
-* round corner
-* transform
-* multicolumn layout
+* Media Query
+* Selector
+* Round Corner
+* Transform
+* Multicolumn Layout
 
 ## Box Model
 
@@ -31,19 +31,19 @@ All HTML elements can be considered as boxes. In CSS, the term box model is used
 
 ## Display
 
-* inline
-* block
+* Inline
+* Block
   * it will change the width and height based on the settings, and block the lane for wrapped content
-* inline-block
+* Inline-Block
   * it will deal better both has the width and height setting and keep wrapped content in line
 
-## Display: none vs visibility: hidden
+## Display: none vs Visibility: hidden
 
 display: none - means that the tag will not appear on the page at all, although you can still interact with it through the DOM. There will be no space allocated for it between the other tags.
 
 visibility: hidden - means that unlike display: none, the tag is not visible, but space is allocated for it on the page. The tag is rendered, it just isn't seen on the page. 
 
-## CSS selectors
+## CSS Selectors
 
 ![](.gitbook/assets/image%20%2810%29.png)
 
@@ -93,7 +93,7 @@ Animations within CSS3 allow the appearance and behavior of an element to be alt
 
 A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element. e.g. :first-letter, :before, :after.
 
-## CSS preprocessors - pros & cons
+## CSS Preprocessors - pros & cons
 
 advantages: 
 
