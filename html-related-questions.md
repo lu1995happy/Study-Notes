@@ -6,23 +6,23 @@ HyperText Markup Language \(HTML\) is the standard markup language for creating 
 
 ## HTML5 New Features
 
-* new doctype
-* placeholders
-* local storage
-* new semantic elements like &lt;header&gt;, &lt;footer&gt;, &lt;article&gt;, and &lt;section&gt;
-* new attributes of form elements like number, date, time, calendar, and range
-* new graphic elements like &lt;svg&gt; and &lt;canvas&gt;
-* new multimedia elements like &lt;audio&gt; and &lt;video&gt;
+* Doctype
+* Placeholders
+* Local Storage
+* Semantic elements like &lt;header&gt;, &lt;footer&gt;, &lt;article&gt;, and &lt;section&gt;
+* Attributes of form elements like number, date, time, calendar, and range
+* Graphic elements like &lt;svg&gt; and &lt;canvas&gt;
+* Multimedia elements like &lt;audio&gt; and &lt;video&gt;
 
-## attribute vs property
+## Attribute vs Property
 
 Attributes are defined on the HTML markup but properties are defined on the DOM. 
 
-## cookie vs sessionStorage vs localStorage
+## Cookie vs SessionStorage vs LocalStorage
 
 All the above-mentioned technologies are key-value storage mechanisms on the client side. They are only able to store values are strings.
 
-|  | cookie | localStorage | sessionStorage |
+|  | Cookie | LocalStorage | SessionStorage |
 | :--- | :--- | :--- | :--- |
 | initiator | client or server. Server can use Set-Cookie header | client | client |
 | expiry | manually set | forever | on tab close |
@@ -41,7 +41,7 @@ HTML constraint validation is based on:
 * CSS Pseudo Selectors - e.g :disabled, :valid, :required
 * DOM Properties and Methods 
 
-## What is HTML data-\* attribute
+## HTML data-\* attribute
 
 The data attributes are used to store custom data private to the page or application. The data attributes give us the ability to embed custom data attributes on all HTML elements. The stored data can then be used in the page's JavaScript to create a more engaging user experience \(without any AJAX calls or sever-side database queries\). 
 
@@ -50,15 +50,15 @@ The data attributes consist of two parts:
 * The attribute name should not contain any uppercase letters, and must be at least one character long after the prefix "data-"
 * The attribute value can be any string
 
-## HTML semantic element
+## HTML Semantic element
 
 A semantic element clearly describes its meaning to both the browser and the developer. e.g. &lt;form&gt;, &lt;table&gt;, &lt;article&gt;
 
-## HTML5 aside element
+## HTML5 Aside element
 
 The aside element represents a portion of the document whose content is only indirectly related to the document's main content. Asides are frequently presented as sidebars or call-out boxes.
 
-## HTML accessibility
+## HTML Accessibility
 
 * use more semantic HTML
 * use correct headings
