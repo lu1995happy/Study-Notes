@@ -53,7 +53,7 @@ Disadvantages:
 
 Since difference browser may require different API for the same functionality, you can easily use if - else statement to define which API should be used in which environment. If the API is not working with that browser, it will return undefined. 
 
-## Continuous Integration
+## Continuous Integration \(CI\)
 
 Continuous Integration is a development practice that requires developers to integrate code into a shared repository several times a day. Each check-in is then verified by an automated build, allowing teams to detect problems early. 
 
