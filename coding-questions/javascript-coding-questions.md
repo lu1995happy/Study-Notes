@@ -881,10 +881,12 @@ $(document).ready( function() {
 ```javascript
 const arr = [1,1,1,1,2,2,2,3,3,4,5];
 
+// Method: 1
 unique = [...new Set(arr)];
 
-uniqueArray = arr.filter((item, pos) => {
-    return arr.indexOf(item) === pos;
+// Method: 2
+uniqueArray = arr.filter((ele, index) => {
+    return arr.indexOf(ele) === index;
 });
 ```
 
