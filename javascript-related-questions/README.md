@@ -6,13 +6,13 @@ JavaScript is a high-level, interpreted programming language.
 
 ## ES6 New Features
 
-* let, const
-* class
-* arrow function
-* spread and destructing
-* modules
-* promise
-* symbol
+* Let, Const
+* Class
+* Arrow Function
+* Spread and Destructing
+* Modules
+* Promise
+* Symbol
 
 ## How JavaScript work
 
@@ -61,7 +61,7 @@ The following rules are applied:
 * If multiple of the above rules apply, the rule that is higher wins and will set the `this` value.
 * If the function is an ES6 arrow function, it ignores all the rules above and receives the `this` value of its surrounding scope at the time it is created. 
 
-## window vs document
+## Window vs Document
 
 `window` is the main JavaScript object root, like the global object in the browser, also can be treated as the root of the DOM. 
 
