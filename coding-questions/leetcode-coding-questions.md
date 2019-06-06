@@ -39,6 +39,10 @@ const lengthOfLongestSubstring = (s) => {
 }
 ```
 
+## Leetcode 6: ZigZag Conversion
+
+## Leetcode 15: 3Sum
+
 ## Leetcode 20: Valid Parentheses
 
 ```javascript
@@ -364,9 +368,13 @@ const dfs = (root, res) => {
 
 ## Leetcode 189: Rotate Array
 
+## Leetcode 198: House Robber
+
 ## Leetcode 203: Remove Linked List Elements
 
 ## Leetcode 206: Reverse Linked List
+
+## Leetcode 207: Course Schedule
 
 ## Leetcode 237: Delete Node in a Linked List
 
