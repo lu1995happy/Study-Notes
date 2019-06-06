@@ -1,2 +1,2 @@
-# React Interview Questions
+# Study Notes
 

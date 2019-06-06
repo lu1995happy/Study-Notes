@@ -1,6 +1,6 @@
 # Table of contents
 
-* [React Interview Questions](README.md)
+* [Study Notes](README.md)
 * [HTML](html-related-questions.md)
 * [CSS](css-related-questions.md)
 * [JavaScript](javascript-related-questions/README.md)
