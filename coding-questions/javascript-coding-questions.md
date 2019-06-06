@@ -774,15 +774,15 @@ const BFS = (root1, root2) => {
 ## Send request to server A, got a token, and then if success, send to sever B to get the data
 
 ```javascript
-axios.get(url_a)
-    .then(response => response.json())
-    .then(data => console.log(data.token))
-    .then(axios.get(url_b)
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
-    )
-    .catch(error => console.log(error));
+async const getData = () => {
+    try {
+        const response = await axios.get('/url_a');
+        const res = await axios.get('/url_b', {token: response.data.token});
+        console.log(res.data);
+    } catch (error) {
+        console.log(error);
+    }
+}
 ```
 
 ## Split an array into two equal sum subarrays
