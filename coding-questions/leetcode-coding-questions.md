@@ -265,6 +265,8 @@ const dfs = (res, root, height) => {
 
 ## **Leetcode 118: Pascal's Triangle**
 
+## **Leetcode 121: Best Time to Buy and Sell Stock**
+
 ## **Leetcode 124: Binary Tree Maximum Path Sum**
 
 ## **Leetcode 125: Valid Palindrome**
@@ -275,6 +277,8 @@ function isPalindrome(str) {
   return (str == str.split('').reverse().join(''));
 }
 ```
+
+## Leetcode 139: Work Break
 
 ## Leetcode 144: Binary Tree Preorder Traversal 
 
@@ -411,4 +415,6 @@ const fizzBuzz = (n) => {
 ## Leetcode 680: Valid Palindrome II
 
 ## Leetcode 695: Max Area of Island
+
+## Leetcode 805: Split Array With Same Average
 
