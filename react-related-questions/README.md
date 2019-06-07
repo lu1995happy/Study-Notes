@@ -8,6 +8,10 @@ React is a Javascript library for building User Interfaces.
 
 React creates a virtual DOM. When state changes in a component it firstly runs a "diffing" algorithm, which identifies what has changed in the virtual DOM. The second step is reconciliation, where it updates the DOM with the results of diff.
 
+## How Virtual DOM works
+
+React builds up its own "virtual DOM" which is a lightweight representation of the DOM optimized for React's diffing algorithms and reconciliation process. Virtual DOM changes eventually propagate to the actual DOM at the end of the reconciliation process.
+
 ## React Advantages
 
 * It's easy to know how a component is rendered, you just need to look at the render function.
@@ -341,10 +345,6 @@ React implements a heuristic O\(n\) algorithm based on two assumptions:
 * Two elements of different types will produce different trees
 * The developer can hint at which child elements may be stable across different renders with a key prop.
 
-## How Virtual DOM works
-
-React builds up its own "virtual DOM" which is a lightweight representation of the DOM optimized for React's diffing algorithms and reconciliation process. Virtual DOM changes eventually propagate to the actual DOM at the end of the reconciliation process. 
-
 ## Shadow DOM
 
 The Shadow DOM is a browser technology designed primarily for scoping variables and CSS in web components. 
@@ -352,6 +352,10 @@ The Shadow DOM is a browser technology designed primarily for scoping variables 
 ## React Fiber
 
 Fiber is new reconciliation engine in React 16. Its main goal is to enable incremental rendering of the virtual DOM.
+
+## Framework vs Library
+
+The key difference between a library and a framework is "Inversion of Control". When you call a method from a library, you are in control. However, with a framework, the control is inverted: the framework calls you. A library is just a collection of class definitions. 
 
 ## Steps for building React Project
 
