@@ -584,28 +584,72 @@ class EditableCell extends React.Component {
 ReactDOM.render( < Products / > , document.getElementById('container'));
 ```
 
-## React Counter using Hooks
+## Add item to the list, if exists, increase the item count
 
 ```jsx
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
-function App() {
-  const [num, setNum] = useState(Number(localStorage.getItem("num")) || 0);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: [],
+      value: ""
+    };
+  }
 
-  useEffect(() => {
-    localStorage.setItem("num", num);
-  }, [num]);
+  onChangeHandler = e => {
+    this.setState({
+      value: e.target.value
+    });
+  };
 
-  return (
-    <div>
-      {num}
-      <button onClick={() => setNum(num + 1)}>Add</button>
-      <button onClick={() => setNum(num - 1)}>Subtract</button>
-    </div>
-  );
+  onSubmitHandler = e => {
+    e.preventDefault();
+    let find = false;
+    const arr = this.state.list;
+    const value = this.state.value;
+    for (let item of arr) {
+      if (item[value]) {
+        item[value]++;
+        find = true;
+        break;
+      }
+    }
+    const newItem = {};
+    newItem[value] = 1;
+    if (!find) {
+      arr.push(newItem);
+    }
+    this.setState({
+      list: arr,
+      value: ""
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.onSubmitHandler}>
+          <input
+            type="text"
+            value={this.state.value}
+            onChange={this.onChangeHandler}
+          />
+          <input type="submit" value="submit" />
+        </form>
+        {this.state.list.map((item, index) => {
+          return <li key={index}> {JSON.stringify(item)} </li>;
+        })}
+      </div>
+    );
+  }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
+
+
 
