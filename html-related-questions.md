@@ -24,12 +24,12 @@ All the above-mentioned technologies are key-value storage mechanisms on the cli
 
 |  | Cookie | LocalStorage | SessionStorage |
 | :--- | :--- | :--- | :--- |
-| initiator | client or server. Server can use Set-Cookie header | client | client |
-| expiry | manually set | forever | on tab close |
-| persistent across browser sessions | depends on whether expiration is set | yes | no |
-| sent to server with every HTTP request | cookies are automatically being sent via cookie header | no | no |
-| capacity | 4kb | 5mb | 5mb |
-| accessibility | any window | any window | same tab |
+| Initiator | client or server. Server can use Set-Cookie header | client | client |
+| Expiry | manually set | forever | on tab close |
+| Persistent across browser sessions | depends on whether expiration is set | yes | no |
+| Sent to server with every HTTP request | cookies are automatically being sent via cookie header | no | no |
+| Capacity | 4kb | 5mb | 5mb |
+| Accessibility | any window | any window | same tab |
 
 ## Form Validation 
 
@@ -60,11 +60,11 @@ The aside element represents a portion of the document whose content is only ind
 
 ## HTML Accessibility
 
-* use more semantic HTML
-* use correct headings
-* alternative text
-* declare the language and use clear language
-* write good links and link titles
+* Use more semantic HTML
+* Use correct headings
+* Alternative text
+* Declare the language and use clear language
+* Write good links and link titles
 
 ## 
 
