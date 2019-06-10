@@ -19,29 +19,29 @@ All HTML elements can be considered as boxes. In CSS, the term box model is used
 ## Position
 
 * Static
-  * this is the default value, all the elements are in order as they appear in the document
+  * This is the default value, all the elements are in order as they appear in the document
 * Fixed 
-  * the element is positioned relative to its normal position
+  * The element is positioned relative to its normal position
 * Absolute
-  * the element is positioned absolutely to its first positioned parent
+  * The element is positioned absolutely to its first positioned parent
 * Relative
-  * the element is positioned related to the browser window
+  * The element is positioned related to the browser window
 * Sticky
-  * the element is positioned based on the user's scroll position
+  * The element is positioned based on the user's scroll position
 
 ## Display
 
 * Inline
 * Block
-  * it will change the width and height based on the settings, and block the lane for wrapped content
+  * It will change the width and height based on the settings, and block the lane for wrapped content
 * Inline-Block
-  * it will deal better both has the width and height setting and keep wrapped content in line
+  * It will deal better both has the width and height setting and keep wrapped content in line
 
 ## Display: none vs Visibility: hidden
 
-display: none - means that the tag will not appear on the page at all, although you can still interact with it through the DOM. There will be no space allocated for it between the other tags.
+Display: none - means that the tag will not appear on the page at all, although you can still interact with it through the DOM. There will be no space allocated for it between the other tags.
 
-visibility: hidden - means that unlike display: none, the tag is not visible, but space is allocated for it on the page. The tag is rendered, it just isn't seen on the page. 
+Visibility: hidden - means that unlike display: none, the tag is not visible, but space is allocated for it on the page. The tag is rendered, it just isn't seen on the page. 
 
 ## CSS Selectors
 
@@ -62,7 +62,7 @@ inline style &gt; ID selector &gt; class, attribute and pseudo-class selector &g
 ## Responsive Design
 
 * Media query 
-  * media query made it possible to define different style rules for different media types. By using media query, we can do responsive web design to handle different devices' viewport. 
+  * Media query made it possible to define different style rules for different media types. By using media query, we can do responsive web design to handle different devices' viewport. 
 * Flexbox 
   * Need a container with attributes display: flex, flex-direction: column/row\(-reserve\), flex-wrap: \(no\)wrap\(-reverse\), flex-flow: setting both the flex-direction and flex-wrap
 
@@ -77,7 +77,7 @@ It uses the @media rule to include a block of CSS properties only if a certain c
 * Flex-box layout is most appropriate to the components of an application and small-scale layouts, while the Grid layout is intended for larger scale layouts which aren't linear in their design
 * Flex-box is for defining a layout as a row or a column, whereas Grid is for defining a grid and fit content into it in two-dimensions
 
-shorthand for using Flex-box: performance issues and browser compatibility. 
+Shorthand for using Flex-box: performance issues and browser compatibility. 
 
 ## Animation vs Transition
 
@@ -86,7 +86,7 @@ Animations within CSS3 allow the appearance and behavior of an element to be alt
 ## Pseudo Class
 
 * It is used to define a special state of an element 
-* active, checked, disabled, first-child, link, visited
+* Active, checked, disabled, first-child, link, visited
 * Pseudo elements: after, before, first-letter, first-line, selection
 
 ## Pseudo elements
@@ -95,17 +95,17 @@ A CSS pseudo-element is a keyword added to a selector that lets you style a spec
 
 ## CSS Preprocessors - pros & cons
 
-advantages: 
+Advantages: 
 
 * CSS is made more maintainable
-* easy to write nested selectors
-* variables for consistent theming. Can share theme files across different projects
-* mixins to generate repeated CSS
-* splitting your code into multiple files. CSS files can be split up too but doing so will require an HTTP request to download each CSS file
+* Easy to write nested selectors
+* Variables for consistent theming. Can share theme files across different projects
+* Mixins to generate repeated CSS
+* Splitting your code into multiple files. CSS files can be split up too but doing so will require an HTTP request to download each CSS file
 
-disadvantages:
+Disadvantages:
 
-* requires tools for preprocessing. Re-compilation time can be slow
+* Requires tools for preprocessing. Re-compilation time can be slow
 
 ## Mixin in SASS / SCSS
 
@@ -127,5 +127,5 @@ The z-index property specifies the stack order of an element. An element with gr
 
 ## How many px is equal to 1 rem
 
-rem is a new feature for CSS3, which stands for root em. It's equal to the computed value of font-size on the root element, the rem units refer to the property's initial value. This means that 1rem equals the font size of the HTML element, which for most browser has a default value of 16px.
+Rem is a new feature for CSS3, which stands for root em. It's equal to the computed value of font-size on the root element, the rem units refer to the property's initial value. This means that 1rem equals the font size of the HTML element, which for most browser has a default value of 16px.
 
