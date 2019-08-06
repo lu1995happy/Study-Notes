@@ -20,4 +20,5 @@
   * [CSS Coding](coding-questions/css-coding-questions.md)
   * [Todo-List](coding-questions/todo-list.md)
   * [React Projects](coding-questions/react-coding-projects.md)
+  * [Apple OA - type-ahead search widget](coding-questions/apple-oa-type-ahead-search-widget.md)
 
